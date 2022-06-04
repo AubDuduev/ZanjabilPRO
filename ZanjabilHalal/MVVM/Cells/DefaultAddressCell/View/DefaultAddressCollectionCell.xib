@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="q8t-Oe-QsE" customClass="DefaultAddressCollectionCell" customModule="ZanjabilHalal" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="434" height="32"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="434" height="32"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yl3-Mb-nfR" userLabel="MainView">
+                        <rect key="frame" x="0.0" y="0.0" width="434" height="32"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="guG-oT-8Pe" userLabel="MainStackView">
+                                <rect key="frame" x="0.0" y="0.0" width="434" height="32"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yl6-pY-aeW">
+                                        <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="yl6-pY-aeW" secondAttribute="height" id="4gz-jA-Rpd"/>
+                                        </constraints>
+                                        <color key="tintColor" name="greenFore"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="square.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="didActionButtonWithButton:" destination="q8t-Oe-QsE" eventType="touchUpInside" id="ZOY-AT-Zzj"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S0C-7c-aj5">
+                                        <rect key="frame" x="36" y="0.0" width="398" height="32"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Устновить по умолчанию">
+                                            <color key="titleColor" name="greenFore"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didActionButtonWithButton:" destination="q8t-Oe-QsE" eventType="touchUpInside" id="PA7-q5-AcS"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="guG-oT-8Pe" firstAttribute="leading" secondItem="Yl3-Mb-nfR" secondAttribute="leading" id="Cge-au-Teb"/>
+                            <constraint firstItem="guG-oT-8Pe" firstAttribute="top" secondItem="Yl3-Mb-nfR" secondAttribute="top" id="pZB-L7-68b"/>
+                            <constraint firstAttribute="trailing" secondItem="guG-oT-8Pe" secondAttribute="trailing" id="tL3-Dw-VzS"/>
+                            <constraint firstAttribute="bottom" secondItem="guG-oT-8Pe" secondAttribute="bottom" id="y9y-ar-GCi"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="OtO-6Y-Eqv"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Yl3-Mb-nfR" secondAttribute="bottom" id="7Y4-SQ-Bak"/>
+                <constraint firstItem="Yl3-Mb-nfR" firstAttribute="leading" secondItem="q8t-Oe-QsE" secondAttribute="leading" id="DLA-PO-6oc"/>
+                <constraint firstItem="Yl3-Mb-nfR" firstAttribute="top" secondItem="q8t-Oe-QsE" secondAttribute="top" id="QFd-H9-KBq"/>
+                <constraint firstAttribute="trailing" secondItem="Yl3-Mb-nfR" secondAttribute="trailing" id="k8e-oc-88Z"/>
+            </constraints>
+            <size key="customSize" width="434" height="47"/>
+            <connections>
+                <outlet property="actionButton" destination="S0C-7c-aj5" id="cQq-WS-rpp"/>
+                <outlet property="checkmarkButton" destination="yl6-pY-aeW" id="tgN-4W-XbJ"/>
+            </connections>
+            <point key="canvasLocation" x="415.94202898550731" y="142.96875"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="square.fill" catalog="system" width="128" height="114"/>
+        <namedColor name="greenFore">
+            <color red="0.082000002264976501" green="0.34900000691413879" blue="0.14900000393390656" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

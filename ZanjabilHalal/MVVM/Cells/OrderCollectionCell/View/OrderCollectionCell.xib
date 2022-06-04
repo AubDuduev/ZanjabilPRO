@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="q8t-Oe-QsE" customClass="OrderCollectionCell" customModule="ZanjabilHalal" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="318" height="37"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="318" height="37"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LFT-NN-dCL" userLabel="MainView">
+                        <rect key="frame" x="0.0" y="0.0" width="318" height="37"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="DM3-gB-oqa" userLabel="MainStackView">
+                                <rect key="frame" x="8" y="0.0" width="302" height="37"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RYe-SD-dnh">
+                                        <rect key="frame" x="0.0" y="0.0" width="37" height="37"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="RYe-SD-dnh" secondAttribute="height" id="rRV-MP-TbK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <color key="textColor" name="greenFore"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpZ-1q-ebG">
+                                        <rect key="frame" x="45" y="0.0" width="210.5" height="37"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <color key="textColor" name="greenFore"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwL-iQ-eJS">
+                                        <rect key="frame" x="263.5" y="0.0" width="38.5" height="37"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" name="greenFore"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" name="greenThree"/>
+                        <constraints>
+                            <constraint firstItem="DM3-gB-oqa" firstAttribute="leading" secondItem="LFT-NN-dCL" secondAttribute="leading" constant="8" id="3Qt-Dw-vkZ"/>
+                            <constraint firstItem="DM3-gB-oqa" firstAttribute="top" secondItem="LFT-NN-dCL" secondAttribute="top" id="7FV-Pe-n4c"/>
+                            <constraint firstAttribute="trailing" secondItem="DM3-gB-oqa" secondAttribute="trailing" constant="8" id="Z8s-ol-apw"/>
+                            <constraint firstAttribute="bottom" secondItem="DM3-gB-oqa" secondAttribute="bottom" id="u0d-4m-JdG"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="OtO-6Y-Eqv"/>
+            <constraints>
+                <constraint firstItem="LFT-NN-dCL" firstAttribute="top" secondItem="q8t-Oe-QsE" secondAttribute="top" id="5QN-Sa-Y1Q"/>
+                <constraint firstAttribute="bottom" secondItem="LFT-NN-dCL" secondAttribute="bottom" id="CrA-54-1An"/>
+                <constraint firstItem="LFT-NN-dCL" firstAttribute="leading" secondItem="q8t-Oe-QsE" secondAttribute="leading" id="KkZ-bW-Ay4"/>
+                <constraint firstAttribute="trailing" secondItem="LFT-NN-dCL" secondAttribute="trailing" id="Lnm-cV-K4d"/>
+            </constraints>
+            <size key="customSize" width="318" height="37"/>
+            <connections>
+                <outlet property="countDishLabel" destination="RYe-SD-dnh" id="T2P-au-kgg"/>
+                <outlet property="nameDishLabel" destination="bpZ-1q-ebG" id="qef-KQ-Jqe"/>
+                <outlet property="priceDishLabel" destination="cwL-iQ-eJS" id="CRI-Ei-fDR"/>
+            </connections>
+            <point key="canvasLocation" x="331.8840579710145" y="139.62053571428569"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="greenFore">
+            <color red="0.082000002264976501" green="0.34900000691413879" blue="0.14900000393390656" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="greenThree">
+            <color red="0.94099998474121094" green="0.94099998474121094" blue="0.94099998474121094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="iXI-D8-SQl" customClass="AvatarCollectionCell" customModule="ZanjabilHalal" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="451" height="79"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="451" height="79"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jlE-xA-XKN" userLabel="MainView">
+                        <rect key="frame" x="0.0" y="0.0" width="451" height="79"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jqX-Ap-Xca" userLabel="MainStackView">
+                                <rect key="frame" x="16" y="8" width="419" height="63"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ETy-lB-ZGy" userLabel="EmptyView">
+                                        <rect key="frame" x="0.0" y="0.0" width="356" height="63"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="ZXJ-cf-xNA">
+                                        <rect key="frame" x="356" y="0.0" width="63" height="63"/>
+                                        <color key="tintColor" name="greenFore"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="ZXJ-cf-xNA" secondAttribute="height" id="Lxx-LA-dbh"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="jqX-Ap-Xca" secondAttribute="bottom" constant="8" id="Rai-1P-We2"/>
+                            <constraint firstItem="jqX-Ap-Xca" firstAttribute="leading" secondItem="jlE-xA-XKN" secondAttribute="leading" constant="16" id="SWn-Ys-kUi"/>
+                            <constraint firstItem="jqX-Ap-Xca" firstAttribute="top" secondItem="jlE-xA-XKN" secondAttribute="top" constant="8" id="Vc3-nX-svw"/>
+                            <constraint firstAttribute="trailing" secondItem="jqX-Ap-Xca" secondAttribute="trailing" constant="16" id="kO1-mX-Pfl"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="qsm-WD-Vdt"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="jlE-xA-XKN" firstAttribute="leading" secondItem="iXI-D8-SQl" secondAttribute="leading" id="FRV-MQ-DtB"/>
+                <constraint firstAttribute="bottom" secondItem="jlE-xA-XKN" secondAttribute="bottom" id="Isb-tE-iaM"/>
+                <constraint firstAttribute="trailing" secondItem="jlE-xA-XKN" secondAttribute="trailing" id="qIo-EC-ltv"/>
+                <constraint firstItem="jlE-xA-XKN" firstAttribute="top" secondItem="iXI-D8-SQl" secondAttribute="top" id="uHz-rB-urc"/>
+            </constraints>
+            <size key="customSize" width="451" height="79"/>
+            <point key="canvasLocation" x="428.26086956521743" y="153.68303571428569"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="avatar" width="512" height="512"/>
+        <namedColor name="greenFore">
+            <color red="0.082000002264976501" green="0.34900000691413879" blue="0.14900000393390656" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
