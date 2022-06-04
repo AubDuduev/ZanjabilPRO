@@ -104,6 +104,10 @@ extension UIView {
       self.clipsToBounds       = clipsToBounds
       self.layer.maskedCorners = direction.radius()
    }
+	
+	public func isAdded(of view: UIView) -> Bool {
+		return self.subviews.contains(where: { type(of: $0.self) == type(of: view.self) })
+	}
    
    enum CornerRadius {
       

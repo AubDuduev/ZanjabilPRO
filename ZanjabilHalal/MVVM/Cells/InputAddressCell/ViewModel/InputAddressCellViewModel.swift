@@ -20,8 +20,6 @@ final class InputAddressCellViewModel: NSObject, MVVMViewModelProtocol {
     private var createAddressService: CreateAddressService
     @Injected
     private var mainRouter          : MainRouter
-    // MARK: - Private
-    private var inputTextField: UITextField!
     // MARK: - Main state view model
     private func stateInputAddressModel(){
         guard let model = self.model else { return }
@@ -51,8 +49,8 @@ final class InputAddressCellViewModel: NSObject, MVVMViewModelProtocol {
     }
     
     @objc
-    private func inputText(){
-        self.model = .createAddress(inputTextField.text)
+	private func inputText(textField: UITextField){
+        self.model = .createAddress(textField.text)
     }
 	
     init(with mainView: InputAddressCollectionCell) {
@@ -66,9 +64,8 @@ extension InputAddressCellViewModel: UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        self.inputTextField = textField
         let selector = #selector(inputText)
-        self.inputTextField.addTarget(self, action: selector, for: .allEvents)
+        textField.addTarget(self, action: selector, for: .allEvents)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

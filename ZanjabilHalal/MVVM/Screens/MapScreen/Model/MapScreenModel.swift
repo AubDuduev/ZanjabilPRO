@@ -11,6 +11,6 @@ enum MapScreenModel {
     
 	case createViewProperties
 	case setupLocationService
-	case updateAddress(String)
 	case updateCameraPosition(MKMapCamera)
+	case addChangeAddress(UIView)
 }

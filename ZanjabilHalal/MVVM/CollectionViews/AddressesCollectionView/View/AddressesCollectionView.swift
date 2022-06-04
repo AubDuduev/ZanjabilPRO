@@ -25,7 +25,7 @@ final class AddressesCollectionView: UIView, MVVMViewProtocol {
     
     private func setupCollectionView() {
         let collectionViewLayout                           = AddressesCollectionViewLayout()
-        collectionViewLayout.sectionInset                  = .init(top: 32, left: 0, bottom: 0, right: 0)
+        collectionViewLayout.sectionInset                  = .init(top: 0, left: 0, bottom: 0, right: 0)
         collectionViewLayout.sectionInsetReference         = .fromContentInset
         collectionViewLayout.minimumLineSpacing            = 0
         collectionViewLayout.minimumInteritemSpacing       = 8

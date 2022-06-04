@@ -31,11 +31,15 @@ final class BasketViewController: UIViewController, MVVMViewProtocol  {
     
     func update(with viewProperties: ViewProperties?) {
         self.viewProperties = viewProperties
-        self.viewProperties?.addedBasketCollectionView(self.menuContainerCollectionView)
-        self.viewProperties?.addBlurHeaderView(self.menuContainerCollectionView)
-        self.viewProperties?.addBuyView(self.containerBuyView)
-        self.viewProperties?.addBasketTotalSumView(self.addBasketTotalSumView)
     }
+	
+	func create(with viewProperties: ViewProperties?) {
+		self.viewProperties = viewProperties
+		self.viewProperties?.addedBasketCollectionView(self.menuContainerCollectionView)
+		self.viewProperties?.addBlurHeaderView(self.menuContainerCollectionView)
+		self.viewProperties?.addBuyView(self.containerBuyView)
+		self.viewProperties?.addBasketTotalSumView(self.addBasketTotalSumView)
+	}
     
     init() {
         super.init(nibName: String(describing: Self.self), bundle: nil)

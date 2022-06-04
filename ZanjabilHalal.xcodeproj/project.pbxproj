@@ -438,6 +438,11 @@
 		82E89F1E28295B7400CA17DC /* ChangeUserNameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E89F1D28295B7400CA17DC /* ChangeUserNameService.swift */; };
 		82E89F2628295C8600CA17DC /* UserData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E89F2428295C8600CA17DC /* UserData+CoreDataProperties.swift */; };
 		82E89F2728295C8600CA17DC /* UserData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E89F2528295C8600CA17DC /* UserData+CoreDataClass.swift */; };
+		82E8BC48284B64F300BA2508 /* ChangeAddressViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E8BC43284B64F300BA2508 /* ChangeAddressViewBuilder.swift */; };
+		82E8BC49284B64F300BA2508 /* ChangeAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E8BC44284B64F300BA2508 /* ChangeAddressView.swift */; };
+		82E8BC4A284B64F300BA2508 /* ChangeAddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E8BC45284B64F300BA2508 /* ChangeAddressModel.swift */; };
+		82E8BC4B284B64F300BA2508 /* ChangeAddressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E8BC46284B64F300BA2508 /* ChangeAddressViewModel.swift */; };
+		82E8BC4C284B64F300BA2508 /* ChangeAddressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82E8BC47284B64F300BA2508 /* ChangeAddressView.xib */; };
 		82EC8BCB27DDF24C00661F58 /* ProfileManagers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EC8BBE27DDF24C00661F58 /* ProfileManagers.swift */; };
 		82EC8BCE27DDF24C00661F58 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EC8BC127DDF24C00661F58 /* ProfileViewController.swift */; };
 		82EC8BCF27DDF24C00661F58 /* ConfiguratorProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EC8BC227DDF24C00661F58 /* ConfiguratorProfile.swift */; };
@@ -903,6 +908,11 @@
 		82E89F1D28295B7400CA17DC /* ChangeUserNameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserNameService.swift; sourceTree = "<group>"; };
 		82E89F2428295C8600CA17DC /* UserData+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		82E89F2528295C8600CA17DC /* UserData+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		82E8BC43284B64F300BA2508 /* ChangeAddressViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAddressViewBuilder.swift; sourceTree = "<group>"; };
+		82E8BC44284B64F300BA2508 /* ChangeAddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAddressView.swift; sourceTree = "<group>"; };
+		82E8BC45284B64F300BA2508 /* ChangeAddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAddressModel.swift; sourceTree = "<group>"; };
+		82E8BC46284B64F300BA2508 /* ChangeAddressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAddressViewModel.swift; sourceTree = "<group>"; };
+		82E8BC47284B64F300BA2508 /* ChangeAddressView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangeAddressView.xib; sourceTree = "<group>"; };
 		82EC8BBE27DDF24C00661F58 /* ProfileManagers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManagers.swift; sourceTree = "<group>"; };
 		82EC8BC127DDF24C00661F58 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		82EC8BC227DDF24C00661F58 /* ConfiguratorProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfiguratorProfile.swift; sourceTree = "<group>"; };
@@ -2200,6 +2210,7 @@
 		827E423427F8864600491AC3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				82E8BC3F284B64BA00BA2508 /* ChangeAddressView */,
 				829F3C0128472936002A8EA7 /* DisplayAddressView */,
 				82DB32882843722A00379554 /* SearchAddressView */,
 				827472DB28412196004D3FDF /* MapView */,
@@ -3352,6 +3363,42 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		82E8BC3F284B64BA00BA2508 /* ChangeAddressView */ = {
+			isa = PBXGroup;
+			children = (
+				82E8BC42284B64E200BA2508 /* Model */,
+				82E8BC41284B64DC00BA2508 /* View */,
+				82E8BC40284B64D500BA2508 /* ViewModel */,
+			);
+			path = ChangeAddressView;
+			sourceTree = "<group>";
+		};
+		82E8BC40284B64D500BA2508 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				82E8BC46284B64F300BA2508 /* ChangeAddressViewModel.swift */,
+				82E8BC43284B64F300BA2508 /* ChangeAddressViewBuilder.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		82E8BC41284B64DC00BA2508 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				82E8BC47284B64F300BA2508 /* ChangeAddressView.xib */,
+				82E8BC44284B64F300BA2508 /* ChangeAddressView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		82E8BC42284B64E200BA2508 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				82E8BC45284B64F300BA2508 /* ChangeAddressModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		82EC8BD827DDF25500661F58 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -3892,6 +3939,7 @@
 				8262AEEA2813F09B009A7E3A /* AvatarCollectionCell.xib in Resources */,
 				8280AC0F27F086D600DEFFE6 /* PayOrderViewController.xib in Resources */,
 				8262AF8D281467BF009A7E3A /* Address.xcassets in Resources */,
+				82E8BC4C284B64F300BA2508 /* ChangeAddressView.xib in Resources */,
 				82DB3297284379B100379554 /* Search.xcassets in Resources */,
 				82F458062802DE76004BCD68 /* MenuCategoriesView.xib in Resources */,
 				8262AF87281466A2009A7E3A /* AddressCollectionCell.xib in Resources */,
@@ -4060,6 +4108,7 @@
 				82DB32C32843E1BC00379554 /* AddressSuggestionsCollection.swift in Sources */,
 				82F458042802DE76004BCD68 /* MenuCategoriesModel.swift in Sources */,
 				82EC8BF327DDFAF800661F58 /* OrderViewController.swift in Sources */,
+				82E8BC4A284B64F300BA2508 /* ChangeAddressModel.swift in Sources */,
 				8262AF5C28145B01009A7E3A /* OrdersViewModel.swift in Sources */,
 				8262AF7A28145FE3009A7E3A /* AddressesModel.swift in Sources */,
 				82A268E1280AB3540051B997 /* PayOrderCollectionView.swift in Sources */,
@@ -4167,6 +4216,7 @@
 				829A56BF282003A5005F110B /* DELETEAddress.swift in Sources */,
 				82B637F7280B01A800E8DF72 /* BasketCollectionModel.swift in Sources */,
 				8262AF9F28146D4F009A7E3A /* AddressesCollectionView.swift in Sources */,
+				82E8BC49284B64F300BA2508 /* ChangeAddressView.swift in Sources */,
 				8280ABD427F061DA00DEFFE6 /* BuyView.swift in Sources */,
 				829F3C0A28472976002A8EA7 /* DisplayAddressViewBuilder.swift in Sources */,
 				82F457DF28028E56004BCD68 /* HorizontalDishCollectionCellBuilder.swift in Sources */,
@@ -4221,6 +4271,7 @@
 				820083ED283A3FD900A0F8BB /* MapScreenViewModel.swift in Sources */,
 				82E2F41827D5CC56005C4530 /* SetupFirebase.swift in Sources */,
 				827E243327DCD1CE0006E763 /* AlertService.swift in Sources */,
+				82E8BC4B284B64F300BA2508 /* ChangeAddressViewModel.swift in Sources */,
 				828C2DC32813086F0059A828 /* ProfileCollectionCellBuilder.swift in Sources */,
 				82A268BB280A60E90051B997 /* InputAddressCollectionViewModel.swift in Sources */,
 				82741A9727D4E795006EBE80 /* BuilderLoading.swift in Sources */,
@@ -4290,6 +4341,7 @@
 				82CD807A281548A50048DC71 /* OrderCollectionCell.swift in Sources */,
 				8262AEED2813F09B009A7E3A /* AvatarCollectionCellViewModel.swift in Sources */,
 				82741AB427D4EA94006EBE80 /* MenuManagers.swift in Sources */,
+				82E8BC48284B64F300BA2508 /* ChangeAddressViewBuilder.swift in Sources */,
 				82E89F2628295C8600CA17DC /* UserData+CoreDataProperties.swift in Sources */,
 				823AF1C8281ED26500593C1C /* DefaultAddressCollectionCellViewModel.swift in Sources */,
 				826EC8DE27EF113C00E5C530 /* AmountService.swift in Sources */,

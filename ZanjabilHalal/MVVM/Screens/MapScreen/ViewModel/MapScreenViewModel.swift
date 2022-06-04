@@ -27,6 +27,7 @@ final class MapScreenViewModel: NSObject, MVVMViewModelProtocol {
     public var isUpdate: ClosureEmpty?
 	// MARK: - Private
 	private var cancellable: Set<AnyCancellable> = []
+	private var changeAddressViewModel: ChangeAddressViewModel!
     //MARK: - Main state view model
     private func stateModel(){
         guard let model = self.model else { return }
@@ -34,17 +35,6 @@ final class MapScreenViewModel: NSObject, MVVMViewModelProtocol {
 			case .setupLocationService:
 				self.mapService.setupLocationService()
 				self.mapService.startUserLocation()
-			case .createViewProperties:
-				
-				let viewProperties = MapScreenViewController.ViewProperties(mapCamera: nil)
-				
-				self.mapService.completionAddress
-					.sink(receiveValue: { address in
-						//guard let self = self else { return }
-						self.model = .updateAddress(address)
-					})
-					.store(in: &self.cancellable)
-				
 				self.mapService.completionMapCamera
 					.sink(receiveValue: { mapCamera in
 						//guard let self = self else { return }
@@ -52,15 +42,33 @@ final class MapScreenViewModel: NSObject, MVVMViewModelProtocol {
 						self.mapService.stopUserLocation()
 					})
 					.store(in: &self.cancellable)
-				self.mainView?.update(with: viewProperties)
-			case .updateAddress(let currentAddress):
+			case .createViewProperties:
+				let addChangeAddress: Closure<UIView> = { container in
+					self.model = .addChangeAddress(container)
+				}
+				let viewProperties = MapScreenViewController.ViewProperties(mapCamera: nil,
+																			addChangeAddress: addChangeAddress)
 				
-				self.reloadProperties()
+				self.mainView?.create(with: viewProperties)
 			case .updateCameraPosition(let mapCamera):
 				self.mainView?.viewProperties?.mapCamera = mapCamera
 				self.reloadProperties()
+			case .addChangeAddress(let container):
+				self.changeAddressViewModel = self.createChangeAddressViewModel(with: container)
+				self.changeAddressViewModel.model = .createViewProperties
+				self.changeAddressViewModel.model = .setupLocationService
 		}
     }
+	
+	public func createChangeAddressViewModel(with containerView: UIView) -> ChangeAddressViewModel {
+		let changeAddressViewBuilder = self.mainViewsBuilder.createChangeAddressViewViewBuilder()
+		let changeAddressView        = changeAddressViewBuilder.view
+		containerView.addSubview(changeAddressView)
+		changeAddressView.snp.makeConstraints { changeAddressView in
+			changeAddressView.edges.equalToSuperview()
+		}
+		return changeAddressViewBuilder.viewModel
+	}
 	
     init(with mainView: MapScreenViewController) {
         self.mainView = mainView

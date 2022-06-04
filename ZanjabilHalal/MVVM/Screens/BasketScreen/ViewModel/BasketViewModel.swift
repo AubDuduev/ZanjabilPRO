@@ -54,7 +54,7 @@ final class BasketViewModel: MVVMViewModelProtocol {
                                                                                addBasketTotalSumView    : addBasketTotalSumView,
                                                                                addBlurHeaderView        : addBlurHeaderView,
                                                                                viewDidLoad              : viewDidLoad)
-                self.mainView?.update(with: createViewProperties)
+                self.mainView?.create(with: createViewProperties)
             case .addedBasketCollectionView(let containerView):
                 self.basketCollectionViewModel = self.managers.configurator.createBasketCollectionViewBuilder(with: containerView)
             case .addBlurHeaderView(let containerView):
@@ -67,7 +67,7 @@ final class BasketViewModel: MVVMViewModelProtocol {
             // MARK: - Router
             case .pushPayOrderVC:
                 self.mainRouter.pushMainNavigation(id: .payOrderVC, animated: true)
-                self.mainRouter.setupMainNavigationVC(isNavigationBarHidden: false, animatedHidden: true, tintColor: .set(.greenFore))
+				self.mainRouter.setupMainNavigationVC(isNavigationBarHidden: false, animatedHidden: true, tintColor: .set(.greenFore), title: .payOrder)
         }
     }
     

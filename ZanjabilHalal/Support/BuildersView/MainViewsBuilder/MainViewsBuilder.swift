@@ -99,6 +99,12 @@ final class MainViewsBuilder {
 		searchAddressViewBuilder.viewModel.model = .createViewProperties
 		return searchAddressViewBuilder
 	}
+	
+	public func createChangeAddressViewViewBuilder() -> ChangeAddressViewBuilder {
+		let changeAddressViewBuilder = ChangeAddressViewBuilder.create()
+		changeAddressViewBuilder.viewModel.model = .createViewProperties
+		return changeAddressViewBuilder
+	}
     
     enum Views {
         case menuPriceView

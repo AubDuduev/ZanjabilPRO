@@ -6,7 +6,7 @@
 //
 import UIKit
 
-private typealias R = TextResources.PayOrderViewController
+private typealias R = TextResources.Navigation.NavigationTitle
 
 final class PayOrderViewController: UIViewController, MVVMViewProtocol, KeyBoardProtocol {
     
@@ -21,15 +21,20 @@ final class PayOrderViewController: UIViewController, MVVMViewProtocol, KeyBoard
     @IBOutlet weak var containerActionButtonView        : UIView!
     //MARK: - Outlets NSLayoutConstraint
     @IBOutlet weak var mainStackViewBottomConstant: NSLayoutConstraint!
+	
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupNotification()
-        self.setTitle()
     }
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		self.setTitle()
+	}
     
     private func setTitle(){
-        self.title = R.title
+		self.title = R.payOrder.localizedString()
     }
     
     func update(with viewProperties: ViewProperties?) {
