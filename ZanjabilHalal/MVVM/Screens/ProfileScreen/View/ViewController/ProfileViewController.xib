@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController" customModule="ZanjabilHalal" customModuleProvider="target">
+            <connections>
+                <outlet property="containerCollectionView" destination="pOK-ux-uoO" id="9HL-zl-zx7"/>
+                <outlet property="mainViewView" destination="CiK-QQ-dLI" id="Nrq-pN-Fh2"/>
+                <outlet property="view" destination="kns-3F-tW8" id="Iip-ZG-UK2"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="kns-3F-tW8">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CiK-QQ-dLI" userLabel="MainView">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="oIJ-qG-U1e" userLabel="MainStackView">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pOK-ux-uoO" userLabel="ProfileContainerCollectionView">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="oIJ-qG-U1e" secondAttribute="trailing" id="I4f-bZ-Ae9"/>
+                        <constraint firstItem="oIJ-qG-U1e" firstAttribute="leading" secondItem="CiK-QQ-dLI" secondAttribute="leading" id="KBZ-Lr-7I1"/>
+                        <constraint firstItem="oIJ-qG-U1e" firstAttribute="top" secondItem="CiK-QQ-dLI" secondAttribute="top" id="Xcn-OR-hbr"/>
+                        <constraint firstAttribute="bottom" secondItem="oIJ-qG-U1e" secondAttribute="bottom" id="rCo-MN-FFj"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="Pmi-a7-4oC"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Pmi-a7-4oC" firstAttribute="bottom" secondItem="CiK-QQ-dLI" secondAttribute="bottom" id="FXF-ID-ETV"/>
+                <constraint firstItem="Pmi-a7-4oC" firstAttribute="trailing" secondItem="CiK-QQ-dLI" secondAttribute="trailing" id="dp9-69-F08"/>
+                <constraint firstItem="CiK-QQ-dLI" firstAttribute="top" secondItem="Pmi-a7-4oC" secondAttribute="top" id="mlm-ZA-G9a"/>
+                <constraint firstItem="CiK-QQ-dLI" firstAttribute="leading" secondItem="Pmi-a7-4oC" secondAttribute="leading" id="rZT-1e-X6X"/>
+            </constraints>
+            <point key="canvasLocation" x="-730" y="27"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

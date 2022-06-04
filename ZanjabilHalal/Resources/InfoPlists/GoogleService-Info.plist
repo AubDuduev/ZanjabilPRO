@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>14732323061-v1gagirq1a1782khe9r3e90der64ep9f.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.14732323061-v1gagirq1a1782khe9r3e90der64ep9f</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC3Oe4jtfJmTlcxqF0V_3kgl28QNhI44EU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>14732323061</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>G.D.ZanjabilHalal</string>
+	<key>PROJECT_ID</key>
+	<string>zanjabilhalal</string>
+	<key>STORAGE_BUCKET</key>
+	<string>zanjabilhalal.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:14732323061:ios:12b0dc47fdf6795e413dbc</string>
+</dict>
+</plist>

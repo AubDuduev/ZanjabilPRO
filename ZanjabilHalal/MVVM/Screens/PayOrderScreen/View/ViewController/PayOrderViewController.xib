@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PayOrderViewController" customModule="ZanjabilHalal" customModuleProvider="target">
+            <connections>
+                <outlet property="containerActionButtonView" destination="pwQ-09-qLk" id="qJ7-DD-UX0"/>
+                <outlet property="mainStackViewBottomConstant" destination="IGJ-aU-iVg" id="YEb-qp-WVy"/>
+                <outlet property="payOrderContainerOfCollectionView" destination="M6Q-9R-qzl" id="qfZ-0u-csq"/>
+                <outlet property="view" destination="kns-3F-tW8" id="EXy-eM-qzA"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="kns-3F-tW8">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YE8-di-R66" userLabel="MainView">
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                    <subviews>
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lir-7P-wSo">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Xtb-Tb-Hbg" userLabel="MainStackView">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M6Q-9R-qzl" userLabel="ContainerOfCollectionView">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </view>
+                                    </subviews>
+                                    <gestureRecognizers/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="M6Q-9R-qzl" secondAttribute="bottom" id="WHS-Xf-UDx"/>
+                                        <constraint firstItem="M6Q-9R-qzl" firstAttribute="top" secondItem="Xtb-Tb-Hbg" secondAttribute="top" id="XBs-nu-5l1"/>
+                                        <constraint firstItem="M6Q-9R-qzl" firstAttribute="leading" secondItem="Xtb-Tb-Hbg" secondAttribute="leading" id="nS8-Vp-42K"/>
+                                        <constraint firstAttribute="trailing" secondItem="M6Q-9R-qzl" secondAttribute="trailing" id="o6A-ec-xKL"/>
+                                    </constraints>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="PBJ-O4-Vpa" appends="YES" id="8d1-JF-j7v"/>
+                                    </connections>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="Xtb-Tb-Hbg" firstAttribute="top" secondItem="Lir-7P-wSo" secondAttribute="top" id="Bot-1X-gcD"/>
+                                <constraint firstAttribute="trailing" secondItem="Xtb-Tb-Hbg" secondAttribute="trailing" id="Ru7-Vb-SSh"/>
+                                <constraint firstAttribute="bottom" secondItem="Xtb-Tb-Hbg" secondAttribute="bottom" id="naX-4o-yer"/>
+                                <constraint firstItem="Xtb-Tb-Hbg" firstAttribute="leading" secondItem="Lir-7P-wSo" secondAttribute="leading" id="q83-Cf-oJF"/>
+                            </constraints>
+                        </scrollView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pwQ-09-qLk" userLabel="ContainerActionButtonView">
+                            <rect key="frame" x="0.0" y="780" width="414" height="72"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="72" id="pCx-el-fgF"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="Lir-7P-wSo" firstAttribute="top" secondItem="YE8-di-R66" secondAttribute="top" id="1gT-yZ-sAA"/>
+                        <constraint firstItem="Xtb-Tb-Hbg" firstAttribute="width" secondItem="YE8-di-R66" secondAttribute="width" id="3jr-mg-Ihh"/>
+                        <constraint firstItem="Xtb-Tb-Hbg" firstAttribute="height" secondItem="YE8-di-R66" secondAttribute="height" id="4nE-Zl-roa"/>
+                        <constraint firstAttribute="bottom" secondItem="Lir-7P-wSo" secondAttribute="bottom" id="IGJ-aU-iVg"/>
+                        <constraint firstAttribute="bottom" secondItem="pwQ-09-qLk" secondAttribute="bottom" id="LL1-G3-iTs"/>
+                        <constraint firstAttribute="trailing" secondItem="Lir-7P-wSo" secondAttribute="trailing" id="RCS-e1-d5e"/>
+                        <constraint firstItem="Lir-7P-wSo" firstAttribute="width" secondItem="YE8-di-R66" secondAttribute="width" id="X5r-Ti-Cu9"/>
+                        <constraint firstAttribute="trailing" secondItem="pwQ-09-qLk" secondAttribute="trailing" id="lX3-Mg-eOt"/>
+                        <constraint firstItem="Lir-7P-wSo" firstAttribute="leading" secondItem="YE8-di-R66" secondAttribute="leading" id="ujq-Qg-qPy"/>
+                        <constraint firstItem="pwQ-09-qLk" firstAttribute="leading" secondItem="YE8-di-R66" secondAttribute="leading" id="vHu-cT-6QG"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="Pmi-a7-4oC"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="YE8-di-R66" firstAttribute="top" secondItem="Pmi-a7-4oC" secondAttribute="top" id="5tT-SL-PQS"/>
+                <constraint firstItem="YE8-di-R66" firstAttribute="leading" secondItem="Pmi-a7-4oC" secondAttribute="leading" id="Fn1-0F-pfs"/>
+                <constraint firstAttribute="bottom" secondItem="YE8-di-R66" secondAttribute="bottom" id="QXh-vi-7VA"/>
+                <constraint firstItem="Pmi-a7-4oC" firstAttribute="trailing" secondItem="YE8-di-R66" secondAttribute="trailing" id="V8z-rb-5HZ"/>
+            </constraints>
+            <point key="canvasLocation" x="-730.43478260869574" y="26.785714285714285"/>
+        </view>
+        <tapGestureRecognizer id="PBJ-O4-Vpa">
+            <connections>
+                <action selector="tapGestureWithGesture:" destination="-1" id="YxE-HH-L9w"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

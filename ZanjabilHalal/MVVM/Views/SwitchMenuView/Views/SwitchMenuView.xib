@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SwitchMenuView" customModule="ZanjabilHalal" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="80" height="36"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NI2-8J-9gC" userLabel="MainView">
+                    <rect key="frame" x="0.0" y="0.0" width="80" height="36"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wba-YH-Ift" userLabel="MainStackView">
+                            <rect key="frame" x="0.0" y="4" width="80" height="28"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Jf-lQ-fm2">
+                                    <rect key="frame" x="0.0" y="0.0" width="39.5" height="28"/>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <inset key="imageEdgeInsets" minX="8" minY="4" maxX="8" maxY="4"/>
+                                    <state key="normal" image="rectangle.split.1x2" catalog="system">
+                                        <color key="titleColor" name="greenFore"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="switchStateMenuButtonWithButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="oEZ-Vq-izT"/>
+                                    </connections>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qRB-Ht-dsv">
+                                    <rect key="frame" x="39.5" y="0.0" width="1" height="28"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="1" id="DBx-rR-Ejg"/>
+                                    </constraints>
+                                </view>
+                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cY3-TJ-zBi">
+                                    <rect key="frame" x="40.5" y="0.0" width="39.5" height="28"/>
+                                    <color key="tintColor" name="greenFore"/>
+                                    <inset key="imageEdgeInsets" minX="8" minY="4" maxX="8" maxY="4"/>
+                                    <state key="normal" image="rectangle.split.2x1" catalog="system">
+                                        <color key="titleColor" name="greenTwo"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="switchStateMenuButtonWithButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="MKy-OO-UKo"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="8Jf-lQ-fm2" firstAttribute="width" secondItem="cY3-TJ-zBi" secondAttribute="width" id="V14-Iy-HLP"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" name="greenThree"/>
+                    <constraints>
+                        <constraint firstItem="Wba-YH-Ift" firstAttribute="top" secondItem="NI2-8J-9gC" secondAttribute="top" constant="4" id="8Ky-hf-DeX"/>
+                        <constraint firstAttribute="bottom" secondItem="Wba-YH-Ift" secondAttribute="bottom" constant="4" id="WF2-cV-LDO"/>
+                        <constraint firstItem="Wba-YH-Ift" firstAttribute="leading" secondItem="NI2-8J-9gC" secondAttribute="leading" id="npq-0a-0fA"/>
+                        <constraint firstAttribute="trailing" secondItem="Wba-YH-Ift" secondAttribute="trailing" id="pSf-2M-J1A"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="NI2-8J-9gC" secondAttribute="bottom" id="0Lg-yS-bz1"/>
+                <constraint firstItem="NI2-8J-9gC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="f5S-gn-B0X"/>
+                <constraint firstItem="NI2-8J-9gC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ixa-1x-kFL"/>
+                <constraint firstAttribute="trailing" secondItem="NI2-8J-9gC" secondAttribute="trailing" id="mvE-VQ-IeJ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outletCollection property="switchButtons" destination="8Jf-lQ-fm2" collectionClass="NSMutableArray" id="hWU-KP-dXp"/>
+                <outletCollection property="switchButtons" destination="cY3-TJ-zBi" collectionClass="NSMutableArray" id="E1C-eG-ieF"/>
+            </connections>
+            <point key="canvasLocation" x="141" y="154"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="rectangle.split.1x2" catalog="system" width="128" height="93"/>
+        <image name="rectangle.split.2x1" catalog="system" width="128" height="93"/>
+        <namedColor name="greenFore">
+            <color red="0.22400000691413879" green="0.43900001049041748" blue="0.016000000759959221" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="greenThree">
+            <color red="0.94099998474121094" green="0.94099998474121094" blue="0.94099998474121094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="greenTwo">
+            <color red="0.74900001287460327" green="0.48600000143051147" blue="0.40400001406669617" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

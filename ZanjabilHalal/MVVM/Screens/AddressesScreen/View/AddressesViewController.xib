@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddressesViewController" customModule="ZanjabilHalal" customModuleProvider="target">
+            <connections>
+                <outlet property="addAddressContainerView" destination="nrl-wF-3ay" id="cbn-1j-Kli"/>
+                <outlet property="addressesCollectionView" destination="DUn-ex-7PG" id="5nb-sY-VT1"/>
+                <outlet property="view" destination="kns-3F-tW8" id="VWp-Pa-J2W"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="kns-3F-tW8">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PAd-yh-PYe" userLabel="MainView">
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8OZ-Rr-edi" userLabel="MianStackView">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DUn-ex-7PG" userLabel="AddressesContainerView">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </view>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="8OZ-Rr-edi" firstAttribute="leading" secondItem="PAd-yh-PYe" secondAttribute="leading" id="K21-yv-KT5"/>
+                        <constraint firstAttribute="trailing" secondItem="8OZ-Rr-edi" secondAttribute="trailing" id="XSO-9C-Imi"/>
+                        <constraint firstItem="8OZ-Rr-edi" firstAttribute="top" secondItem="PAd-yh-PYe" secondAttribute="top" id="i9D-KW-htx"/>
+                        <constraint firstAttribute="bottom" secondItem="8OZ-Rr-edi" secondAttribute="bottom" id="nA5-Yi-ULd"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nrl-wF-3ay" userLabel="AddView">
+                    <rect key="frame" x="326" y="768" width="64" height="64"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="64" id="1OP-er-E6r"/>
+                        <constraint firstAttribute="height" constant="64" id="bMW-Tv-vT8"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="Pmi-a7-4oC"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="PAd-yh-PYe" secondAttribute="bottom" id="CDa-Gh-U3e"/>
+                <constraint firstAttribute="bottom" secondItem="nrl-wF-3ay" secondAttribute="bottom" constant="64" id="Dsn-Y7-BiR"/>
+                <constraint firstItem="PAd-yh-PYe" firstAttribute="leading" secondItem="kns-3F-tW8" secondAttribute="leading" id="Pys-Qm-PJS"/>
+                <constraint firstAttribute="trailing" secondItem="PAd-yh-PYe" secondAttribute="trailing" id="VT6-Kl-2sD"/>
+                <constraint firstItem="PAd-yh-PYe" firstAttribute="top" secondItem="Pmi-a7-4oC" secondAttribute="top" id="bS8-uL-y8V"/>
+                <constraint firstAttribute="trailing" secondItem="nrl-wF-3ay" secondAttribute="trailing" constant="24" id="e9E-QW-Cqu"/>
+            </constraints>
+            <point key="canvasLocation" x="-730.43478260869574" y="26.785714285714285"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

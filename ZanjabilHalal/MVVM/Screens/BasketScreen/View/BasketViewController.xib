@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BasketViewController" customModule="ZanjabilHalal" customModuleProvider="target">
+            <connections>
+                <outlet property="addBasketTotalSumView" destination="BVl-00-o65" id="nBS-v8-IYE"/>
+                <outlet property="containerBuyView" destination="abL-nF-xoC" id="Dbc-kb-uMv"/>
+                <outlet property="mainView" destination="wSa-pV-Eq8" id="Ipm-cP-dWm"/>
+                <outlet property="menuContainerCollectionView" destination="4Zc-O9-8aV" id="Vkw-AR-jJ4"/>
+                <outlet property="view" destination="kns-3F-tW8" id="rmS-lW-ggy"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="kns-3F-tW8">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wSa-pV-Eq8" userLabel="MainView">
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="YN8-1Y-pBR" userLabel="MainStackView">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BVl-00-o65" userLabel="AddBasketTotalSumView">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="64" id="1BA-0n-gVG"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Zc-O9-8aV" userLabel="MenuContainerCollectionView">
+                                    <rect key="frame" x="0.0" y="64" width="414" height="788"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JLn-l1-ac1">
+                                    <rect key="frame" x="0.0" y="852" width="414" height="0.0"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" id="m4i-dS-lCs"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                        </stackView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="abL-nF-xoC" userLabel="BuyView">
+                            <rect key="frame" x="334" y="692" width="64" height="64"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="64" id="b3Z-fc-99p"/>
+                                <constraint firstAttribute="width" constant="64" id="o6U-cd-9UI"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="YN8-1Y-pBR" firstAttribute="top" secondItem="wSa-pV-Eq8" secondAttribute="top" id="Fqf-OH-kGT"/>
+                        <constraint firstAttribute="bottom" secondItem="YN8-1Y-pBR" secondAttribute="bottom" id="J2d-7T-TvQ"/>
+                        <constraint firstAttribute="trailing" secondItem="abL-nF-xoC" secondAttribute="trailing" constant="16" id="NFa-ZY-zHR"/>
+                        <constraint firstAttribute="bottom" secondItem="abL-nF-xoC" secondAttribute="bottom" constant="96" id="SgS-6a-6VP"/>
+                        <constraint firstAttribute="trailing" secondItem="YN8-1Y-pBR" secondAttribute="trailing" id="tEs-hV-hnt"/>
+                        <constraint firstItem="YN8-1Y-pBR" firstAttribute="leading" secondItem="wSa-pV-Eq8" secondAttribute="leading" id="tpe-Dr-QBk"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="Pmi-a7-4oC"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="wSa-pV-Eq8" firstAttribute="leading" secondItem="kns-3F-tW8" secondAttribute="leading" id="OjF-Eo-zFd"/>
+                <constraint firstItem="wSa-pV-Eq8" firstAttribute="top" secondItem="Pmi-a7-4oC" secondAttribute="top" id="bwT-aL-IKP"/>
+                <constraint firstAttribute="trailing" secondItem="wSa-pV-Eq8" secondAttribute="trailing" id="f3z-kT-s1O"/>
+                <constraint firstAttribute="bottom" secondItem="wSa-pV-Eq8" secondAttribute="bottom" id="zG8-N4-De6"/>
+            </constraints>
+            <point key="canvasLocation" x="-730.43478260869574" y="26.785714285714285"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

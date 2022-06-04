@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CounterDishesView" customModule="ZanjabilHalal" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="34"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Shf-l1-ZVH" userLabel="MainView">
+                    <rect key="frame" x="0.0" y="0.0" width="102" height="34"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="j3O-6s-DjR" userLabel="MainStackView">
+                            <rect key="frame" x="0.0" y="0.0" width="102" height="34"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezX-yl-18Z">
+                                    <rect key="frame" x="0.0" y="0.0" width="34" height="34"/>
+                                    <color key="tintColor" name="greenFore"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" image="minus" catalog="system"/>
+                                    <connections>
+                                        <action selector="increaseCounterButtonWithButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="zQd-cr-UeG"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ip7-fg-drS">
+                                    <rect key="frame" x="34" y="0.0" width="34" height="34"/>
+                                    <color key="backgroundColor" name="greenFore"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="34" id="E0A-p9-ogi"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" name="greenThree"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S1z-LM-fEH">
+                                    <rect key="frame" x="68" y="0.0" width="34" height="34"/>
+                                    <color key="tintColor" name="greenFore"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" image="plus" catalog="system"/>
+                                    <connections>
+                                        <action selector="increaseCounterButtonWithButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="M71-zX-gOL"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="ezX-yl-18Z" firstAttribute="width" secondItem="S1z-LM-fEH" secondAttribute="width" id="Uw0-Nm-EFp"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" name="greenThree"/>
+                    <constraints>
+                        <constraint firstItem="j3O-6s-DjR" firstAttribute="top" secondItem="Shf-l1-ZVH" secondAttribute="top" id="4hI-WS-uKm"/>
+                        <constraint firstAttribute="bottom" secondItem="j3O-6s-DjR" secondAttribute="bottom" id="8V9-Td-GXf"/>
+                        <constraint firstAttribute="trailing" secondItem="j3O-6s-DjR" secondAttribute="trailing" id="NtN-rn-Hjf"/>
+                        <constraint firstItem="j3O-6s-DjR" firstAttribute="leading" secondItem="Shf-l1-ZVH" secondAttribute="leading" id="vMY-IK-yNZ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Shf-l1-ZVH" secondAttribute="bottom" id="3uc-Gt-gcP"/>
+                <constraint firstItem="Shf-l1-ZVH" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="rjE-or-r63"/>
+                <constraint firstItem="Shf-l1-ZVH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="uT5-QG-Zfk"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="counterLabel" destination="Ip7-fg-drS" id="h5K-4J-BC5"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="154"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="minus" catalog="system" width="128" height="24"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <namedColor name="greenFore">
+            <color red="0.22352941176470587" green="0.4392156862745098" blue="0.015686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="greenThree">
+            <color red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

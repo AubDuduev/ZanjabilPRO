@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BascketTotalSumViewController" customModule="ZanjabilHalal" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="kns-3F-tW8" customClass="BasketTotalSumView" customModule="ZanjabilHalal" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="470" height="68"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4I0-S1-1KJ" userLabel="MainView">
+                    <rect key="frame" x="0.0" y="0.0" width="470" height="68"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Qjx-5x-zRv" userLabel="MainStackView">
+                            <rect key="frame" x="16" y="0.0" width="438" height="68"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ваш заказ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBV-J6-kDr">
+                                    <rect key="frame" x="0.0" y="0.0" width="438" height="34"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                    <color key="textColor" name="greenFore"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 блюда на сумму 890 ₽" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ze4-Iu-gTt">
+                                    <rect key="frame" x="0.0" y="34" width="438" height="34"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                    <color key="textColor" name="greenFore"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="68" id="2Ag-gn-CP8"/>
+                        <constraint firstItem="Qjx-5x-zRv" firstAttribute="leading" secondItem="4I0-S1-1KJ" secondAttribute="leading" constant="16" id="57H-wv-mhG"/>
+                        <constraint firstItem="Qjx-5x-zRv" firstAttribute="top" secondItem="4I0-S1-1KJ" secondAttribute="top" id="H5H-0S-7zN"/>
+                        <constraint firstAttribute="bottom" secondItem="Qjx-5x-zRv" secondAttribute="bottom" id="Lc6-vD-NaA"/>
+                        <constraint firstAttribute="trailing" secondItem="Qjx-5x-zRv" secondAttribute="trailing" constant="16" id="O1h-Oa-v8t"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="Pmi-a7-4oC"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="4I0-S1-1KJ" secondAttribute="trailing" id="9B7-wM-fLy"/>
+                <constraint firstAttribute="bottom" secondItem="4I0-S1-1KJ" secondAttribute="bottom" id="JQl-Jq-AKQ"/>
+                <constraint firstAttribute="bottom" secondItem="4I0-S1-1KJ" secondAttribute="bottom" id="Zs9-TW-yKC"/>
+                <constraint firstItem="4I0-S1-1KJ" firstAttribute="top" secondItem="kns-3F-tW8" secondAttribute="top" id="c2N-Cm-4Qb"/>
+                <constraint firstItem="4I0-S1-1KJ" firstAttribute="leading" secondItem="kns-3F-tW8" secondAttribute="leading" id="sJv-4M-Jpf"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="countsDishesLabel" destination="Ze4-Iu-gTt" id="ERC-uA-HCK"/>
+            </connections>
+            <point key="canvasLocation" x="-689.85507246376812" y="-204.91071428571428"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="greenFore">
+            <color red="0.082000002264976501" green="0.34900000691413879" blue="0.14900000393390656" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

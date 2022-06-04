@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OrdersViewController" customModule="ZanjabilHalal" customModuleProvider="target">
+            <connections>
+                <outlet property="ordersContainerCollectionView" destination="mbt-nH-ho7" id="WJz-kA-URi"/>
+                <outlet property="view" destination="kns-3F-tW8" id="ti2-fi-12g"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="kns-3F-tW8">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O1n-yf-7Ez" userLabel="MainView">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gUP-gZ-Fac" userLabel="MainStackView">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mbt-nH-ho7" userLabel="ContainerOrdersCollectionView">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </view>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="gUP-gZ-Fac" firstAttribute="leading" secondItem="O1n-yf-7Ez" secondAttribute="leading" id="QuT-Rj-fx5"/>
+                        <constraint firstAttribute="trailing" secondItem="gUP-gZ-Fac" secondAttribute="trailing" id="Ye2-vP-YyD"/>
+                        <constraint firstAttribute="bottom" secondItem="gUP-gZ-Fac" secondAttribute="bottom" id="dlb-Na-Wlh"/>
+                        <constraint firstItem="gUP-gZ-Fac" firstAttribute="top" secondItem="O1n-yf-7Ez" secondAttribute="top" id="pXa-bk-xlx"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="Pmi-a7-4oC"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="O1n-yf-7Ez" firstAttribute="top" secondItem="kns-3F-tW8" secondAttribute="top" id="2SR-KA-CWs"/>
+                <constraint firstItem="O1n-yf-7Ez" firstAttribute="leading" secondItem="kns-3F-tW8" secondAttribute="leading" id="GtO-IW-5KL"/>
+                <constraint firstAttribute="bottom" secondItem="O1n-yf-7Ez" secondAttribute="bottom" id="JKr-Js-GJZ"/>
+                <constraint firstAttribute="trailing" secondItem="O1n-yf-7Ez" secondAttribute="trailing" id="To0-7B-Brx"/>
+            </constraints>
+            <point key="canvasLocation" x="-730" y="27"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

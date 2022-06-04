@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChangeUserNameViewController" customModule="ZanjabilHalal" customModuleProvider="target">
+            <connections>
+                <outlet property="userNameTextField" destination="2NN-8n-6pg" id="lbb-qo-SrC"/>
+                <outlet property="view" destination="kns-3F-tW8" id="nJr-mO-DMI"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="kns-3F-tW8">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="17s-aw-Zxm" userLabel="MainView">
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="deN-78-2DT" userLabel="MainStackView">
+                            <rect key="frame" x="16" y="0.0" width="382" height="852"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8OB-2R-ExM" userLabel="EmptyView">
+                                    <rect key="frame" x="0.0" y="0.0" width="382" height="64"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="64" id="RWR-CJ-RN1"/>
+                                    </constraints>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Как Вас завут?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ksl-BY-LjM">
+                                    <rect key="frame" x="0.0" y="64" width="382" height="27.5"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
+                                    <color key="textColor" name="greenFore"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i6i-Dj-cIX" userLabel="EmptyView">
+                                    <rect key="frame" x="0.0" y="91.5" width="382" height="8"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="8" id="HUm-TI-Xaq"/>
+                                    </constraints>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Напишите и будем знакомы : )" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f9r-bG-vuZ">
+                                    <rect key="frame" x="0.0" y="99.5" width="382" height="19.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <color key="textColor" name="greenFore"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Dw-6i-Oyp" userLabel="EmptyView">
+                                    <rect key="frame" x="0.0" y="119" width="382" height="64"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="64" id="kaY-6Y-hGZ"/>
+                                    </constraints>
+                                </view>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Введите ваше имя" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2NN-8n-6pg">
+                                    <rect key="frame" x="0.0" y="183" width="382" height="34"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="34" id="BVg-ro-rAp"/>
+                                    </constraints>
+                                    <color key="textColor" name="greenFore"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                </textField>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F9S-hk-H3x">
+                                    <rect key="frame" x="0.0" y="217" width="382" height="635"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </view>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="deN-78-2DT" secondAttribute="bottom" id="4ac-4H-N6M"/>
+                        <constraint firstItem="deN-78-2DT" firstAttribute="top" secondItem="17s-aw-Zxm" secondAttribute="top" id="BOL-o4-2jc"/>
+                        <constraint firstAttribute="trailing" secondItem="deN-78-2DT" secondAttribute="trailing" constant="16" id="Ej7-uS-Axx"/>
+                        <constraint firstItem="deN-78-2DT" firstAttribute="leading" secondItem="17s-aw-Zxm" secondAttribute="leading" constant="16" id="bce-j8-eYN"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="Pmi-a7-4oC"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="17s-aw-Zxm" firstAttribute="top" secondItem="Pmi-a7-4oC" secondAttribute="top" id="BF5-cX-s52"/>
+                <constraint firstItem="17s-aw-Zxm" firstAttribute="leading" secondItem="kns-3F-tW8" secondAttribute="leading" id="NWF-wl-4mk"/>
+                <constraint firstItem="17s-aw-Zxm" firstAttribute="trailing" secondItem="Pmi-a7-4oC" secondAttribute="trailing" id="VqK-vJ-xZU"/>
+                <constraint firstAttribute="bottom" secondItem="17s-aw-Zxm" secondAttribute="bottom" id="Xxo-0c-4A6"/>
+            </constraints>
+            <point key="canvasLocation" x="-730.43478260869574" y="26.785714285714285"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="greenFore">
+            <color red="0.082000002264976501" green="0.34900000691413879" blue="0.14900000393390656" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoadingViewController" customModule="ZanjabilHalal" customModuleProvider="target">
+            <connections>
+                <outlet property="logoView" destination="Wxi-6J-Vkq" id="qoJ-r5-ZoM"/>
+                <outlet property="view" destination="gTL-VD-AKW" id="9oe-8O-Vxs"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="gTL-VD-AKW">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wxi-6J-Vkq" userLabel="LogoView">
+                    <rect key="frame" x="16" y="0.0" width="382" height="896"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="jQ0-mD-4tb"/>
+            <color key="backgroundColor" name="greenFore"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Wxi-6J-Vkq" secondAttribute="trailing" constant="16" id="5T9-DC-WyX"/>
+                <constraint firstAttribute="bottom" secondItem="Wxi-6J-Vkq" secondAttribute="bottom" id="5uM-8E-BR7"/>
+                <constraint firstItem="Wxi-6J-Vkq" firstAttribute="top" secondItem="gTL-VD-AKW" secondAttribute="top" id="Gr7-9e-muU"/>
+                <constraint firstItem="Wxi-6J-Vkq" firstAttribute="leading" secondItem="gTL-VD-AKW" secondAttribute="leading" constant="16" id="nbf-T1-FfN"/>
+            </constraints>
+            <point key="canvasLocation" x="-730" y="27"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="greenFore">
+            <color red="0.082000002264976501" green="0.34900000691413879" blue="0.14900000393390656" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -1,0 +1,12 @@
+//
+//  BasketCollectionLayout.swift
+//  ZanjabilHalal
+//
+//  Created by Senior Developer on 16.04.2022.
+//
+import UIKit
+
+final class BasketCollectionViewLayout: UICollectionViewFlowLayout {
+  
+  
+}

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MapViewController" customModule="ZanjabilHalal" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="kns-3F-tW8" customClass="MapView" customModule="ZanjabilHalal" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="470" height="101"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X7G-Kh-iyd" userLabel="MainView">
+                    <rect key="frame" x="0.0" y="0.0" width="470" height="101"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4mw-xP-ZG2" userLabel="MainStackView">
+                            <rect key="frame" x="0.0" y="0.0" width="470" height="101"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EwG-cl-bZV" userLabel="MapView">
+                                    <rect key="frame" x="0.0" y="0.0" width="470" height="53"/>
+                                    <subviews>
+                                        <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Y6a-7U-GXi">
+                                            <rect key="frame" x="0.0" y="0.0" width="470" height="53"/>
+                                        </mapView>
+                                    </subviews>
+                                    <color key="backgroundColor" name="greenThree"/>
+                                    <constraints>
+                                        <constraint firstItem="Y6a-7U-GXi" firstAttribute="top" secondItem="EwG-cl-bZV" secondAttribute="top" id="3dm-Zz-03o"/>
+                                        <constraint firstItem="Y6a-7U-GXi" firstAttribute="leading" secondItem="EwG-cl-bZV" secondAttribute="leading" id="Kbw-Kw-EDg"/>
+                                        <constraint firstAttribute="trailing" secondItem="Y6a-7U-GXi" secondAttribute="trailing" id="aWb-rT-iAg"/>
+                                        <constraint firstAttribute="bottom" secondItem="Y6a-7U-GXi" secondAttribute="bottom" id="cYS-Tv-1je"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="luU-Xg-SOO" userLabel="AddressView">
+                                    <rect key="frame" x="0.0" y="53" width="470" height="48"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zn7-Cf-QWi">
+                                            <rect key="frame" x="16" y="0.0" width="438" height="48"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" name="greenFore"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="Zn7-Cf-QWi" secondAttribute="trailing" constant="16" id="4lP-r7-FMJ"/>
+                                        <constraint firstAttribute="bottom" secondItem="Zn7-Cf-QWi" secondAttribute="bottom" id="7Mv-V7-g7w"/>
+                                        <constraint firstItem="Zn7-Cf-QWi" firstAttribute="leading" secondItem="luU-Xg-SOO" secondAttribute="leading" constant="16" id="Bx9-BE-lj8"/>
+                                        <constraint firstAttribute="height" constant="48" id="H65-kl-oVJ"/>
+                                        <constraint firstItem="Zn7-Cf-QWi" firstAttribute="top" secondItem="luU-Xg-SOO" secondAttribute="top" id="SpK-rd-N7j"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <gestureRecognizers/>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="M0f-3E-CDh" appends="YES" id="qVJ-O0-GP4"/>
+                            </connections>
+                        </stackView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mapPin" translatesAutoresizingMaskIntoConstraints="NO" id="mtY-5t-8de">
+                            <rect key="frame" x="225" y="6.5" width="20" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="20" id="23b-Tn-5Yr"/>
+                                <constraint firstAttribute="height" constant="20" id="4Fk-Kf-KBO"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="4mw-xP-ZG2" secondAttribute="trailing" id="1iA-Fc-9xX"/>
+                        <constraint firstAttribute="bottom" secondItem="4mw-xP-ZG2" secondAttribute="bottom" id="8bs-pP-z08"/>
+                        <constraint firstItem="mtY-5t-8de" firstAttribute="centerY" secondItem="EwG-cl-bZV" secondAttribute="centerY" constant="-10" id="LR0-e4-1Ht"/>
+                        <constraint firstItem="4mw-xP-ZG2" firstAttribute="top" secondItem="X7G-Kh-iyd" secondAttribute="top" id="VNd-1S-hxh"/>
+                        <constraint firstItem="mtY-5t-8de" firstAttribute="centerX" secondItem="EwG-cl-bZV" secondAttribute="centerX" id="iUL-ze-0Pp"/>
+                        <constraint firstItem="4mw-xP-ZG2" firstAttribute="leading" secondItem="X7G-Kh-iyd" secondAttribute="leading" id="wje-7g-JEq"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="Pmi-a7-4oC"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="X7G-Kh-iyd" firstAttribute="top" secondItem="kns-3F-tW8" secondAttribute="top" id="EVp-gv-0qS"/>
+                <constraint firstItem="X7G-Kh-iyd" firstAttribute="trailing" secondItem="Pmi-a7-4oC" secondAttribute="trailing" id="Uoe-HS-DDa"/>
+                <constraint firstAttribute="bottom" secondItem="X7G-Kh-iyd" secondAttribute="bottom" id="lpM-Qn-7Fo"/>
+                <constraint firstItem="X7G-Kh-iyd" firstAttribute="leading" secondItem="Pmi-a7-4oC" secondAttribute="leading" id="mbB-Qo-jIr"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="currentAddressLabel" destination="Zn7-Cf-QWi" id="fB7-uP-SlN"/>
+                <outlet property="mapView" destination="Y6a-7U-GXi" id="b78-MD-4Qd"/>
+            </connections>
+            <point key="canvasLocation" x="-689.85507246376812" y="-239.39732142857142"/>
+        </view>
+        <tapGestureRecognizer id="M0f-3E-CDh">
+            <connections>
+                <action selector="didTapMapViewGestureWithGesture:" destination="kns-3F-tW8" id="Xjc-9h-TRl"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="mapPin" width="512" height="512"/>
+        <namedColor name="greenFore">
+            <color red="0.082000002264976501" green="0.34900000691413879" blue="0.14900000393390656" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="greenThree">
+            <color red="0.94099998474121094" green="0.94099998474121094" blue="0.94099998474121094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
