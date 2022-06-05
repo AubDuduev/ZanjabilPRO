@@ -15,7 +15,7 @@ final class TabBarViewBuilder: BuilderViewProtocol {
     public static func create() -> TabBarViewBuilder {
         let view      = TabBarView.create()
         let viewModel = TabBarViewModel(with: view)
-        viewModel.bindMainView(with: view)
+        viewModel.bindView(with: view)
         let selfBuilder = TabBarViewBuilder(with: view,
                                             with: viewModel)
         return selfBuilder

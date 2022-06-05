@@ -15,6 +15,10 @@ final class MapView: UIView, MVVMViewProtocol {
 		var currentAddress: String
 		var didTapMapView : ClosureEmpty
     }
+	
+	var updateViewProperties: Closure<ViewProperties>?
+	var createViewProperties: Closure<ViewProperties>?
+	
     var viewProperties: ViewProperties?
 	
 	@IBOutlet weak private var mapView            : MKMapView!

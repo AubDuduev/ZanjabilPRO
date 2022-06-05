@@ -21,7 +21,7 @@ final class MapViewModel: MVVMViewModelProtocol {
 	@Injected
 	private var mainRouter: MainRouter
     //MARK: - implementation protocol
-    public var mainView: MapView?
+	var viewProperties: MapView.ViewProperties?
 	// MARK: - Private
 	private var cancellable: Set<AnyCancellable> = []
     

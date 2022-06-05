@@ -310,11 +310,6 @@
 		829A56CB28202261005F110B /* StartLoadingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829A56C628202261005F110B /* StartLoadingModel.swift */; };
 		829A56CC28202261005F110B /* StartLoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829A56C728202261005F110B /* StartLoadingViewModel.swift */; };
 		829A56CD28202261005F110B /* StartLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 829A56C828202261005F110B /* StartLoadingView.xib */; };
-		829F3C0A28472976002A8EA7 /* DisplayAddressViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829F3C0528472976002A8EA7 /* DisplayAddressViewBuilder.swift */; };
-		829F3C0B28472976002A8EA7 /* DisplayAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829F3C0628472976002A8EA7 /* DisplayAddressView.swift */; };
-		829F3C0C28472976002A8EA7 /* DisplayAddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829F3C0728472976002A8EA7 /* DisplayAddressModel.swift */; };
-		829F3C0D28472976002A8EA7 /* DisplayAddressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829F3C0828472976002A8EA7 /* DisplayAddressViewModel.swift */; };
-		829F3C0E28472976002A8EA7 /* DisplayAddressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 829F3C0928472976002A8EA7 /* DisplayAddressView.xib */; };
 		82A268A1280A5AE60051B997 /* InputAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A26895280A5AE60051B997 /* InputAddressViewController.swift */; };
 		82A268A4280A5AE60051B997 /* BuilderInputAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A26898280A5AE60051B997 /* BuilderInputAddress.swift */; };
 		82A268A7280A5AE60051B997 /* InputAddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A2689B280A5AE60051B997 /* InputAddressModel.swift */; };
@@ -774,11 +769,6 @@
 		829A56C628202261005F110B /* StartLoadingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartLoadingModel.swift; sourceTree = "<group>"; };
 		829A56C728202261005F110B /* StartLoadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartLoadingViewModel.swift; sourceTree = "<group>"; };
 		829A56C828202261005F110B /* StartLoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartLoadingView.xib; sourceTree = "<group>"; };
-		829F3C0528472976002A8EA7 /* DisplayAddressViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayAddressViewBuilder.swift; sourceTree = "<group>"; };
-		829F3C0628472976002A8EA7 /* DisplayAddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayAddressView.swift; sourceTree = "<group>"; };
-		829F3C0728472976002A8EA7 /* DisplayAddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayAddressModel.swift; sourceTree = "<group>"; };
-		829F3C0828472976002A8EA7 /* DisplayAddressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayAddressViewModel.swift; sourceTree = "<group>"; };
-		829F3C0928472976002A8EA7 /* DisplayAddressView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DisplayAddressView.xib; sourceTree = "<group>"; };
 		82A26895280A5AE60051B997 /* InputAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputAddressViewController.swift; sourceTree = "<group>"; };
 		82A26898280A5AE60051B997 /* BuilderInputAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuilderInputAddress.swift; sourceTree = "<group>"; };
 		82A2689B280A5AE60051B997 /* InputAddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputAddressModel.swift; sourceTree = "<group>"; };
@@ -2200,7 +2190,6 @@
 		827E423427F8864600491AC3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				829F3C0128472936002A8EA7 /* DisplayAddressView */,
 				82DB32882843722A00379554 /* SearchAddressView */,
 				827472DB28412196004D3FDF /* MapView */,
 				829A56C028202222005F110B /* StartLoadingView */,
@@ -2591,42 +2580,6 @@
 			isa = PBXGroup;
 			children = (
 				829A56C628202261005F110B /* StartLoadingModel.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		829F3C0128472936002A8EA7 /* DisplayAddressView */ = {
-			isa = PBXGroup;
-			children = (
-				829F3C042847295E002A8EA7 /* Model */,
-				829F3C032847295A002A8EA7 /* View */,
-				829F3C0228472953002A8EA7 /* ViewModel */,
-			);
-			path = DisplayAddressView;
-			sourceTree = "<group>";
-		};
-		829F3C0228472953002A8EA7 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				829F3C0528472976002A8EA7 /* DisplayAddressViewBuilder.swift */,
-				829F3C0828472976002A8EA7 /* DisplayAddressViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		829F3C032847295A002A8EA7 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				829F3C0928472976002A8EA7 /* DisplayAddressView.xib */,
-				829F3C0628472976002A8EA7 /* DisplayAddressView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		829F3C042847295E002A8EA7 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				829F3C0728472976002A8EA7 /* DisplayAddressModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -3882,7 +3835,6 @@
 				828C2DC22813086F0059A828 /* ProfileCollectionCell.xib in Resources */,
 				82CD80892815AE390048DC71 /* OrdersCollectionView.xib in Resources */,
 				8262AF5E28145B01009A7E3A /* OrdersViewController.xib in Resources */,
-				829F3C0E28472976002A8EA7 /* DisplayAddressView.xib in Resources */,
 				82B637F5280B01A800E8DF72 /* BasketCollectionView.xib in Resources */,
 				8262AF9E28146D4F009A7E3A /* AddressesCollectionView.xib in Resources */,
 				82EC8BD727DDF24C00661F58 /* ProfileViewController.xib in Resources */,
@@ -3974,7 +3926,6 @@
 				82E89EFD2829005F00CA17DC /* ChangeCurrentCategoryService.swift in Sources */,
 				82F457CB28028A0B004BCD68 /* Extension + UIAplication.swift in Sources */,
 				820188ED284299E8008916B5 /* DECAddressSuggestionData.swift in Sources */,
-				829F3C0D28472976002A8EA7 /* DisplayAddressViewModel.swift in Sources */,
 				82C266102801CBDC007984B3 /* WarningText.swift in Sources */,
 				82EC8C1827DE5C2100661F58 /* DECDish.swift in Sources */,
 				820083FA283A412800A0F8BB /* MapCollectionCellBuilder.swift in Sources */,
@@ -4137,7 +4088,6 @@
 				82F457F528029144004BCD68 /* MenuCollectionViewModel.swift in Sources */,
 				828E0D9D280C6856005239F1 /* Extension + InfoAlertService.swift in Sources */,
 				82C265E728015323007984B3 /* PayOrderCollectionCellViewModel.swift in Sources */,
-				829F3C0C28472976002A8EA7 /* DisplayAddressModel.swift in Sources */,
 				82CD8078281548A50048DC71 /* OrderCollectionCellModel.swift in Sources */,
 				823211A627DD0FF20019E6B6 /* TextResources.swift in Sources */,
 				820188E628429635008916B5 /* ENCAddressSuggestion.swift in Sources */,
@@ -4168,7 +4118,6 @@
 				82B637F7280B01A800E8DF72 /* BasketCollectionModel.swift in Sources */,
 				8262AF9F28146D4F009A7E3A /* AddressesCollectionView.swift in Sources */,
 				8280ABD427F061DA00DEFFE6 /* BuyView.swift in Sources */,
-				829F3C0A28472976002A8EA7 /* DisplayAddressViewBuilder.swift in Sources */,
 				82F457DF28028E56004BCD68 /* HorizontalDishCollectionCellBuilder.swift in Sources */,
 				82C2661C2801CF7B007984B3 /* ErrorView.swift in Sources */,
 				82CD808B2815AE390048DC71 /* OrdersCollectionModel.swift in Sources */,
@@ -4180,7 +4129,6 @@
 				823AF1B8281EC75E00593C1C /* AddAddressView.swift in Sources */,
 				82F457E028028E56004BCD68 /* HorizontalDishCollectionCell.swift in Sources */,
 				82741AF427D51E6D006EBE80 /* MenuCollection.swift in Sources */,
-				829F3C0B28472976002A8EA7 /* DisplayAddressView.swift in Sources */,
 				823AF1BA281EC75E00593C1C /* AddAddressViewModel.swift in Sources */,
 				82CD808D2815AE390048DC71 /* OrdersCollectionViewBuilder.swift in Sources */,
 				827472E8284121DE004D3FDF /* MapModel.swift in Sources */,
