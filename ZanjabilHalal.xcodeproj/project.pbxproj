@@ -1151,6 +1151,29 @@
 			path = CoreDataModel;
 			sourceTree = "<group>";
 		};
+		8223D586284C99EE00729F52 /* TableViews */ = {
+			isa = PBXGroup;
+			children = (
+				8223D587284C99FB00729F52 /* AddressSuggstionsTableView */,
+			);
+			path = TableViews;
+			sourceTree = "<group>";
+		};
+		8223D587284C99FB00729F52 /* AddressSuggstionsTableView */ = {
+			isa = PBXGroup;
+			children = (
+				8223D588284C9A1200729F52 /* ViewModel */,
+			);
+			path = AddressSuggstionsTableView;
+			sourceTree = "<group>";
+		};
+		8223D588284C9A1200729F52 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		8232107927D46EFF00FE79E9 = {
 			isa = PBXGroup;
 			children = (
@@ -1256,6 +1279,7 @@
 		823210A227D46FA900FE79E9 /* MVVM */ = {
 			isa = PBXGroup;
 			children = (
+				8223D586284C99EE00729F52 /* TableViews */,
 				8299C2A4281D885F0071A742 /* Headers */,
 				82F457E628028FD0004BCD68 /* CollectionViews */,
 				82F457FA2802D139004BCD68 /* Cells */,

@@ -28,14 +28,14 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8qi-kQ-zkD" userLabel="ContainerSearchView">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="40" id="WLZ-PL-KJj"/>
+                                        <constraint firstAttribute="height" constant="56" id="WLZ-PL-KJj"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="urp-9S-qbx" userLabel="ContainerAddressSuggestionsCollectionView">
-                                    <rect key="frame" x="0.0" y="40" width="414" height="812"/>
+                                    <rect key="frame" x="0.0" y="56" width="414" height="796"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </view>
                             </subviews>
