@@ -9,7 +9,8 @@ import UIKit
 final class AddressesCollectionView: UIView, MVVMViewProtocol {
     
     struct ViewProperties {
-        let addresses: [DECAddress]
+		let addressCollectionType: AddressCollectionType
+        let addresses            : [DECAddress]
     }
     var viewProperties: ViewProperties?
     

@@ -6,7 +6,7 @@
 //
 import UIKit
 //It is responsible of creating Collection Cells
-final class MainCellsBuilder {
+final class MainCollectionCellsBuilder {
     
     public func createVerticalDishCollectionCellBuilder(with collection: UICollectionView, with indexPath: IndexPath) -> VerticalDishCollectionCellBuilder {
         let verticalDishCollectionCellBuilder = VerticalDishCollectionCellBuilder.create(with: collection, with: indexPath)

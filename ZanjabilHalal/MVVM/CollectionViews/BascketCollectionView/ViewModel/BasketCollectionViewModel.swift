@@ -19,7 +19,7 @@ final class BasketCollectionViewModel: MVVMViewModelProtocol {
     public var isUpdate: ClosureEmpty?
     //DI
     @Injected
-    private var mainCellsBuilder  : MainCellsBuilder
+    private var mainCellsBuilder  : MainCollectionCellsBuilder
     @Injected
     private var menuService       : MenuService
     @Injected

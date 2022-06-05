@@ -15,7 +15,7 @@ final class OrdersCollectionViewModel: MVVMViewModelProtocol {
     }
     //DI
     @Injected
-    private var mainCellsBuilder: MainCellsBuilder
+    private var mainCellsBuilder: MainCollectionCellsBuilder
     @Injected
     private var ordersService   : OrdersService
     // MARK: - Private

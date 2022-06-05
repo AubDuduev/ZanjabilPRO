@@ -64,6 +64,18 @@ extension Resolver: ResolverRegistering {
 		Resolver.register {
 			RequestsRESTService()
 		}
+		
+		Resolver.register {
+			MainTableCellBuilder()
+		}
+		
+		Resolver.register {
+			MainTableViewsBuilder()
+		}
+		
+		Resolver.register {
+			DelayTaskService()
+		}
     }
     
     private static func application(){
@@ -114,7 +126,7 @@ extension Resolver: ResolverRegistering {
         .scope(.application)
         
         Resolver.register {
-            MainCellsBuilder()
+            MainCollectionCellsBuilder()
         }
         .scope(.application)
         

@@ -39,7 +39,10 @@
                                                         <constraint firstAttribute="width" secondItem="VbD-O2-OPJ" secondAttribute="height" id="maS-1Y-nsM"/>
                                                     </constraints>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                    <state key="normal" title="Button" image="search"/>
+                                                    <state key="normal" image="magnifyingglass" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="didTapSearchAddressButtonWithButton:" destination="kns-3F-tW8" eventType="touchUpInside" id="3uX-u4-UOA"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="tintColor" name="greenFore"/>
@@ -110,7 +113,7 @@
         </tapGestureRecognizer>
     </objects>
     <resources>
-        <image name="search" width="256" height="256"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <namedColor name="greenFore">
             <color red="0.082000002264976501" green="0.34900000691413879" blue="0.14900000393390656" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -24,7 +24,7 @@ final class AddressCollectionCellViewModel: MVVMViewModelProtocol {
     private func stateAddressModel(){
         guard let model = self.model else { return }
         switch model {
-            case .createViewProperties(let address):
+            case .createViewProperties(let address, let addressCollectionType):
                 let didTapEditAddress  : Closure<DECAddress> = { address in
                     self.mainRouter.presentNavigation(id: .inputAddressVC(address, .editAddress), animated: true)
                 }
@@ -39,10 +39,11 @@ final class AddressCollectionCellViewModel: MVVMViewModelProtocol {
                     self.addressesService.changeDefaultAddress(with: address)
                 }
                 
-                let viewProperties = AddressCollectionCell.ViewProperties(address            : address,
-                                                                          didTapEditAddress  : didTapEditAddress,
-                                                                          didTapDeleteAddress: didTapDeleteAddress,
-                                                                          didTapCellAddress  : didTapCellAddress)
+				let viewProperties = AddressCollectionCell.ViewProperties(addressCollectionType: addressCollectionType,
+																		  address              : address,
+                                                                          didTapEditAddress    : didTapEditAddress,
+                                                                          didTapDeleteAddress  : didTapDeleteAddress,
+                                                                          didTapCellAddress    : didTapCellAddress)
                 self.mainView?.update(with: viewProperties)
         }
     }

@@ -11,7 +11,7 @@ final class PayOrderCollection: NSObject {
     
     //DI
     @Injected
-    private var mainCellsBuilder: MainCellsBuilder
+    private var mainCellsBuilder: MainCollectionCellsBuilder
    
     var viewProperties: PayOrderCollectionView.ViewProperties?
     
