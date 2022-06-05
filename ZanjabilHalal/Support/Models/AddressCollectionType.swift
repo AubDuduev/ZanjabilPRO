@@ -6,3 +6,19 @@
 //
 
 import Foundation
+
+enum AddressCollectionType {
+	
+	case edit
+	case display
+	
+	public func isHiddenButton() -> Bool {
+		
+		switch self {
+			case .edit:
+				return false
+			case .display:
+				return true
+		}
+	}
+}

@@ -33,7 +33,8 @@ extension AddressesCollection: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let collectionCellBuilder = self.mainCellsBuilder.createAddressCollectionCellBuilder(with: collectionView, with: indexPath)
         let address = viewProperties!.addresses[indexPath.row]
-        collectionCellBuilder.viewModel.model = .createViewProperties(address)
+		let addressCollectionType = viewProperties!.addressCollectionType
+		collectionCellBuilder.viewModel.model = .createViewProperties(address, addressCollectionType)
         return collectionCellBuilder.view
     }
 }

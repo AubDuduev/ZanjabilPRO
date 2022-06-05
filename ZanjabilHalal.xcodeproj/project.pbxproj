@@ -47,6 +47,8 @@
 		8223D5DF284CBDE900729F52 /* AddressSuggestionTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8223D5DA284CBDE900729F52 /* AddressSuggestionTableCell.xib */; };
 		8223D5E2284CC06000729F52 /* MainTableCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8223D5E1284CC06000729F52 /* MainTableCellBuilder.swift */; };
 		8223D5E5284CC33F00729F52 /* MainTableViewsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8223D5E4284CC33F00729F52 /* MainTableViewsBuilder.swift */; };
+		8223D5E7284D1EC500729F52 /* AddressCollectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8223D5E6284D1EC500729F52 /* AddressCollectionType.swift */; };
+		8223D5EA284D23E900729F52 /* DelayTaskService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8223D5E9284D23E900729F52 /* DelayTaskService.swift */; };
 		8232108627D46EFF00FE79E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8232108527D46EFF00FE79E9 /* AppDelegate.swift */; };
 		8232109527D46F0000FE79E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8232109327D46F0000FE79E9 /* LaunchScreen.storyboard */; };
 		823210CB27D475E200FE79E9 /* LoadNidoble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823210CA27D475E200FE79E9 /* LoadNidoble.swift */; };
@@ -558,6 +560,8 @@
 		8223D5DA284CBDE900729F52 /* AddressSuggestionTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressSuggestionTableCell.xib; sourceTree = "<group>"; };
 		8223D5E1284CC06000729F52 /* MainTableCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableCellBuilder.swift; sourceTree = "<group>"; };
 		8223D5E4284CC33F00729F52 /* MainTableViewsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewsBuilder.swift; sourceTree = "<group>"; };
+		8223D5E6284D1EC500729F52 /* AddressCollectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressCollectionType.swift; sourceTree = "<group>"; };
+		8223D5E9284D23E900729F52 /* DelayTaskService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayTaskService.swift; sourceTree = "<group>"; };
 		8232108227D46EFF00FE79E9 /* ZanjabilHalal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZanjabilHalal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8232108527D46EFF00FE79E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8232109427D46F0000FE79E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -1283,6 +1287,14 @@
 			path = MainTableViewsBuilder;
 			sourceTree = "<group>";
 		};
+		8223D5E8284D23D500729F52 /* DelayTaskService */ = {
+			isa = PBXGroup;
+			children = (
+				8223D5E9284D23E900729F52 /* DelayTaskService.swift */,
+			);
+			path = DelayTaskService;
+			sourceTree = "<group>";
+		};
 		8232107927D46EFF00FE79E9 = {
 			isa = PBXGroup;
 			children = (
@@ -1414,6 +1426,7 @@
 		8232115227D477FD00FE79E9 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				8223D5E8284D23D500729F52 /* DelayTaskService */,
 				82B8EC152846849E001861E9 /* MapService */,
 				82BFE364282186710043E685 /* YandexMapService */,
 				826A92612839531C004AAE0C /* LocationSevice */,
@@ -2148,6 +2161,7 @@
 				82A26902280AD7F10051B997 /* PayInfoCellTypes.swift */,
 				82A26904280AD8490051B997 /* InputAddressTypes.swift */,
 				827472E928412278004D3FDF /* InputAddressCollectionViewType.swift */,
+				8223D5E6284D1EC500729F52 /* AddressCollectionType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -4123,7 +4137,9 @@
 				82A268D1280A677D0051B997 /* MainCollectionViewsBuilder.swift in Sources */,
 				82DB32C22843E1BC00379554 /* AddressSuggestionsCollectionModel.swift in Sources */,
 				8299C2A3281D2B7F0071A742 /* DECOrder.swift in Sources */,
+				8223D5E7284D1EC500729F52 /* AddressCollectionType.swift in Sources */,
 				82529B0827EECCD500B348F0 /* MainViewsBuilder.swift in Sources */,
+				8223D5EA284D23E900729F52 /* DelayTaskService.swift in Sources */,
 				8262AFA028146D4F009A7E3A /* AddressesCollectionModel.swift in Sources */,
 				8208FE8827F88A39003955D0 /* CounterDishesView.swift in Sources */,
 				8262AF7428145FE3009A7E3A /* AddressesViewController.swift in Sources */,

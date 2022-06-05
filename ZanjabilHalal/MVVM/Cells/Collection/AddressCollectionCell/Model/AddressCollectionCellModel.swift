@@ -8,5 +8,5 @@ import UIKit
 
 enum AddressCollectionCellModel {
     
-    case createViewProperties(DECAddress)
+    case createViewProperties(DECAddress, AddressCollectionType)
 }

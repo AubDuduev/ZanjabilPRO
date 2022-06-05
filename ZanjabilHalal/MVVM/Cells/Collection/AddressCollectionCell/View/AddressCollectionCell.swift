@@ -9,10 +9,11 @@ import UIKit
 final class AddressCollectionCell: UICollectionViewCell, LoadNidoble, MVVMViewProtocol {
     
     struct ViewProperties {
-        let address            : DECAddress
-        let didTapEditAddress  : Closure<DECAddress>
-        let didTapDeleteAddress: Closure<DECAddress>
-        let didTapCellAddress  : Closure<DECAddress>
+		let addressCollectionType: AddressCollectionType
+        let address              : DECAddress
+        let didTapEditAddress    : Closure<DECAddress>
+        let didTapDeleteAddress  : Closure<DECAddress>
+        let didTapCellAddress    : Closure<DECAddress>
     }
     var viewProperties: ViewProperties?
     
@@ -36,12 +37,14 @@ final class AddressCollectionCell: UICollectionViewCell, LoadNidoble, MVVMViewPr
         self.setAddressData()
         self.setupColorIconView()
     }
+	
     private func setupColorIconView(){
         guard let viewProperties = self.viewProperties else { return }
         let isDefault      = viewProperties.address.isDefault
         let color: UIColor = isDefault ? .set(.greenFore) : .clear
         self.mainView.borderColor(color, 1)
     }
+	
     private func setAddressData(){
         guard let viewProperties = self.viewProperties else { return }
         let title    = "\(viewProperties.address.street) \(viewProperties.address.build), \(viewProperties.address.apartment)"
@@ -49,11 +52,16 @@ final class AddressCollectionCell: UICollectionViewCell, LoadNidoble, MVVMViewPr
         self.streetLebel.text = title
         self.cityLebel.text   = subtitle
     }
+	
     private func setupEditView(){
+		guard let viewProperties = self.viewProperties else { return }
+		self.editView.isHidden = viewProperties.addressCollectionType.isHiddenButton()
         self.editView.cornerRadius(20, true)
     }
     
     private func setupDeleteView(){
+		guard let viewProperties = self.viewProperties else { return }
+		self.deleteView.isHidden = viewProperties.addressCollectionType.isHiddenButton()
         self.deleteView.cornerRadius(20, true)
     }
     

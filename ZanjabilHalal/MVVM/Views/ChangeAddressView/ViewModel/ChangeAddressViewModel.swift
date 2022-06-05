@@ -46,13 +46,12 @@ final class ChangeAddressViewModel: MVVMViewModelProtocol {
 				self.mapService.startUserLocation()
 				self.mapService.completionAddress
 					.sink(receiveValue: { address in
-						//guard let self = self else { return }
 						self.model = .updateAddress(address)
 					})
 					.store(in: &self.cancellable)
 			case .addAddressCollectionView(let containerView):
 				self.addressesCollectionViewModel       = self.createAddressCollectionViewViewModel(with: containerView)
-				self.addressesCollectionViewModel.model = .createViewProperties
+				self.addressesCollectionViewModel.model = .createViewProperties(addressCollectionType: .display)
 			case .updateAddress(let currentAddress):
 				self.mainView?.viewProperties?.currentAddress = currentAddress
 				self.reloadProperties()
@@ -64,13 +63,9 @@ final class ChangeAddressViewModel: MVVMViewModelProtocol {
 	public func createAddressCollectionViewViewModel(with containerView: UIView) -> AddressesCollectionViewModel {
 		let addressCollectionViewBuilder = self.mainCollectionViewsBuilder.createAddressesCollectionViewBuilder()
 		let addressCollectionView        = addressCollectionViewBuilder.view
-		containerView.subviews.forEach({ print( $0.self)})
-		containerView.subviews.forEach({ print( String(describing: $0.self))})
-		if !containerView.isAdded(of: addressCollectionView) {
-			containerView.addSubview(addressCollectionView)
-			addressCollectionView.snp.makeConstraints { addressCollectionView in
-				addressCollectionView.edges.equalToSuperview()
-			}
+		containerView.addSubview(addressCollectionView)
+		addressCollectionView.snp.makeConstraints { addressCollectionView in
+			addressCollectionView.edges.equalToSuperview()
 		}
 		return addressCollectionViewBuilder.viewModel
 	}

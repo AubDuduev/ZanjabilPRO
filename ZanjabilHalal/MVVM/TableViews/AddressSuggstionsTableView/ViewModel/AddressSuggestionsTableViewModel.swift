@@ -20,6 +20,8 @@ final class AddressSuggestionsTableViewModel: MVVMViewModelProtocol {
     private var mainCellsBuilder: MainCollectionCellsBuilder
 	@Injected
 	private var daDataService   : DaDataService
+	@Injected
+	private var mainRouter      : MainRouter
 	// MARK: - Private
 	private var cancelable: Set<AnyCancellable> = []
     //MARK: - Main state view model
@@ -27,8 +29,12 @@ final class AddressSuggestionsTableViewModel: MVVMViewModelProtocol {
         guard let model = self.model else { return }
         switch model {
 			case .createViewProperties(let decAddressSuggestions):
+				let didSelectRowAt: Closure<IndexPath> = { indexPath in
+					self.mainRouter.dissmiss(animated: true)
+				}
 				let countCells     = decAddressSuggestions.count
-				let viewProperties = AddressSuggestionsTableView.ViewProperties(countCells: countCells,
+				let viewProperties = AddressSuggestionsTableView.ViewProperties(didSelectRowAt       : didSelectRowAt,
+																				countCells           : countCells,
 																				decAddressSuggestions: decAddressSuggestions)
 				self.mainView?.update(with: viewProperties)
 			case .getSuggestionsAddressList:

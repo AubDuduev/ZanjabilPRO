@@ -72,6 +72,10 @@ extension Resolver: ResolverRegistering {
 		Resolver.register {
 			MainTableViewsBuilder()
 		}
+		
+		Resolver.register {
+			DelayTaskService()
+		}
     }
     
     private static func application(){

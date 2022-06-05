@@ -23,7 +23,7 @@ final class AddressSuggestionsTable: NSObject {
 extension AddressSuggestionsTable: UITableViewDelegate {
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		
+		self.viewProperties?.didSelectRowAt(indexPath)
 	}
 }
 //MARK: - DataSources
@@ -45,6 +45,7 @@ extension AddressSuggestionsTable: UITableViewDataSource {
 	}
 	
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		return tableView.estimatedRowHeight
+		let cellHeight = (tableView.estimatedRowHeight < 48) ? 48 : tableView.estimatedRowHeight
+		return cellHeight
 	}
 }

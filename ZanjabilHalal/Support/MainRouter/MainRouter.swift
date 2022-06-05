@@ -56,6 +56,10 @@ final class MainRouter {
         window??.rootViewController = rootViewController
         window??.makeKeyAndVisible()
     }
+	
+	public func dissmiss(animated: Bool){
+		self.currentPresentationVC.dismiss(animated: animated)
+	}
     
 //    public func setupNewNavigationVC(isNavigationBarHidden: Bool = false, animatedHidden: Bool = false, tintColor: UIColor = .blue, backButtonTitle: String = "", title: TextResources.Router.NavigationTitle = .empty){
 //        self.newNavigationVC.navigationBar.tintColor       = tintColor
