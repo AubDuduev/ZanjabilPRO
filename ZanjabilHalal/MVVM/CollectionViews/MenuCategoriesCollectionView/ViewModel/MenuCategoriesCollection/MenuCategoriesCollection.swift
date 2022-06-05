@@ -10,7 +10,7 @@ import Resolver
 final class MenuCategoriesCollection : NSObject {
 	//DI
 	@Injected
-	private var mainCellsBuilder: MainCellsBuilder
+	private var mainCellsBuilder: MainCollectionCellsBuilder
     
 	var viewProperties: MenuCategoriesView.ViewProperties?
     

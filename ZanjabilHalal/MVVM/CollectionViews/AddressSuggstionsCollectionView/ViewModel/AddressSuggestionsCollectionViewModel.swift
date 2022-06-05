@@ -15,14 +15,13 @@ final class AddressSuggestionsCollectionViewModel: MVVMViewModelProtocol {
     }
 	//DI
 	@Injected
-	private var mainCellsBuilder: MainCellsBuilder
+	private var mainCellsBuilder: MainCollectionCellsBuilder
 	@Injected
 	private var daDataService: DaDataService
 	// MARK: - Private
 	private var cancelable: Set<AnyCancellable> = []
     //MARK: - implementation protocol
     public var mainView: AddressSuggestionsCollectionView?
-    public var isUpdate: ClosureEmpty?
    
     //MARK: - Main state view model
     private func stateModel(){

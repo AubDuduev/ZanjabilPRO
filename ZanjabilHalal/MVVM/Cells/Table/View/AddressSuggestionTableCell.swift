@@ -6,13 +6,14 @@
 //
 import UIKit
 
-final class AddressSuggestionTableCell: UITableViewCell {
-	
+final class AddressSuggestionTableCell: UITableViewCell, MVVMViewProtocol {
 	
 	struct ViewProperties {
-		
+		let addressSuggestion: DECAddressSuggestion
 	}
 	var viewProperties: ViewProperties?
+	
+	@IBOutlet weak private var fullAddressSuggestionLabel: UILabel!
 	
 	func create(with viewProperties: ViewProperties?) {
 		self.viewProperties = viewProperties
@@ -20,9 +21,14 @@ final class AddressSuggestionTableCell: UITableViewCell {
 	
 	func update(with viewProperties: ViewProperties?) {
 		self.viewProperties = viewProperties
+		self.setData()
 	}
 	
-	func create() -> Self {
+	private func setData(){
+		self.fullAddressSuggestionLabel.text = self.viewProperties?.addressSuggestion.fullAddress
+	}
+	
+	static func create() -> Self {
 		let nib = Bundle.main.loadNibNamed(String(describing: Self.self), owner: nil, options: nil)?.first
 		return nib as! Self
 	}

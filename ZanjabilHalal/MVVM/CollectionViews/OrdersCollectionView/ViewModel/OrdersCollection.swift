@@ -10,7 +10,7 @@ import Resolver
 final class OrdersCollection: NSObject {
    
     @Injected
-    private var mainCellsBuilder: MainCellsBuilder
+    private var mainCellsBuilder: MainCollectionCellsBuilder
     
     private var viewProperties: OrdersCollectionView.ViewProperties?
     

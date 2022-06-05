@@ -45,6 +45,10 @@ final class ChangeAddressView: UIView, MVVMViewProtocol {
 	@IBAction func didTapSearchAddressGesture(gesture: UITapGestureRecognizer){
 		self.viewProperties?.didTapSearchAddress()
 	}
+	
+	@IBAction func didTapSearchAddressButton(button: UIButton){
+		self.viewProperties?.didTapSearchAddress()
+	}
     // MARK: - create view
     static func create() -> ChangeAddressView {
         let view = Bundle.main.loadNibNamed(String(describing: Self.self), owner: nil, options: nil)?.first as! ChangeAddressView

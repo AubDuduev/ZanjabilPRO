@@ -10,7 +10,7 @@ import Resolver
 final class AddressesCollection: NSObject {
    
     @Injected
-    private var mainCellsBuilder: MainCellsBuilder
+    private var mainCellsBuilder: MainCollectionCellsBuilder
 
     var viewProperties: AddressesCollectionView.ViewProperties?
     

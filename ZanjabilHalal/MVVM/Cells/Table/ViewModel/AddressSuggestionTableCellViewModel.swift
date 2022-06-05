@@ -19,8 +19,9 @@ final class AddressSuggestionTableCellViewModel: MVVMViewModelProtocol {
 	private func stateAddressSuggestionModel(){
 		guard let model = self.model else { return }
 		switch model {
-			case .createViewProperties:
-				print("")
+			case .createViewProperties(let addressSuggestion):
+				let viewProperties = AddressSuggestionTableCell.ViewProperties(addressSuggestion: addressSuggestion)
+				self.mainView?.update(with: viewProperties)
 		}
 	}
 	

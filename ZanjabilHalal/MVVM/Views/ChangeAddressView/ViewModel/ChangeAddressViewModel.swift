@@ -57,8 +57,7 @@ final class ChangeAddressViewModel: MVVMViewModelProtocol {
 				self.mainView?.viewProperties?.currentAddress = currentAddress
 				self.reloadProperties()
 			case .didTapSearchAddress:
-				self.mainRouter.pushMainNavigation(id: .addressSuggestionScreenVC, animated: true)
-				self.mainRouter.setupMainNavigationVC(isNavigationBarHidden: false, animatedHidden: true, tintColor: .set(.greenFore), title: .addressList)
+				self.mainRouter.presentNavigation(id: .addressSuggestionScreenVC, animated: true)
         }
     }
 	
@@ -80,4 +79,3 @@ final class ChangeAddressViewModel: MVVMViewModelProtocol {
         self.mainView = mainView
     }
 }
- //containerView.isDescendant(of: addressCollectionView)

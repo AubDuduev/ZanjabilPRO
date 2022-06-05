@@ -11,7 +11,7 @@ final class AddressSuggestionTableCellBuilder: BuilderViewProtocol {
 	public var view     : AddressSuggestionTableCell
 	public var viewModel: AddressSuggestionTableCellViewModel
 	
-	public static func create(with collection: UICollectionView, with indexPath: IndexPath) -> AddressSuggestionTableCellBuilder {
+	public static func create() -> AddressSuggestionTableCellBuilder {
 		let cell      = AddressSuggestionTableCell.create()
 		let viewModel = AddressSuggestionTableCellViewModel(with: cell)
 		viewModel.bindMainView(with: cell)

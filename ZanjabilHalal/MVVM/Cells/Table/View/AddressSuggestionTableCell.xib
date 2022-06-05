@@ -1,21 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="oGl-Tz-Qwb" customClass="AddressSuggestionTableCell" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="61" id="oGl-Tz-Qwb" customClass="AddressSuggestionTableCell" customModule="ZanjabilHalal" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="61"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oGl-Tz-Qwb" id="BOa-mI-uOM">
-                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                <rect key="frame" x="0.0" y="0.0" width="414" height="61"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wrX-rU-vnG" userLabel="MainView">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="61"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="aiF-cp-qHr">
+                                <rect key="frame" x="16" y="8" width="382" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="shadowTabBar"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jBd-9D-S13" userLabel="BottomLineView">
+                                <rect key="frame" x="0.0" y="60" width="414" height="1"/>
+                                <color key="backgroundColor" name="shadowTabBar"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="HLJ-bM-hzV"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jBd-9D-S13" firstAttribute="leading" secondItem="wrX-rU-vnG" secondAttribute="leading" id="1qd-9m-H3M"/>
+                            <constraint firstItem="aiF-cp-qHr" firstAttribute="leading" secondItem="wrX-rU-vnG" secondAttribute="leading" constant="16" id="CIT-Cq-v7n"/>
+                            <constraint firstAttribute="bottom" secondItem="aiF-cp-qHr" secondAttribute="bottom" constant="8" id="NKP-WT-iU3"/>
+                            <constraint firstItem="aiF-cp-qHr" firstAttribute="top" secondItem="wrX-rU-vnG" secondAttribute="top" constant="8" id="R3a-31-Phf"/>
+                            <constraint firstAttribute="bottom" secondItem="jBd-9D-S13" secondAttribute="bottom" id="XRM-x3-vlj"/>
+                            <constraint firstAttribute="trailing" secondItem="jBd-9D-S13" secondAttribute="trailing" id="ns2-B7-zVk"/>
+                            <constraint firstAttribute="trailing" secondItem="aiF-cp-qHr" secondAttribute="trailing" constant="16" id="rBv-On-jdB"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="wrX-rU-vnG" secondAttribute="trailing" id="CBG-v2-fnM"/>
+                    <constraint firstItem="wrX-rU-vnG" firstAttribute="top" secondItem="BOa-mI-uOM" secondAttribute="top" id="fk1-6g-qqp"/>
+                    <constraint firstAttribute="bottom" secondItem="wrX-rU-vnG" secondAttribute="bottom" id="sgH-XR-zOP"/>
+                    <constraint firstItem="wrX-rU-vnG" firstAttribute="leading" secondItem="BOa-mI-uOM" secondAttribute="leading" id="vKE-pO-o6f"/>
+                </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="222" y="11"/>
+            <connections>
+                <outlet property="fullAddressSuggestionLabel" destination="aiF-cp-qHr" id="hVy-el-gUi"/>
+            </connections>
+            <point key="canvasLocation" x="221.73913043478262" y="16.40625"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <namedColor name="shadowTabBar">
+            <color red="0.090000003576278687" green="0.090000003576278687" blue="0.090000003576278687" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

@@ -8,5 +8,6 @@ import UIKit
 
 enum AddressSuggestionsTableModel {
     
-    case createViewProperties
+    case createViewProperties([DECAddressSuggestion])
+	case getSuggestionsAddressList
 }

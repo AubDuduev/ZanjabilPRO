@@ -10,15 +10,19 @@ final class AddressSuggestionsTableView: UIView, MVVMViewProtocol {
     
     struct ViewProperties {
        
+		let countCells           : Int
+		let decAddressSuggestions: [DECAddressSuggestion]
     }
     var viewProperties: ViewProperties?
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak private var tableView: UITableView!
     
     private let table = AddressSuggestionsTable()
     
     func update(with viewProperties: ViewProperties?) {
-        
+		self.viewProperties = viewProperties
+		self.table.update(with: self.viewProperties)
+		self.setupTableView()
     }
 	
 	func create(with viewProperties: ViewProperties?) {

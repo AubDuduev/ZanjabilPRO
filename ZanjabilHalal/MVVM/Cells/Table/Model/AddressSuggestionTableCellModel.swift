@@ -8,5 +8,5 @@ import UIKit
 
 enum AddressSuggestionTableCellModel {
     
-    case createViewProperties
+	case createViewProperties(DECAddressSuggestion)
 }

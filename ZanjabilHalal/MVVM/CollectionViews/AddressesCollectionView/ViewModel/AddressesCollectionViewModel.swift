@@ -15,7 +15,7 @@ final class AddressesCollectionViewModel: MVVMViewModelProtocol {
     }
     //DI
     @Injected
-    private var mainCellsBuilder: MainCellsBuilder
+    private var mainCellsBuilder: MainCollectionCellsBuilder
     @Injected
     private var addressesService: AddressesService
     // MARK: - Private
