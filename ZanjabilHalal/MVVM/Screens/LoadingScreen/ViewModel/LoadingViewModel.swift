@@ -45,7 +45,7 @@ final class LoadingViewModel: MVVMViewModelProtocol {
                 self.mainRouter.setRootViewController(id: .mainNavigationVC)
                 self.mainRouter.setupMainNavigationVC(isNavigationBarHidden: true,
                                                       tintColor            : .set(.greenFore),
-                                                      backButtonTitle      : "")
+													  backButtonTitle      : .back)
         }
     }
     

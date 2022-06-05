@@ -33,15 +33,6 @@ final class MapViewModel: MVVMViewModelProtocol {
 			case .setupLocationService:
 				self.mapService.setupLocationService()
 				self.mapService.startUserLocation()
-            case .createViewProperties:
-				let didTapMapView: ClosureEmpty = {
-					self.mainRouter.pushMainNavigation(id: .mapScreenVC, animated: true)
-					self.mainRouter.setupMainNavigationVC(isNavigationBarHidden: false, animatedHidden: true, tintColor: .set(.greenFore))
-				}
-				
-				let viewProperties = MapView.ViewProperties(mapCamera     : nil,
-															currentAddress: "",
-															didTapMapView : didTapMapView)
 				
 				self.mapService.completionAddress
 					.sink(receiveValue: { address in
@@ -57,6 +48,15 @@ final class MapViewModel: MVVMViewModelProtocol {
 						self.mapService.stopUserLocation()
 					})
 					.store(in: &self.cancellable)
+            case .createViewProperties:
+				let didTapMapView: ClosureEmpty = {
+					self.mainRouter.pushMainNavigation(id: .mapScreenVC, animated: true)
+					self.mainRouter.setupMainNavigationVC(isNavigationBarHidden: false, animatedHidden: true, tintColor: .set(.greenFore), title: .map)
+				}
+				
+				let viewProperties = MapView.ViewProperties(mapCamera     : nil,
+															currentAddress: "",
+															didTapMapView : didTapMapView)
 				self.mainView?.update(with: viewProperties)
 			case .updateAddress(let currentAddress):
 				self.mainView?.viewProperties?.currentAddress = currentAddress

@@ -74,5 +74,10 @@ final class MainViewControllersBuilder {
 		let mapScreenControllerBuilder = MapScreenViewControllerBuilder.create()
 		return mapScreenControllerBuilder
 	}
+	
+	public func createAddressSuggestionScreenViewControllerBuilder() -> AddressSuggestionScreenViewControllerBuilder {
+		let addressSuggestionScreenControllerBuilder = AddressSuggestionScreenViewControllerBuilder.create()
+		return addressSuggestionScreenControllerBuilder
+	}
 }
 

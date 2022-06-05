@@ -21,7 +21,7 @@
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="65q-X4-xbT" userLabel="MainStackView">
                             <rect key="frame" x="16" y="8" width="440" height="40"/>
                             <subviews>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qAE-ck-l6W">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите адрес" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qAE-ck-l6W">
                                     <rect key="frame" x="0.0" y="0.0" width="410.5" height="40"/>
                                     <color key="backgroundColor" name="blur"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>

@@ -12,8 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MapScreenViewController" customModule="ZanjabilHalal" customModuleProvider="target">
             <connections>
-                <outlet property="mapDataStackView" destination="2ja-es-XS4" id="vxt-NU-clq"/>
-                <outlet property="mapDataView" destination="jtD-Hr-wB9" id="bLE-02-Vu3"/>
+                <outlet property="containerChangeAddressView" destination="jtD-Hr-wB9" id="fn3-Ou-TCq"/>
                 <outlet property="mapView" destination="v9t-AA-6sV" id="6IU-ZE-hDv"/>
                 <outlet property="pinImageView" destination="l6l-Tg-ZXt" id="mDf-wu-nfh"/>
                 <outlet property="view" destination="kns-3F-tW8" id="UMe-1P-Rbc"/>
@@ -47,44 +46,11 @@
                                 </view>
                             </subviews>
                         </stackView>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jtD-Hr-wB9" userLabel="MapDataView">
-                            <rect key="frame" x="0.0" y="672" width="414" height="180"/>
-                            <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2ja-es-XS4" userLabel="MapDataStackView">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="180"/>
-                                    <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qKP-9H-iYg" userLabel="ContainerSearchView">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="48"/>
-                                            <subviews>
-                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите адрес для поиска" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="opG-qc-sk0">
-                                                    <rect key="frame" x="8" y="8" width="398" height="32"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="opG-qc-sk0" secondAttribute="trailing" constant="8" id="12j-xM-kXI"/>
-                                                <constraint firstItem="opG-qc-sk0" firstAttribute="top" secondItem="qKP-9H-iYg" secondAttribute="top" constant="8" id="JQB-7z-cad"/>
-                                                <constraint firstAttribute="bottom" secondItem="opG-qc-sk0" secondAttribute="bottom" constant="8" id="JSN-n7-bRH"/>
-                                                <constraint firstAttribute="height" constant="48" id="eHk-XG-7U7"/>
-                                                <constraint firstItem="opG-qc-sk0" firstAttribute="leading" secondItem="qKP-9H-iYg" secondAttribute="leading" constant="8" id="qDq-YD-r5r"/>
-                                            </constraints>
-                                        </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L65-3k-yM6">
-                                            <rect key="frame" x="0.0" y="48" width="414" height="132"/>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        </view>
-                                    </subviews>
-                                </stackView>
-                            </subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jtD-Hr-wB9" userLabel="ContainerChangeAddressView">
+                            <rect key="frame" x="0.0" y="692" width="414" height="160"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="2ja-es-XS4" secondAttribute="trailing" id="7db-3P-JjH"/>
-                                <constraint firstAttribute="height" constant="180" id="9aE-fH-ERY"/>
-                                <constraint firstAttribute="bottom" secondItem="2ja-es-XS4" secondAttribute="bottom" id="BDb-ia-BK4"/>
-                                <constraint firstItem="2ja-es-XS4" firstAttribute="leading" secondItem="jtD-Hr-wB9" secondAttribute="leading" id="bc3-un-mjN"/>
-                                <constraint firstItem="2ja-es-XS4" firstAttribute="top" secondItem="jtD-Hr-wB9" secondAttribute="top" id="dLm-sN-Do7"/>
+                                <constraint firstAttribute="height" constant="160" id="9aE-fH-ERY"/>
                             </constraints>
                         </view>
                     </subviews>

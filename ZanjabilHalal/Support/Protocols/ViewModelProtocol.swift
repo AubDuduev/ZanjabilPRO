@@ -44,13 +44,15 @@ extension MVVMViewModelProtocol {
     }
 }
 
-protocol MVVMViewProtocol {
+protocol MVVMViewProtocol where Self: AnyObject {
     
     associatedtype ViewProperties
     
     var viewProperties: ViewProperties? { get set }
     
     func update(with viewProperties: ViewProperties?)
+	
+	func create(with viewProperties: ViewProperties?)
 }
 
 extension MVVMViewProtocol {
@@ -58,6 +60,10 @@ extension MVVMViewProtocol {
 	// MARK: - Обновление текущих ViewProperties
 	func reloadProperties() {
 		self.update(with: self.viewProperties)
+	}
+	
+	func create(with viewProperties: ViewProperties?) {
+		self.viewProperties = viewProperties
 	}
 }
 
