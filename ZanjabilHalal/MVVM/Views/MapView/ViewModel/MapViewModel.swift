@@ -22,7 +22,6 @@ final class MapViewModel: MVVMViewModelProtocol {
 	private var mainRouter: MainRouter
     //MARK: - implementation protocol
     public var mainView: MapView?
-    public var isUpdate: ClosureEmpty?
 	// MARK: - Private
 	private var cancellable: Set<AnyCancellable> = []
     

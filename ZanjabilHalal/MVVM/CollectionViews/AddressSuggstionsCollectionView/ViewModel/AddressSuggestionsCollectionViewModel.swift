@@ -22,7 +22,6 @@ final class AddressSuggestionsCollectionViewModel: MVVMViewModelProtocol {
 	private var cancelable: Set<AnyCancellable> = []
     //MARK: - implementation protocol
     public var mainView: AddressSuggestionsCollectionView?
-    public var isUpdate: ClosureEmpty?
    
     //MARK: - Main state view model
     private func stateModel(){
