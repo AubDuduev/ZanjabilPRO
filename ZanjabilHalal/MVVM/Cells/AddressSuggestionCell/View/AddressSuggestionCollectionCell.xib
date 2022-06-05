@@ -22,10 +22,10 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BAs-K4-OaJ" userLabel="MainView">
                         <rect key="frame" x="0.0" y="0.0" width="435" height="51"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B6m-b3-Qdv">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="B6m-b3-Qdv">
                                 <rect key="frame" x="16" y="0.0" width="403" height="51"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" name="greenFore"/>
+                                <color key="textColor" name="shadowBuyView"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -54,8 +54,8 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <namedColor name="greenFore">
-            <color red="0.082000002264976501" green="0.34900000691413879" blue="0.14900000393390656" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="shadowBuyView">
+            <color red="0.090000003576278687" green="0.090000003576278687" blue="0.090000003576278687" alpha="0.40000000596046448" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

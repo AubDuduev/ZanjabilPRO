@@ -33,8 +33,14 @@ final class AddressSuggestionScreenViewModel: MVVMViewModelProtocol {
 				let addAddressSuggestionsListView : Closure<UIView> = { container in
 					self.model = .addAddressSuggestionsListView(container)
 				}
+				let addSearchAddressView : Closure<UIView> = { container in
+					self.model = .addSearchAddressView(container)
+				}
+				let viewProperties = AddressSuggestionScreenViewController.ViewProperties(addAddressSuggestionsListView: addAddressSuggestionsListView,
+																						  addSearchAddressView         : addSearchAddressView)
+				self.mainView?.create(with: viewProperties)
 			case .addAddressSuggestionsListView(let container):
-				self.addressSuggestionsCollectionViewModel = self.createAddressSuggestionsCollectionViewViewModel(with: container)
+				self.addressSuggestionsCollectionViewModel       = self.createAddressSuggestionsCollectionViewViewModel(with: container)
 				self.addressSuggestionsCollectionViewModel.model = .getSuggestionsAddressList
 			case .addSearchAddressView(let container):
 				self.searchAddressViewModel = self.createSearchAddressViewModel(with: container)
@@ -54,12 +60,10 @@ final class AddressSuggestionScreenViewModel: MVVMViewModelProtocol {
 	public func createAddressSuggestionsCollectionViewViewModel(with containerView: UIView) -> AddressSuggestionsCollectionViewModel {
 		let addressSuggestionsCollectionViewBuilder = self.mainCollectionViewsBuilder.createAddressSuggestionsCollectionViewBuilder()
 		let addressSuggestionsCollectionView        = addressSuggestionsCollectionViewBuilder.view
-		self.mainView?.view.insertSubview(addressSuggestionsCollectionView, at: 1000)
-		addressSuggestionsCollectionView.translatesAutoresizingMaskIntoConstraints = false
-		addressSuggestionsCollectionView.topAnchor.constraint(equalTo: containerView.bottomAnchor).isActive = true
-		addressSuggestionsCollectionView.leadingAnchor.constraint(equalTo: self.mainView!.view.leadingAnchor).isActive = true
-		addressSuggestionsCollectionView.trailingAnchor.constraint(equalTo: self.mainView!.view.trailingAnchor).isActive = true
-		addressSuggestionsCollectionView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+		containerView.addSubview(addressSuggestionsCollectionView)
+		addressSuggestionsCollectionView.snp.makeConstraints { addressSuggestionsCollectionView in
+			addressSuggestionsCollectionView.edges.equalToSuperview()
+		}
 		return addressSuggestionsCollectionViewBuilder.viewModel
 	}
     

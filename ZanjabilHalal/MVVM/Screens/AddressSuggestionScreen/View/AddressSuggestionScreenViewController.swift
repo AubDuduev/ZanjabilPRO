@@ -12,7 +12,8 @@ final class AddressSuggestionScreenViewController: UIViewController, MVVMViewPro
     
     //MARK: - Main ViewProperties
     struct ViewProperties {
-        
+		let addAddressSuggestionsListView: Closure<UIView>
+		let addSearchAddressView         : Closure<UIView>
     }
     var viewProperties: ViewProperties?
     
@@ -27,6 +28,12 @@ final class AddressSuggestionScreenViewController: UIViewController, MVVMViewPro
 	
 	private func setTitle(){
 		self.title = R.addressList.localizedString()
+	}
+	
+	func create(with viewProperties: ViewProperties?) {
+		self.viewProperties = viewProperties
+		self.viewProperties?.addAddressSuggestionsListView(containerAddressSuggestionsCollectionView)
+		self.viewProperties?.addSearchAddressView(containerSearchView)
 	}
     
     func update(with viewProperties: ViewProperties?) {
