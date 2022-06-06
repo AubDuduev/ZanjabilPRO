@@ -14,16 +14,17 @@ final class CenterMapPinViewModel: MVVMViewModelProtocol {
     
     //MARK: - implementation protocol
     public var mainView: CenterMapPinView?
-    public var isUpdate: ClosureEmpty?
     
     //MARK: - Main state view model
     private func stateCenterMapPinModel(){
         guard let model = self.model else { return }
         switch model {
             case .createViewProperties:
-                print("")
-            case .updateViewProperties:
-                print("")
+				let viewProperties = CenterMapPinView.ViewProperties(isAnimationPin: false)
+				self.mainView?.create(with: viewProperties)
+			case .animationCenterPinImageView(let isAnimationPin):
+				self.mainView?.viewProperties?.isAnimationPin = isAnimationPin
+				self.reloadProperties()
         }
     }
     

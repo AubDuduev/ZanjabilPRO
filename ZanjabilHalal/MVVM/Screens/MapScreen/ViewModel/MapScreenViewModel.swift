@@ -24,10 +24,10 @@ final class MapScreenViewModel: NSObject, MVVMViewModelProtocol {
 	private var mainCollectionViewsBuilder: MainCollectionViewsBuilder
     //MARK: - implementation protocol
     public var mainView: MapScreenViewController?
-    public var isUpdate: ClosureEmpty?
 	// MARK: - Private
 	private var cancellable: Set<AnyCancellable> = []
 	private var changeAddressViewModel: ChangeAddressViewModel!
+	private var centerMapPinViewModel : CenterMapPinViewModel!
     //MARK: - Main state view model
     private func stateModel(){
         guard let model = self.model else { return }
@@ -46,8 +46,13 @@ final class MapScreenViewModel: NSObject, MVVMViewModelProtocol {
 				let addChangeAddress: Closure<UIView> = { container in
 					self.model = .addChangeAddress(container)
 				}
-				let viewProperties = MapScreenViewController.ViewProperties(mapCamera: nil,
-																			addChangeAddress: addChangeAddress)
+				let addCenterMapPinView: Closure<UIView> = { container in
+					self.model = .addCenterMapPinView(container)
+				}
+				let viewProperties = MapScreenViewController.ViewProperties(mapViewDelegate : self,
+																			mapCamera       : nil,
+																			addChangeAddress: addChangeAddress,
+																			addCenterMapPinView: addCenterMapPinView)
 				
 				self.mainView?.create(with: viewProperties)
 			case .updateCameraPosition(let mapCamera):
@@ -57,10 +62,15 @@ final class MapScreenViewModel: NSObject, MVVMViewModelProtocol {
 				self.changeAddressViewModel = self.createChangeAddressViewModel(with: container)
 				self.changeAddressViewModel.model = .createViewProperties
 				self.changeAddressViewModel.model = .setupLocationService
+			case .addCenterMapPinView(let container):
+				self.centerMapPinViewModel = self.createCenterMapPinViewModel(with: container)
+				self.centerMapPinViewModel.model = .createViewProperties
+			case .animationCenterPinImageView(let isAnimationPin):
+				self.centerMapPinViewModel.model = .animationCenterPinImageView(isAnimationPin)
 		}
     }
 	
-	public func createChangeAddressViewModel(with containerView: UIView) -> ChangeAddressViewModel {
+	private func createChangeAddressViewModel(with containerView: UIView) -> ChangeAddressViewModel {
 		let changeAddressViewBuilder = self.mainViewsBuilder.createChangeAddressViewViewBuilder()
 		let changeAddressView        = changeAddressViewBuilder.view
 		containerView.addSubview(changeAddressView)
@@ -70,7 +80,52 @@ final class MapScreenViewModel: NSObject, MVVMViewModelProtocol {
 		return changeAddressViewBuilder.viewModel
 	}
 	
+	public func createCenterMapPinViewModel(with containerView: UIView) -> CenterMapPinViewModel {
+		let centerMapPinViewBuilder = self.mainViewsBuilder.createCenterMapPinViewBuilder()
+		let centerMapPinView        = centerMapPinViewBuilder.view
+		containerView.addSubview(centerMapPinView)
+		centerMapPinView.snp.makeConstraints { centerMapPinView in
+			centerMapPinView.edges.equalToSuperview()
+		}
+		return centerMapPinViewBuilder.viewModel
+	}
+	
     init(with mainView: MapScreenViewController) {
         self.mainView = mainView
     }
+}
+extension MapScreenViewModel: MKMapViewDelegate {
+	
+	func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+		let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "user")
+//		annotationView.backgroundColor = .red
+//		annotationView.frame.size = CGSize(width: 15, height: 15)
+//		annotationView.cornerRadius(7.5, false)
+//		annotationView.shadowColor(color: .black, radius: 10, opacity: 0.2)
+//		annotationView.borderColor(.black, 1)
+		return annotationView
+	}
+	
+	func mapView(_ mapView: MKMapView, regionWillChangeAnimated animated: Bool) {
+		//загрузку начинаем
+		//self.viewModel.mapModel = .loadingGetPosition(false)
+		//Анимация центрального пина
+		self.model = .animationCenterPinImageView(true)
+	}
+	func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+		//self.viewModel.mapModel = .presentMyCoordinateName(mapView.camera.centerCoordinate)
+		//Анимация центрального пина
+		self.model = .animationCenterPinImageView(false)
+		
+		//self.mapViewData.currentCoordinate = mapView.camera.centerCoordinate
+	}
+	
+	func mapViewDidFailLoadingMap(_ mapView: MKMapView, withError error: Error) {
+		//загрузку заканчиваем
+		//self.viewModel.mapModel = .loadingGetPosition(true)
+	}
+//	func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+//		return self.viewModel.managers.logic.createPolygon(overlay: overlay)
+//	}
+	
 }

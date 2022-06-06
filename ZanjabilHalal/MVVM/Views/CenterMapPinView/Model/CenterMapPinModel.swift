@@ -9,5 +9,5 @@ import UIKit
 enum CenterMapPinModel {
     
     case createViewProperties
-    case updateViewProperties
+	case animationCenterPinImageView(Bool)
 }

@@ -105,6 +105,12 @@ final class MainViewsBuilder {
 		changeAddressViewBuilder.viewModel.model = .createViewProperties
 		return changeAddressViewBuilder
 	}
+	
+	public func createCenterMapPinViewBuilder() -> CenterMapPinViewBuilder {
+		let centerMapPinViewBuilder = CenterMapPinViewBuilder.create()
+		centerMapPinViewBuilder.viewModel.model = .createViewProperties
+		return centerMapPinViewBuilder
+	}
     
     enum Views {
         case menuPriceView
