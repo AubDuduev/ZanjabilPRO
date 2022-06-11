@@ -14,15 +14,17 @@ final class MapScreenViewController: UIViewController, MVVMViewProtocol {
     
     //MARK: - Main ViewProperties
     struct ViewProperties {
-		var mapCamera       : MKMapCamera?
-		var addChangeAddress: Closure<UIView>
+		let mapViewDelegate    : MKMapViewDelegate
+		var mapCamera          : MKMapCamera?
+		var addChangeAddress   : Closure<UIView>
+		var addCenterMapPinView: Closure<UIView>
     }
     var viewProperties: ViewProperties?
     
     //MARK: - Outlets
 	@IBOutlet weak private var mapView                   : MKMapView!
 	@IBOutlet weak private var containerChangeAddressView: UIView!
-	@IBOutlet weak private var pinImageView              : UIImageView!
+	@IBOutlet weak private var containerCenterMapPinView : UIView!
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
@@ -38,6 +40,7 @@ final class MapScreenViewController: UIViewController, MVVMViewProtocol {
 		self.setup()
 		self.setupContainerChangeAddressView()
 		self.viewProperties?.addChangeAddress(self.containerChangeAddressView)
+		self.viewProperties?.addCenterMapPinView(self.containerCenterMapPinView)
 	}
 	
 	func update(with viewProperties: ViewProperties?) {
@@ -47,8 +50,10 @@ final class MapScreenViewController: UIViewController, MVVMViewProtocol {
 	}
 	
 	private func setup(){
-		guard let mapCamera = self.viewProperties?.mapCamera else { return }
-		self.mapView.camera = mapCamera
+		guard let mapCamera       = self.viewProperties?.mapCamera else { return }
+		guard let mapViewDelegate = self.viewProperties?.mapViewDelegate else { return }
+		self.mapView.camera   = mapCamera
+		self.mapView.delegate = mapViewDelegate
 	}
 	
 	private func setupContainerChangeAddressView(){
@@ -59,10 +64,6 @@ final class MapScreenViewController: UIViewController, MVVMViewProtocol {
 													radius: 10,
 													sizeW : 0,
 													sizeH : 0)
-	}
-	
-	private func animationPin(){
-		
 	}
     
     init() {

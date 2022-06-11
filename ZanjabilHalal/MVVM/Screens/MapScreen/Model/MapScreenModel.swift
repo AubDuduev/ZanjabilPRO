@@ -13,4 +13,6 @@ enum MapScreenModel {
 	case setupLocationService
 	case updateCameraPosition(MKMapCamera)
 	case addChangeAddress(UIView)
+	case addCenterMapPinView(UIView)
+	case animationCenterPinImageView(Bool)
 }

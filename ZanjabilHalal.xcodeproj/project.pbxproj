@@ -179,6 +179,11 @@
 		827472ED284126B3004D3FDF /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827472EC284126B3004D3FDF /* LocationService.swift */; };
 		827472EF2841323C004D3FDF /* Extension + CLLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827472EE2841323C004D3FDF /* Extension + CLLocation.swift */; };
 		8275A8252811A45C00F0A042 /* LoadingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8275A8242811A45C00F0A042 /* LoadingService.swift */; };
+		827648C3284DC91F00D97971 /* CenterMapPinViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827648BE284DC91F00D97971 /* CenterMapPinViewBuilder.swift */; };
+		827648C4284DC91F00D97971 /* CenterMapPinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827648BF284DC91F00D97971 /* CenterMapPinView.swift */; };
+		827648C5284DC91F00D97971 /* CenterMapPinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827648C0284DC91F00D97971 /* CenterMapPinModel.swift */; };
+		827648C6284DC91F00D97971 /* CenterMapPinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827648C1284DC91F00D97971 /* CenterMapPinViewModel.swift */; };
+		827648C7284DC91F00D97971 /* CenterMapPinView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 827648C2284DC91F00D97971 /* CenterMapPinView.xib */; };
 		827C30622822E1310023282D /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = 827C30612822E1310023282D /* Resolver */; };
 		827C30642822E13E0023282D /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = 827C30632822E13E0023282D /* Reachability */; };
 		827C30662822E1550023282D /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 827C30652822E1550023282D /* FirebaseAnalytics */; };
@@ -696,6 +701,11 @@
 		827472EC284126B3004D3FDF /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		827472EE2841323C004D3FDF /* Extension + CLLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + CLLocation.swift"; sourceTree = "<group>"; };
 		8275A8242811A45C00F0A042 /* LoadingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingService.swift; sourceTree = "<group>"; };
+		827648BE284DC91F00D97971 /* CenterMapPinViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterMapPinViewBuilder.swift; sourceTree = "<group>"; };
+		827648BF284DC91F00D97971 /* CenterMapPinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterMapPinView.swift; sourceTree = "<group>"; };
+		827648C0284DC91F00D97971 /* CenterMapPinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterMapPinModel.swift; sourceTree = "<group>"; };
+		827648C1284DC91F00D97971 /* CenterMapPinViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterMapPinViewModel.swift; sourceTree = "<group>"; };
+		827648C2284DC91F00D97971 /* CenterMapPinView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CenterMapPinView.xib; sourceTree = "<group>"; };
 		827E23F827DCD1410006E763 /* GETProducts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GETProducts.swift; sourceTree = "<group>"; };
 		827E23FA27DCD1410006E763 /* JSONDecoderService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDecoderService.swift; sourceTree = "<group>"; };
 		827E23FD27DCD1410006E763 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -2210,6 +2220,42 @@
 			path = LoadingService;
 			sourceTree = "<group>";
 		};
+		827648BA284DC8D200D97971 /* CenterMapPinView */ = {
+			isa = PBXGroup;
+			children = (
+				827648BD284DC8FA00D97971 /* Model */,
+				827648BC284DC8F500D97971 /* View */,
+				827648BB284DC8EF00D97971 /* ViewModel */,
+			);
+			path = CenterMapPinView;
+			sourceTree = "<group>";
+		};
+		827648BB284DC8EF00D97971 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				827648BE284DC91F00D97971 /* CenterMapPinViewBuilder.swift */,
+				827648C1284DC91F00D97971 /* CenterMapPinViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		827648BC284DC8F500D97971 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				827648C2284DC91F00D97971 /* CenterMapPinView.xib */,
+				827648BF284DC91F00D97971 /* CenterMapPinView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		827648BD284DC8FA00D97971 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				827648C0284DC91F00D97971 /* CenterMapPinModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		827E239527DCD0DB0006E763 /* NetworkService */ = {
 			isa = PBXGroup;
 			children = (
@@ -2357,6 +2403,7 @@
 		827E423427F8864600491AC3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				827648BA284DC8D200D97971 /* CenterMapPinView */,
 				82E8BC3F284B64BA00BA2508 /* ChangeAddressView */,
 				82DB32882843722A00379554 /* SearchAddressView */,
 				827472DB28412196004D3FDF /* MapView */,
@@ -4077,6 +4124,7 @@
 				82A26901280AD5A50051B997 /* PayInfoView.xib in Resources */,
 				82741AED27D4F38C006EBE80 /* MainNavigationViewController.xib in Resources */,
 				82E89F1B282956E900CA17DC /* ChangeUserNameViewController.xib in Resources */,
+				827648C7284DC91F00D97971 /* CenterMapPinView.xib in Resources */,
 				828C2DB2281307BF0059A828 /* ProfileCollectionView.xib in Resources */,
 				8262AF40281451A1009A7E3A /* zanjabilLogo.json in Resources */,
 				82C2660C2801C9F8007984B3 /* WarningView.xib in Resources */,
@@ -4156,6 +4204,7 @@
 				8223D5DC284CBDE900729F52 /* AddressSuggestionTableCell.swift in Sources */,
 				82E89F15282956E900CA17DC /* BuilderChangeUserName.swift in Sources */,
 				827E242127DCD1410006E763 /* URLPathService.swift in Sources */,
+				827648C6284DC91F00D97971 /* CenterMapPinViewModel.swift in Sources */,
 				8223D5AE284CA77D00729F52 /* AddressSuggestionsTable.swift in Sources */,
 				82DB32912843726B00379554 /* SearchAddressViewBuilder.swift in Sources */,
 				82E89F1E28295B7400CA17DC /* ChangeUserNameService.swift in Sources */,
@@ -4180,6 +4229,7 @@
 				8262AF7B28145FE3009A7E3A /* AddressesViewModel.swift in Sources */,
 				8262AF8B281466A2009A7E3A /* AddressCollectionCell.swift in Sources */,
 				82A2690A280AE45F0051B997 /* BasketProduct+CoreDataClass.swift in Sources */,
+				827648C5284DC91F00D97971 /* CenterMapPinModel.swift in Sources */,
 				82F457E128028E56004BCD68 /* HorizontalDishModel.swift in Sources */,
 				82F91E7527E5D6CF00F5A5CC /* MenuCategoriesCollection.swift in Sources */,
 				826B35C1280C0AE500A15424 /* ActionButtonViewBuilder.swift in Sources */,
@@ -4321,6 +4371,7 @@
 				82A268CB280A615C0051B997 /* InputAddressCollectionCell.swift in Sources */,
 				8208FE8627F88A14003955D0 /* CounterDishesViewModel.swift in Sources */,
 				82EC8C0127DE03E900661F58 /* MenuCollectionLayout.swift in Sources */,
+				827648C4284DC91F00D97971 /* CenterMapPinView.swift in Sources */,
 				820083EC283A3FD900A0F8BB /* MapScreenModel.swift in Sources */,
 				829A56BF282003A5005F110B /* DELETEAddress.swift in Sources */,
 				82B637F7280B01A800E8DF72 /* BasketCollectionModel.swift in Sources */,
@@ -4453,6 +4504,7 @@
 				82741AB427D4EA94006EBE80 /* MenuManagers.swift in Sources */,
 				82E8BC48284B64F300BA2508 /* ChangeAddressViewBuilder.swift in Sources */,
 				82E89F2628295C8600CA17DC /* UserData+CoreDataProperties.swift in Sources */,
+				827648C3284DC91F00D97971 /* CenterMapPinViewBuilder.swift in Sources */,
 				8223D5DB284CBDE900729F52 /* AddressSuggestionTableCellViewModel.swift in Sources */,
 				823AF1C8281ED26500593C1C /* DefaultAddressCollectionCellViewModel.swift in Sources */,
 				826EC8DE27EF113C00E5C530 /* AmountService.swift in Sources */,
