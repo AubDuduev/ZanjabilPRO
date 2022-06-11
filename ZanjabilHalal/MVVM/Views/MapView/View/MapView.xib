@@ -13,20 +13,20 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MapViewController" customModule="ZanjabilHalal" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="kns-3F-tW8" customClass="MapView" customModule="ZanjabilHalal" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="470" height="101"/>
+            <rect key="frame" x="0.0" y="0.0" width="582" height="293"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X7G-Kh-iyd" userLabel="MainView">
-                    <rect key="frame" x="0.0" y="0.0" width="470" height="101"/>
+                    <rect key="frame" x="0.0" y="0.0" width="582" height="293"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4mw-xP-ZG2" userLabel="MainStackView">
-                            <rect key="frame" x="0.0" y="0.0" width="470" height="101"/>
+                            <rect key="frame" x="0.0" y="0.0" width="582" height="293"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EwG-cl-bZV" userLabel="MapView">
-                                    <rect key="frame" x="0.0" y="0.0" width="470" height="53"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="582" height="245"/>
                                     <subviews>
                                         <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Y6a-7U-GXi">
-                                            <rect key="frame" x="0.0" y="0.0" width="470" height="53"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="582" height="245"/>
                                         </mapView>
                                     </subviews>
                                     <color key="backgroundColor" name="greenThree"/>
@@ -38,10 +38,10 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="luU-Xg-SOO" userLabel="AddressView">
-                                    <rect key="frame" x="0.0" y="53" width="470" height="48"/>
+                                    <rect key="frame" x="0.0" y="245" width="582" height="48"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zn7-Cf-QWi">
-                                            <rect key="frame" x="16" y="0.0" width="438" height="48"/>
+                                            <rect key="frame" x="16" y="0.0" width="550" height="48"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                             <color key="textColor" name="greenFore"/>
                                             <nil key="highlightedColor"/>
@@ -63,7 +63,7 @@
                             </connections>
                         </stackView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mapPin" translatesAutoresizingMaskIntoConstraints="NO" id="mtY-5t-8de">
-                            <rect key="frame" x="225" y="6.5" width="20" height="20"/>
+                            <rect key="frame" x="281" y="102.5" width="20" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="20" id="23b-Tn-5Yr"/>
                                 <constraint firstAttribute="height" constant="20" id="4Fk-Kf-KBO"/>
@@ -94,7 +94,7 @@
                 <outlet property="currentAddressLabel" destination="Zn7-Cf-QWi" id="fB7-uP-SlN"/>
                 <outlet property="mapView" destination="Y6a-7U-GXi" id="b78-MD-4Qd"/>
             </connections>
-            <point key="canvasLocation" x="-689.85507246376812" y="-239.39732142857142"/>
+            <point key="canvasLocation" x="-608.69565217391312" y="-175.11160714285714"/>
         </view>
         <tapGestureRecognizer id="M0f-3E-CDh">
             <connections>
