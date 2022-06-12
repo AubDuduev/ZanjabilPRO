@@ -36,14 +36,12 @@ final class MapViewModel: MVVMViewModelProtocol {
 				
 				self.mapService.completionAddress
 					.sink(receiveValue: { address in
-						//guard let self = self else { return }
 						self.model = .updateAddress(address)
 					})
 					.store(in: &self.cancellable)
 				
 				self.mapService.completionMapCamera
 					.sink(receiveValue: { mapCamera in
-						//guard let self = self else { return }
 						self.model = .updateCameraPosition(mapCamera)
 						self.mapService.stopUserLocation()
 					})
