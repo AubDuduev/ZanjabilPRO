@@ -10,7 +10,7 @@ struct ENCCoordinate: Encodable {
 	
 	let lat          : Double
 	let lon          : Double
-	let radius_meters: Int    = 50
+	let radius_meters: Int    = 5
 	let language     : String = "ru"
 	let count        : Int?
 }
