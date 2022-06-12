@@ -17,7 +17,11 @@ final class MapScreenViewModel: NSObject, MVVMViewModelProtocol {
     }
 	// MARK: - DI
 	@Injected
-	private var mapService                : MapService
+	private var requestsRESTService       : RequestsRESTService
+	@Injected
+	private var geoPositioningService     : GeoPositioningService
+	@Injected
+	private var mapKitService             : MapKitService
 	@Injected
 	private var mainViewsBuilder          : MainViewsBuilder
 	@Injected
@@ -32,16 +36,25 @@ final class MapScreenViewModel: NSObject, MVVMViewModelProtocol {
     private func stateModel(){
         guard let model = self.model else { return }
         switch model {
-			case .setupLocationService:
-				self.mapService.setupLocationService()
-				self.mapService.startUserLocation()
-				self.mapService.completionMapCamera
+			case .setupGeoPositioningService:
+				self.geoPositioningService.setupLocationService()
+				self.geoPositioningService.startUserLocation()
+				self.geoPositioningService.setupMapKitService()
+				// MARK: - изменения геопозиции пользователя
+				self.geoPositioningService.completionMapCamera
 					.sink(receiveValue: { mapCamera in
-						//guard let self = self else { return }
 						self.model = .updateCameraPosition(mapCamera)
-						self.mapService.stopUserLocation()
+						self.geoPositioningService.stopUserLocation()
 					})
 					.store(in: &self.cancellable)
+				// MARK: - изменения камеры карты
+				self.geoPositioningService.completionRegionChange
+					.sink(receiveValue: { regionChange in
+						self.model = .animationCenterPinImageView(regionChange)
+					}).store(in: &self.cancellable)
+			
+			case .createAddressForCoordinate(let coordinate):
+				self.postReverseGeocoding(with: coordinate)
 			case .createViewProperties:
 				let addChangeAddress: Closure<UIView> = { container in
 					self.model = .addChangeAddress(container)
@@ -49,24 +62,23 @@ final class MapScreenViewModel: NSObject, MVVMViewModelProtocol {
 				let addCenterMapPinView: Closure<UIView> = { container in
 					self.model = .addCenterMapPinView(container)
 				}
-				let viewProperties = MapScreenViewController.ViewProperties(mapViewDelegate : self,
-																			mapCamera       : nil,
-																			addChangeAddress: addChangeAddress,
+				let viewProperties = MapScreenViewController.ViewProperties(mapViewDelegate    : self.mapKitService,
+																			mapCamera          : nil,
+																			addChangeAddress   : addChangeAddress,
 																			addCenterMapPinView: addCenterMapPinView)
-				
 				self.mainView?.create(with: viewProperties)
 			case .updateCameraPosition(let mapCamera):
 				self.mainView?.viewProperties?.mapCamera = mapCamera
 				self.reloadProperties()
 			case .addChangeAddress(let container):
-				self.changeAddressViewModel = self.createChangeAddressViewModel(with: container)
+				self.changeAddressViewModel       = self.createChangeAddressViewModel(with: container)
 				self.changeAddressViewModel.model = .createViewProperties
-				self.changeAddressViewModel.model = .setupLocationService
+				self.changeAddressViewModel.model = .setupGeoPositioningService
 			case .addCenterMapPinView(let container):
-				self.centerMapPinViewModel = self.createCenterMapPinViewModel(with: container)
+				self.centerMapPinViewModel       = self.createCenterMapPinViewModel(with: container)
 				self.centerMapPinViewModel.model = .createViewProperties
-			case .animationCenterPinImageView(let isAnimationPin):
-				self.centerMapPinViewModel.model = .animationCenterPinImageView(isAnimationPin)
+			case .animationCenterPinImageView(let regionChange):
+				self.centerMapPinViewModel.model = .animationCenterPinImageView(regionChange)
 		}
     }
 	
@@ -90,42 +102,23 @@ final class MapScreenViewModel: NSObject, MVVMViewModelProtocol {
 		return centerMapPinViewBuilder.viewModel
 	}
 	
+	private func postReverseGeocoding(with coordinate: CLLocationCoordinate2D) {
+		guard let encCoordinate = self.createEncCoordinates(with: coordinate) else { return }
+		self.requestsRESTService.postReverseGeocoding(with: encCoordinate) { suggestionsAddresses in
+			
+			print(suggestionsAddresses)
+		}
+	}
+	// MARK: -
+	private func createEncCoordinates(with coordinates: CLLocationCoordinate2D) -> ENCCoordinate? {
+		let latitude   = coordinates.latitude
+		let longitude  = coordinates.longitude
+		let coordinate = ENCCoordinate(lat: latitude, lon: longitude, count: 5)
+		return coordinate
+	}
+	
+	
     init(with mainView: MapScreenViewController) {
         self.mainView = mainView
     }
-}
-extension MapScreenViewModel: MKMapViewDelegate {
-	
-	func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-		let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "user")
-//		annotationView.backgroundColor = .red
-//		annotationView.frame.size = CGSize(width: 15, height: 15)
-//		annotationView.cornerRadius(7.5, false)
-//		annotationView.shadowColor(color: .black, radius: 10, opacity: 0.2)
-//		annotationView.borderColor(.black, 1)
-		return annotationView
-	}
-	
-	func mapView(_ mapView: MKMapView, regionWillChangeAnimated animated: Bool) {
-		//загрузку начинаем
-		//self.viewModel.mapModel = .loadingGetPosition(false)
-		//Анимация центрального пина
-		self.model = .animationCenterPinImageView(true)
-	}
-	func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
-		//self.viewModel.mapModel = .presentMyCoordinateName(mapView.camera.centerCoordinate)
-		//Анимация центрального пина
-		self.model = .animationCenterPinImageView(false)
-		
-		//self.mapViewData.currentCoordinate = mapView.camera.centerCoordinate
-	}
-	
-	func mapViewDidFailLoadingMap(_ mapView: MKMapView, withError error: Error) {
-		//загрузку заканчиваем
-		//self.viewModel.mapModel = .loadingGetPosition(true)
-	}
-//	func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-//		return self.viewModel.managers.logic.createPolygon(overlay: overlay)
-//	}
-	
 }

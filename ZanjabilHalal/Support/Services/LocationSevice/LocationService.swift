@@ -14,8 +14,7 @@ final class LocationService: NSObject, ServiceProtocol {
 	
 	private let locationManager = CLLocationManager()
 	
-	public var returnLocationUser: Closure<CLLocationCoordinate2D>!
-	
+	public var didUpdateLocations: Closure<CLLocationCoordinate2D>!
 	public var returnResponseUser: Closure<Bool>!
 	
 	public func getUserLocation(){
@@ -107,7 +106,7 @@ extension LocationService: CLLocationManagerDelegate {
 	}
 	func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 		let userLocation = locations.last!
-		self.returnLocationUser?(userLocation.coordinate)
+		self.didUpdateLocations?(userLocation.coordinate)
 	}
 	func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
 		print("Ошибка получение текущей геопозиции", error.localizedDescription)

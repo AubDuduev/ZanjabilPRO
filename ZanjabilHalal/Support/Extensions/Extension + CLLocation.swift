@@ -2,35 +2,24 @@
 import CoreLocation
 
 extension CLLocation {
-   func fetchAddress(completion: @escaping (_ address: String?, _ error: Error?) -> ()) {
-      CLGeocoder().reverseGeocodeLocation(self) {
-         let placeMark = $0?.first
-         var address = ""
-         if let subThoroughfare = placeMark?.subThoroughfare {
-            address = address + subThoroughfare + ", "
-         }
-         if let thoroughfare = placeMark?.thoroughfare {
-            address = address + thoroughfare + ", "
-         }
-         if let locality = placeMark?.locality {
-            address = address + locality + ", "
-         }
-         if let subLocality = placeMark?.subLocality {
-            address = address + subLocality + ", "
-         }
-         if let administrativeArea = placeMark?.administrativeArea {
-            address = address + administrativeArea + ", "
-         }
-         if let postalCode = placeMark?.postalCode {
-            address = address + postalCode + ", "
-         }
-         if let country = placeMark?.country {
-            address = address + country + ", "
-         }
-         if address.last == "," {
-            address = String(address.dropLast())
-         }
-         completion(address, $1)
-      }
-   }
+	func fetchAddress(completion: @escaping (_ address: String?, _ error: Error?) -> ()) {
+		CLGeocoder().reverseGeocodeLocation(self) {
+			let placeMark = $0?.first
+			let address = self.createAddress(placeMark?.thoroughfare,
+											 placeMark?.subThoroughfare,
+											 placeMark?.locality,
+											 placeMark?.subLocality,
+											 placeMark?.administrativeArea,
+											 placeMark?.postalCode,
+											 placeMark?.country)
+
+			completion(address, $1)
+		}
+	}
+	
+	private func createAddress(_ texts: String?...) -> String {
+		var address = texts.compactMap({ $0 }).joined(separator: ", ")
+		address = String(address.dropLast())
+		return address
+	}
 }

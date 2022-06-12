@@ -20,10 +20,10 @@ final class CenterMapPinViewModel: MVVMViewModelProtocol {
         guard let model = self.model else { return }
         switch model {
             case .createViewProperties:
-				let viewProperties = CenterMapPinView.ViewProperties(isAnimationPin: false)
+				let viewProperties = CenterMapPinView.ViewProperties(regionChange: .finish)
 				self.mainView?.create(with: viewProperties)
-			case .animationCenterPinImageView(let isAnimationPin):
-				self.mainView?.viewProperties?.isAnimationPin = isAnimationPin
+			case .animationCenterPinImageView(let regionChange):
+				self.mainView?.viewProperties?.regionChange = regionChange
 				self.reloadProperties()
         }
     }

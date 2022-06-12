@@ -38,11 +38,17 @@ final class CreateAddressService: ServiceProtocol {
                 self.createAddressModel.floor = inputText
             case .intercom:
                 self.createAddressModel.intercom = inputText
-			default:
-				break
         }
         self.update?(self.createAddressModel)
     }
+	
+	public func createForSuggestion(with suggestion: DECAddressSuggestionData) {
+		self.createAddressModel = CreateAddressModel(suggestion: suggestion)
+	}
+	
+	public func createForCoordinate(with inputText: String, with inputAddressType: InputAddressTypes) {
+		
+	}
     
     public func setAddress(with address: DECAddress) {
         self.createAddressModel = CreateAddressModel(address: address)

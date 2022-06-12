@@ -68,7 +68,7 @@ final class PayOrderCollectionCellViewModel: NSObject, MVVMViewModelProtocol {
 			case .createMapViewModel(let container):
 				self.mapViewModel = self.createMapViewModel(with: container)
 				self.mapViewModel.model = .createViewProperties
-				self.mapViewModel.model = .setupLocationService
+				self.mapViewModel.model = .setupGeoPositioningService
         }
     }
     

@@ -15,7 +15,7 @@ final class ChangeAddressViewModel: MVVMViewModelProtocol {
     }
 	// MARK: - DI
 	@Injected
-	private var mapService                : MapService
+	private var geoPositioningService     : GeoPositioningService
 	@Injected
 	private var mainRouter                : MainRouter
 	@Injected
@@ -41,10 +41,10 @@ final class ChangeAddressViewModel: MVVMViewModelProtocol {
 																	  didTapSearchAddress     : didTapSearchAddress,
 																	  addAddressCollectionView: addAddressCollectionView)
 				self.mainView?.create(with: viewProperties)
-			case .setupLocationService:
-				self.mapService.setupLocationService()
-				self.mapService.startUserLocation()
-				self.mapService.completionAddress
+			case .setupGeoPositioningService:
+				self.geoPositioningService.setupLocationService()
+				self.geoPositioningService.startUserLocation()
+				self.geoPositioningService.completionAddress
 					.sink(receiveValue: { address in
 						self.model = .updateAddress(address)
 					})

@@ -10,57 +10,12 @@ import Resolver
 import UIKit
 import MapKit
 
-final class MapKitService: NSObject, ServiceProtocol {
-	// MARK: - DI
-	@Injected
-	private var locationService: LocationService
-	// MARK: - Public
-	public var completionAddress       = PassthroughSubject<String, Never>()
-	public var completionCoordinate    = PassthroughSubject<CLLocationCoordinate2D, Never>()
-	public var completionMapCoordinate = PassthroughSubject<CLLocationCoordinate2D, Never>()
-	public var completionChangeUserGeo = PassthroughSubject<MKMapCamera, Never>()
+final class MapKitService: NSObject, ServiceProtocol, MKMapViewDelegate {
 	
-	public var completionRegionChange: Closure<Bool>?
+	public var regionWillChangeAnimated  : ClosureEmpty?
+	public var regionDidChangeAnimated   : ClosureEmpty?
+	public var completionRegionCoordinate: Closure<CLLocationCoordinate2D>?
 	
-	public func setupLocationService() {
-		self.locationService.setup()
-		self.locationService.authorisation()
-		self.locationService.didUpdateLocations = { [weak self] coordinate in
-			guard let self = self else { return }
-			self.updateViewCoordinate(with: coordinate)
-			self.updateAddress(with: coordinate)
-			self.completionCoordinate.send(coordinate)
-		}
-	}
-	
-	public func stopUserLocation(){
-		self.locationService.stopUserLocation()
-	}
-	
-	public func startUserLocation(){
-		self.locationService.getUserLocation()
-	}
-	
-	private func updateAddress(with coordinate: CLLocationCoordinate2D) {
-		let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
-		location.fetchAddress { [weak self] currentAddress, error in
-			guard let self = self else { return }
-			guard let currentAddress = currentAddress else { return }
-			self.completionAddress.send(currentAddress)
-		}
-	}
-	
-	private func updateViewCoordinate(with coordinate: CLLocationCoordinate2D) {
-		let distance     = "800"
-		let eyeAltitude  = CLLocationDistance(distance)!
-		let mapCamera    = MKMapCamera(lookingAtCenter  : coordinate,
-									   fromEyeCoordinate: coordinate,
-									   eyeAltitude      : eyeAltitude)
-		self.completionChangeUserGeo.send(mapCamera)
-	}
-}
-
-extension MapKitService: MKMapViewDelegate {
 	
 	func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
 		let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "user")
@@ -74,19 +29,26 @@ extension MapKitService: MKMapViewDelegate {
 	
 	func mapView(_ mapView: MKMapView, regionWillChangeAnimated animated: Bool) {
 		//загрузку начинаем
-		self.completionRegionChange?(true)
+		self.regionWillChangeAnimated?()
 	}
 	func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
 		//загрузку заканчиваем
-		self.completionRegionChange?(false)
+		self.regionDidChangeAnimated?()
+		self.completionRegionCoordinate?(mapView.centerCoordinate)
 	}
 	
 	func mapViewDidFailLoadingMap(_ mapView: MKMapView, withError error: Error) {
 		//загрузку заканчиваем
 		//self.viewModel.mapModel = .loadingGetPosition(true)
 	}
-	//	func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-	//		return self.viewModel.managers.logic.createPolygon(overlay: overlay)
-	//	}
 	
+//	func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+//		return self.viewModel.managers.logic.createPolygon(overlay: overlay)
+//	}
+//
+	private func createCoordinate(with mapView: MKMapView) -> CLLocationCoordinate2D {
+		let coordinate = mapView.centerCoordinate
+		return coordinate
+	}
 }
+

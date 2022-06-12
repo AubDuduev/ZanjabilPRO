@@ -17,9 +17,9 @@ final class MapViewModel: MVVMViewModelProtocol {
     }
     // MARK: - DI
 	@Injected
-	private var mapService: MapService
+	private var geoPositioningService: GeoPositioningService
 	@Injected
-	private var mainRouter: MainRouter
+	private var mainRouter           : MainRouter
     //MARK: - implementation protocol
     public var mainView: MapView?
     public var isUpdate: ClosureEmpty?
@@ -30,22 +30,23 @@ final class MapViewModel: MVVMViewModelProtocol {
     private func stateMapModel(){
         guard let model = self.model else { return }
         switch model {
-			case .setupLocationService:
-				self.mapService.setupLocationService()
-				self.mapService.startUserLocation()
+			case .setupGeoPositioningService:
+				self.geoPositioningService.setupLocationService()
+				self.geoPositioningService.startUserLocation()
 				
-				self.mapService.completionAddress
+				self.geoPositioningService.completionAddress
 					.sink(receiveValue: { address in
 						self.model = .updateAddress(address)
 					})
 					.store(in: &self.cancellable)
 				
-				self.mapService.completionMapCamera
+				self.geoPositioningService.completionMapCamera
 					.sink(receiveValue: { mapCamera in
 						self.model = .updateCameraPosition(mapCamera)
-						self.mapService.stopUserLocation()
+						self.geoPositioningService.stopUserLocation()
 					})
 					.store(in: &self.cancellable)
+				
             case .createViewProperties:
 				let didTapMapView: ClosureEmpty = {
 					self.mainRouter.pushMainNavigation(id: .mapScreenVC, animated: true)

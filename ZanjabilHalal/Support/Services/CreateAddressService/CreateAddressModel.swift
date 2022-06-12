@@ -28,6 +28,18 @@ struct CreateAddressModel {
         self.street    = address.street
         self.isDefault = address.isDefault
     }
+	
+	init(suggestion: DECAddressSuggestionData) {
+		
+		self.ID        = UUID().uuidString
+		self.build     = ""
+		self.city      = suggestion.city ?? ""
+		self.apartment = ""
+		self.floor     = ""
+		self.intercom  = ""
+		self.street    = suggestion.street ?? ""
+		self.isDefault = false
+	}
     
     init() {
         self.ID        = UUID().uuidString

@@ -10,7 +10,7 @@ final class CenterMapPinView: UIView, MVVMViewProtocol {
     
     struct ViewProperties {
 		
-		var isAnimationPin: Bool
+		var regionChange: RegionChange
     }
     var viewProperties: ViewProperties?
 	
@@ -38,13 +38,13 @@ final class CenterMapPinView: UIView, MVVMViewProtocol {
     }
 	
 	private func animationCenterPinImageView(){
-		guard let isAnimationPin = self.viewProperties?.isAnimationPin else { return }
-		switch isAnimationPin {
-			case true:
+		guard let regionChange = self.viewProperties?.regionChange else { return }
+		switch regionChange {
+			case .start:
 				UIView.animate(withDuration: 0.4) {
 					self.centerPinImageView.transform = CGAffineTransform(translationX: 0, y: -15)
 				}
-			case false:
+			case .finish:
 				UIView.animate(withDuration: 0.8) {
 					self.centerPinImageView.transform = .identity
 				}

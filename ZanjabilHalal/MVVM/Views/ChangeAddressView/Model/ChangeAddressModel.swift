@@ -9,7 +9,7 @@ import UIKit
 enum ChangeAddressModel {
     
     case createViewProperties
-	case setupLocationService
+	case setupGeoPositioningService
 	case addAddressCollectionView(UIView)
 	case didTapSearchAddress
 	case updateAddress(String)

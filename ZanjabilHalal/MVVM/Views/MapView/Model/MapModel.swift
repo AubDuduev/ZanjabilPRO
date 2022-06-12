@@ -10,7 +10,7 @@ import UIKit
 enum MapModel {
     
     case createViewProperties
-	case setupLocationService
+	case setupGeoPositioningService
 	case updateAddress(String)
 	case updateCameraPosition(MKMapCamera)
 }

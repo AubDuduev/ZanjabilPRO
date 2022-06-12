@@ -57,7 +57,7 @@ final class MainRouter {
         window??.makeKeyAndVisible()
     }
 	
-	public func dissmiss(animated: Bool){
+	public func dismiss(animated: Bool){
 		self.currentPresentationVC.dismiss(animated: animated)
 	}
     

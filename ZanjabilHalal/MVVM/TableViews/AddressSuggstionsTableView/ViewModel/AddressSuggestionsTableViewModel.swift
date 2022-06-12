@@ -7,6 +7,7 @@
 import Combine
 import Resolver
 import UIKit
+import CoreLocation
 
 final class AddressSuggestionsTableViewModel: MVVMViewModelProtocol {
     
@@ -16,12 +17,16 @@ final class AddressSuggestionsTableViewModel: MVVMViewModelProtocol {
     //MARK: - implementation protocol
     public var mainView: AddressSuggestionsTableView?
     //DI
+	@Injected
+	private var geoPositioningService: GeoPositioningService
     @Injected
-    private var mainCellsBuilder: MainCollectionCellsBuilder
+    private var mainCellsBuilder     : MainCollectionCellsBuilder
 	@Injected
-	private var daDataService   : DaDataService
+	private var daDataService        : DaDataService
 	@Injected
-	private var mainRouter      : MainRouter
+	private var mainRouter           : MainRouter
+	@Injected
+	private var createAddressService : CreateAddressService
 	// MARK: - Private
 	private var cancelable: Set<AnyCancellable> = []
     //MARK: - Main state view model
@@ -30,13 +35,23 @@ final class AddressSuggestionsTableViewModel: MVVMViewModelProtocol {
         switch model {
 			case .createViewProperties(let decAddressSuggestions):
 				let didSelectRowAt: Closure<IndexPath> = { indexPath in
-					self.mainRouter.dissmiss(animated: true)
+					self.mainRouter.dismiss(animated: true)
+					if let addressSuggestionData = self.createAddressSuggestionData(with: indexPath) {
+						self.model = .createAddressForSuggestion(addressSuggestionData)
+						self.model = .setCoordinateToMap(addressSuggestionData)
+					}
 				}
 				let countCells     = decAddressSuggestions.count
 				let viewProperties = AddressSuggestionsTableView.ViewProperties(didSelectRowAt       : didSelectRowAt,
 																				countCells           : countCells,
 																				decAddressSuggestions: decAddressSuggestions)
 				self.mainView?.update(with: viewProperties)
+			case .createAddressForSuggestion(let addressSuggestionData):
+				self.createAddressService.createForSuggestion(with: addressSuggestionData)
+			case .setCoordinateToMap(let addressSuggestionData):
+				let coordinate = CLLocationCoordinate2D(latitude : addressSuggestionData.latitude,
+														longitude: addressSuggestionData.longitude)
+				self.geoPositioningService.setCoordinate(with: coordinate)
 			case .getSuggestionsAddressList:
 				self.daDataService.suggestionsAddressesList
 					.sink { [weak self] addressSuggestions in
@@ -46,6 +61,12 @@ final class AddressSuggestionsTableViewModel: MVVMViewModelProtocol {
 					.store(in: &self.cancelable)
         }
     }
+	
+	private func createAddressSuggestionData(with indexPath: IndexPath) -> DECAddressSuggestionData? {
+		let decAddressSuggestions = mainView?.viewProperties?.decAddressSuggestions
+		let addressSuggestionData = decAddressSuggestions?[indexPath.row].addressData
+		return addressSuggestionData
+	}
     
     init(with mainView: AddressSuggestionsTableView) {
         self.mainView = mainView

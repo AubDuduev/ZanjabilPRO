@@ -18,12 +18,11 @@ final class ChangeAddressView: UIView, MVVMViewProtocol {
 	private var isLoad = false
 	
 	@IBOutlet weak private var containerAddressesCollectionView: UIView!
-	@IBOutlet weak private var currentAddressTextField         : UITextField!
+	@IBOutlet weak private var currentAddressLabel             : UILabel!
 	
 	func create(with viewProperties: ViewProperties?) {
 		self.viewProperties = viewProperties
 		self.setCurrentAddress()
-		self.viewProperties?.addAddressCollectionView(self.containerAddressesCollectionView)
 		self.setup()
 	}
     
@@ -33,7 +32,7 @@ final class ChangeAddressView: UIView, MVVMViewProtocol {
     }
 	
 	private func setCurrentAddress(){
-		self.currentAddressTextField.text = self.viewProperties?.currentAddress
+		self.currentAddressLabel.text = self.viewProperties?.currentAddress
 	}
 	
 	private func setup(){
