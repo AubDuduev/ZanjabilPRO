@@ -9,5 +9,7 @@ import UIKit
 enum AddressSuggestionsTableModel {
     
     case createViewProperties([DECAddressSuggestion])
+	case createAddressForSuggestion(DECAddressSuggestion)
 	case getSuggestionsAddressList
+	case setCoordinateToMap(DECAddressSuggestion)
 }

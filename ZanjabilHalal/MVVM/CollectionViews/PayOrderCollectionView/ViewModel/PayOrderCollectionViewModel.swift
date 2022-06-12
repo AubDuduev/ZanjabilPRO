@@ -37,7 +37,7 @@ final class PayOrderCollectionViewModel: MVVMViewModelProtocol {
                 self.mainView?.update(with: viewProperties)
             case .getAddress:
                 self.addressesService.subscribeUpdate.sink { addresses in
-                    self.addresses = addresses
+                    self.addresses     = addresses
                     let defaultAddress = addresses.first(where: { $0.isDefault })
                     self.model = .createViewProperties(defaultAddress)
                 }

@@ -15,5 +15,10 @@ extension String {
 //      let stringResult = NumberFormatter.amount(minimumFractionDigits: 1, maximumFractionDigits: max).string(from: round as NSNumber)!
 //      return stringResult
 //   }
+	
+	public func toDouble() -> Double? {
+		let result = Double(self)
+		return result
+	}
 }
 

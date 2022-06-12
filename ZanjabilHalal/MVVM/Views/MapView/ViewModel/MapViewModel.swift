@@ -17,9 +17,9 @@ final class MapViewModel: MVVMViewModelProtocol {
     }
     // MARK: - DI
 	@Injected
-	private var mapService: MapService
+	private var geoPositioningService: GeoPositioningService
 	@Injected
-	private var mainRouter: MainRouter
+	private var mainRouter           : MainRouter
     //MARK: - implementation protocol
     public var mainView: MapView?
     public var isUpdate: ClosureEmpty?
@@ -30,24 +30,23 @@ final class MapViewModel: MVVMViewModelProtocol {
     private func stateMapModel(){
         guard let model = self.model else { return }
         switch model {
-			case .setupLocationService:
-				self.mapService.setupLocationService()
-				self.mapService.startUserLocation()
-				
-				self.mapService.completionAddress
-					.sink(receiveValue: { address in
-						//guard let self = self else { return }
-						self.model = .updateAddress(address)
+			case .setupGeoPositioningService:
+				self.geoPositioningService.setupLocationService()
+				self.geoPositioningService.startUserLocation()
+				// MARK: - возврат адреса пользователя
+				self.geoPositioningService.completionSuggestionsAddress
+					.sink(receiveValue: { suggestionsAddress in
+						self.model = .updateAddress(suggestionsAddress)
 					})
 					.store(in: &self.cancellable)
-				
-				self.mapService.completionMapCamera
+				// MARK: - возврат камеры карты
+				self.geoPositioningService.completionMapCamera
 					.sink(receiveValue: { mapCamera in
-						//guard let self = self else { return }
 						self.model = .updateCameraPosition(mapCamera)
-						self.mapService.stopUserLocation()
+						self.geoPositioningService.stopUserLocation()
 					})
 					.store(in: &self.cancellable)
+				
             case .createViewProperties:
 				let didTapMapView: ClosureEmpty = {
 					self.mainRouter.pushMainNavigation(id: .mapScreenVC, animated: true)
@@ -58,7 +57,8 @@ final class MapViewModel: MVVMViewModelProtocol {
 															currentAddress: "",
 															didTapMapView : didTapMapView)
 				self.mainView?.update(with: viewProperties)
-			case .updateAddress(let currentAddress):
+			case .updateAddress(let suggestionsAddress):
+				let currentAddress = suggestionsAddress.fullAddress
 				self.mainView?.viewProperties?.currentAddress = currentAddress
 				self.reloadProperties()
 			case .updateCameraPosition(let mapCamera):

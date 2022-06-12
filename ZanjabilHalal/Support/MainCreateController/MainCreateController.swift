@@ -103,7 +103,7 @@ final class MainCreateController {
 	private func createMapScreenViewController() -> MapScreenViewController {
 		let mapScreenViewControllerBuilder = self.mainViewControllersBuilder.createMapScreenViewControllerBuilder()
 		mapScreenViewControllerBuilder.viewModel.model = .createViewProperties
-		mapScreenViewControllerBuilder.viewModel.model = .setupLocationService
+		mapScreenViewControllerBuilder.viewModel.model = .setupGeoPositioningService
 		let mapScreenViewController = mapScreenViewControllerBuilder.view
 		return mapScreenViewController
 	}

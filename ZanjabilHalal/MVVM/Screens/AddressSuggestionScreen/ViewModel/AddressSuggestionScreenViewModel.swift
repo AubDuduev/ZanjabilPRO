@@ -14,7 +14,7 @@ final class AddressSuggestionScreenViewModel: MVVMViewModelProtocol {
     }
 	// MARK: - DI
 	@Injected
-	private var mapService           : MapService
+	private var mapService           : MapKitService
 	@Injected
 	private var mainViewsBuilder     : MainViewsBuilder
 	@Injected

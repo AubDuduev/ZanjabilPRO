@@ -25,7 +25,7 @@ final class YandexMapService: ServiceProtocol {
 	public func setupLocationService() {
 		self.locationService.setup()
 		self.locationService.authorisation()
-		self.locationService.returnLocationUser = { [weak self] coordinate in
+		self.locationService.didUpdateLocations = { [weak self] coordinate in
 			guard let self = self else { return }
 			self.updateViewCoordinate(with: coordinate)
 			self.updateAddress(with: coordinate)

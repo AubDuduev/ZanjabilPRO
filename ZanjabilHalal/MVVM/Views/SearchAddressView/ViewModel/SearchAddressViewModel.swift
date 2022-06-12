@@ -30,7 +30,7 @@ final class SearchAddressViewModel: NSObject, MVVMViewModelProtocol {
 				self.mainView?.update(with: viewProperties)
 			case .createAddress(let textAddress):
 				guard let textAddress = textAddress else { return }
-				self.delayTaskService.deleteAfter(seconds: 2)
+				self.delayTaskService.deleteAfter(seconds: 1)
 				self.delayTaskService.execute = { [weak self] in
 					guard let self = self else { return }
 					let encAddressSuggestion = self.createAddressSuggestion(with: textAddress)

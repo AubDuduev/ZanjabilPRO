@@ -24,4 +24,20 @@ final class RequestsRESTService {
 			}
 		}
 	}
+	
+	public func postReverseGeocoding(with coordinate: ENCCoordinate, completion: @escaping Closure<[DECAddressSuggestion]?>){
+		let postReverseGeocoding = POSTReverseGeocoding()
+		postReverseGeocoding.request(data: coordinate) { requestResult in
+			DispatchQueue.main.async {
+				switch  requestResult {
+					case .error(let error):
+						print(error ?? "")
+					case .object(let decAddressSuggestions):
+						let decAddressSuggestion = decAddressSuggestions as? DECAddressSuggestions
+						let decAddressSuggestions = decAddressSuggestion?.addresses as? [DECAddressSuggestion]
+						completion(decAddressSuggestions)
+				}
+			}
+		}
+	}
 }
