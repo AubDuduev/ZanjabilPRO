@@ -36,9 +36,9 @@ final class AddressSuggestionsTableViewModel: MVVMViewModelProtocol {
 			case .createViewProperties(let decAddressSuggestions):
 				let didSelectRowAt: Closure<IndexPath> = { indexPath in
 					self.mainRouter.dismiss(animated: true)
-					if let addressSuggestionData = self.createAddressSuggestionData(with: indexPath) {
-						self.model = .createAddressForSuggestion(addressSuggestionData)
-						self.model = .setCoordinateToMap(addressSuggestionData)
+					if let addressSuggestion = self.createAddressSuggestion(with: indexPath) {
+						self.model = .createAddressForSuggestion(addressSuggestion)
+						self.model = .setCoordinateToMap(addressSuggestion)
 					}
 				}
 				let countCells     = decAddressSuggestions.count
@@ -46,12 +46,14 @@ final class AddressSuggestionsTableViewModel: MVVMViewModelProtocol {
 																				countCells           : countCells,
 																				decAddressSuggestions: decAddressSuggestions)
 				self.mainView?.update(with: viewProperties)
-			case .createAddressForSuggestion(let addressSuggestionData):
-				self.createAddressService.createForSuggestion(with: addressSuggestionData)
-			case .setCoordinateToMap(let addressSuggestionData):
+			case .createAddressForSuggestion(let addressSuggestion):
+				self.createAddressService.createForSuggestion(with: addressSuggestion)
+			case .setCoordinateToMap(let addressSuggestion):
+				guard let addressSuggestionData = addressSuggestion.addressData else { return }
 				let coordinate = CLLocationCoordinate2D(latitude : addressSuggestionData.latitude,
 														longitude: addressSuggestionData.longitude)
 				self.geoPositioningService.setCoordinate(with: coordinate)
+				self.geoPositioningService.saveAddressSuggestion(with: addressSuggestion)
 			case .getSuggestionsAddressList:
 				self.daDataService.suggestionsAddressesList
 					.sink { [weak self] addressSuggestions in
@@ -62,9 +64,9 @@ final class AddressSuggestionsTableViewModel: MVVMViewModelProtocol {
         }
     }
 	
-	private func createAddressSuggestionData(with indexPath: IndexPath) -> DECAddressSuggestionData? {
+	private func createAddressSuggestion(with indexPath: IndexPath) -> DECAddressSuggestion? {
 		let decAddressSuggestions = mainView?.viewProperties?.decAddressSuggestions
-		let addressSuggestionData = decAddressSuggestions?[indexPath.row].addressData
+		let addressSuggestionData = decAddressSuggestions?[indexPath.row]
 		return addressSuggestionData
 	}
     

@@ -11,7 +11,6 @@ enum MapScreenModel {
     
 	case createViewProperties
 	case setupGeoPositioningService
-	case createAddressForCoordinate(CLLocationCoordinate2D)
 	case updateCameraPosition(MKMapCamera)
 	case addChangeAddress(UIView)
 	case addCenterMapPinView(UIView)

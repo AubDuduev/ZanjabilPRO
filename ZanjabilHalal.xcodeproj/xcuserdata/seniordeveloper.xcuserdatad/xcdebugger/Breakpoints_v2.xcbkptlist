@@ -119,15 +119,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "850F4107-8D99-47FA-B660-12028AABDFC2"
-            shouldBeEnabled = "Yes"
+            uuid = "899C5899-72F2-4273-A847-141B1D731DD1"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ZanjabilHalal/MVVM/Screens/MapScreen/ViewModel/MapScreenViewModel.swift"
+            filePath = "ZanjabilHalal/Support/Services/GeopositioningService/GeoPositioningService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
             landmarkName = "postReverseGeocoding(with:)"
             landmarkType = "7">
          </BreakpointContent>

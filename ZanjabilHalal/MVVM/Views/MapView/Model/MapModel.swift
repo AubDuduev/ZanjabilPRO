@@ -11,6 +11,6 @@ enum MapModel {
     
     case createViewProperties
 	case setupGeoPositioningService
-	case updateAddress(String)
+	case updateAddress(DECAddressSuggestion)
 	case updateCameraPosition(MKMapCamera)
 }

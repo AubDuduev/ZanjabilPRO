@@ -17,8 +17,6 @@ final class MapScreenViewModel: NSObject, MVVMViewModelProtocol {
     }
 	// MARK: - DI
 	@Injected
-	private var requestsRESTService       : RequestsRESTService
-	@Injected
 	private var geoPositioningService     : GeoPositioningService
 	@Injected
 	private var mapKitService             : MapKitService
@@ -52,9 +50,6 @@ final class MapScreenViewModel: NSObject, MVVMViewModelProtocol {
 					.sink(receiveValue: { regionChange in
 						self.model = .animationCenterPinImageView(regionChange)
 					}).store(in: &self.cancellable)
-			
-			case .createAddressForCoordinate(let coordinate):
-				self.postReverseGeocoding(with: coordinate)
 			case .createViewProperties:
 				let addChangeAddress: Closure<UIView> = { container in
 					self.model = .addChangeAddress(container)
@@ -101,22 +96,6 @@ final class MapScreenViewModel: NSObject, MVVMViewModelProtocol {
 		}
 		return centerMapPinViewBuilder.viewModel
 	}
-	
-	private func postReverseGeocoding(with coordinate: CLLocationCoordinate2D) {
-		guard let encCoordinate = self.createEncCoordinates(with: coordinate) else { return }
-		self.requestsRESTService.postReverseGeocoding(with: encCoordinate) { suggestionsAddresses in
-			
-			print(suggestionsAddresses)
-		}
-	}
-	// MARK: -
-	private func createEncCoordinates(with coordinates: CLLocationCoordinate2D) -> ENCCoordinate? {
-		let latitude   = coordinates.latitude
-		let longitude  = coordinates.longitude
-		let coordinate = ENCCoordinate(lat: latitude, lon: longitude, count: 5)
-		return coordinate
-	}
-	
 	
     init(with mainView: MapScreenViewController) {
         self.mainView = mainView

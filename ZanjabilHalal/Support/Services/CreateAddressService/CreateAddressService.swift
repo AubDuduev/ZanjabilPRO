@@ -42,12 +42,9 @@ final class CreateAddressService: ServiceProtocol {
         self.update?(self.createAddressModel)
     }
 	
-	public func createForSuggestion(with suggestion: DECAddressSuggestionData) {
-		self.createAddressModel = CreateAddressModel(suggestion: suggestion)
-	}
-	
-	public func createForCoordinate(with inputText: String, with inputAddressType: InputAddressTypes) {
-		
+	public func createForSuggestion(with addressSuggestion: DECAddressSuggestion) {
+		guard let addressSuggestionData = addressSuggestion.addressData else { return }
+		self.createAddressModel = CreateAddressModel(addressSuggestionData: addressSuggestionData)
 	}
     
     public func setAddress(with address: DECAddress) {

@@ -9,7 +9,6 @@ import UIKit
 
 final class PayOrderCollectionCellBuilder: BuilderViewProtocol {
 
-    
     public var view     : PayOrderCollectionCell
     public var viewModel: PayOrderCollectionCellViewModel
     

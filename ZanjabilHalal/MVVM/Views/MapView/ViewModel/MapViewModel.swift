@@ -33,13 +33,13 @@ final class MapViewModel: MVVMViewModelProtocol {
 			case .setupGeoPositioningService:
 				self.geoPositioningService.setupLocationService()
 				self.geoPositioningService.startUserLocation()
-				
-				self.geoPositioningService.completionAddress
-					.sink(receiveValue: { address in
-						self.model = .updateAddress(address)
+				// MARK: - возврат адреса пользователя
+				self.geoPositioningService.completionSuggestionsAddress
+					.sink(receiveValue: { suggestionsAddress in
+						self.model = .updateAddress(suggestionsAddress)
 					})
 					.store(in: &self.cancellable)
-				
+				// MARK: - возврат камеры карты
 				self.geoPositioningService.completionMapCamera
 					.sink(receiveValue: { mapCamera in
 						self.model = .updateCameraPosition(mapCamera)
@@ -57,7 +57,8 @@ final class MapViewModel: MVVMViewModelProtocol {
 															currentAddress: "",
 															didTapMapView : didTapMapView)
 				self.mainView?.update(with: viewProperties)
-			case .updateAddress(let currentAddress):
+			case .updateAddress(let suggestionsAddress):
+				let currentAddress = suggestionsAddress.fullAddress
 				self.mainView?.viewProperties?.currentAddress = currentAddress
 				self.reloadProperties()
 			case .updateCameraPosition(let mapCamera):

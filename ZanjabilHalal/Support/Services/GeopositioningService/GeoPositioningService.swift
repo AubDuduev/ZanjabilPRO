@@ -13,15 +13,19 @@ import MapKit
 final class GeoPositioningService {
 	// MARK: - DI
 	@Injected
-	private var locationService: LocationService
+	private var locationService    : LocationService
 	@Injected
-	private var mapKitService  : MapKitService
+	private var mapKitService      : MapKitService
+	@Injected
+	private var requestsRESTService: RequestsRESTService
 	// MARK: - Public
-	public var completionAddress          = PassthroughSubject<String, Never>()
-	public var completionUserCoordinate   = PassthroughSubject<CLLocationCoordinate2D, Never>()
-	public var completionRegionCoordinate = PassthroughSubject<CLLocationCoordinate2D, Never>()
-	public var completionMapCamera        = PassthroughSubject<MKMapCamera, Never>()
-	public var completionRegionChange     = PassthroughSubject<RegionChange, Never>()
+	public var completionSuggestionsAddress = PassthroughSubject<DECAddressSuggestion, Never>()
+	public var completionUserCoordinate     = PassthroughSubject<CLLocationCoordinate2D, Never>()
+	public var completionRegionCoordinate   = PassthroughSubject<CLLocationCoordinate2D, Never>()
+	public var completionMapCamera          = PassthroughSubject<MKMapCamera, Never>()
+	public var completionRegionChange       = PassthroughSubject<RegionChange, Never>()
+	
+	private var addressSuggestion: DECAddressSuggestion?
 	
 	public func setupLocationService() {
 		self.locationService.setup()
@@ -29,8 +33,8 @@ final class GeoPositioningService {
 		self.locationService.didUpdateLocations = { [weak self] coordinate in
 			guard let self = self else { return }
 			self.createMapCamera(with: coordinate)
-			self.createAddress(with: coordinate)
 			self.completionUserCoordinate.send(coordinate)
+			self.postReverseGeocoding(with: coordinate)
 		}
 	}
 	
@@ -48,12 +52,20 @@ final class GeoPositioningService {
 		self.mapKitService.completionRegionCoordinate = { [weak self] coordinate in
 			guard let self = self else { return }
 			self.completionRegionCoordinate.send(coordinate)
-			self.createAddress(with: coordinate)
+			self.postReverseGeocoding(with: coordinate)
 		}
 	}
 	
 	public func setCoordinate(with coordinate: CLLocationCoordinate2D) {
 		self.createMapCamera(with: coordinate)
+	}
+	
+	public func saveAddressSuggestion(with addressSuggestion: DECAddressSuggestion){
+		self.addressSuggestion = addressSuggestion
+	}
+	
+	public func getAddressSuggestion() -> DECAddressSuggestion? {
+		return self.addressSuggestion
 	}
 	
 	public func stopUserLocation(){
@@ -64,15 +76,6 @@ final class GeoPositioningService {
 		self.locationService.getUserLocation()
 	}
 	
-	private func createAddress(with coordinate: CLLocationCoordinate2D) {
-		let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
-		location.fetchAddress { [weak self] currentAddress, error in
-			guard let self = self else { return }
-			guard let currentAddress = currentAddress else { return }
-			self.completionAddress.send(currentAddress)
-		}
-	}
-	
 	private func createMapCamera(with coordinate: CLLocationCoordinate2D) {
 		let distance     = "800"
 		let eyeAltitude  = CLLocationDistance(distance)!
@@ -81,5 +84,24 @@ final class GeoPositioningService {
 									   eyeAltitude      : eyeAltitude)
 		self.completionMapCamera.send(mapCamera)
 	}
+	
+	private func postReverseGeocoding(with coordinate: CLLocationCoordinate2D) {
+		guard let encCoordinate = self.createEncCoordinates(with: coordinate) else { return }
+		self.requestsRESTService.postReverseGeocoding(with: encCoordinate) { suggestionsAddresses in
+			guard let suggestionsAddress = suggestionsAddresses?.last else { return }
+			self.completionSuggestionsAddress.send(suggestionsAddress)
+		}
+	}
+	private func createEncCoordinates(with coordinates: CLLocationCoordinate2D) -> ENCCoordinate? {
+		let latitude   = coordinates.latitude
+		let longitude  = coordinates.longitude
+		let coordinate = ENCCoordinate(lat: latitude, lon: longitude, count: 5)
+		return coordinate
+	}
+	
 }
 
+struct GeoPositioningAddress {
+	
+	
+}
