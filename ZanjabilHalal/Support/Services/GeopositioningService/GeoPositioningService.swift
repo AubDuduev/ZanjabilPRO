@@ -77,7 +77,7 @@ final class GeoPositioningService {
 	}
 	
 	private func createMapCamera(with coordinate: CLLocationCoordinate2D) {
-		let distance     = "800"
+		let distance     = "500"
 		let eyeAltitude  = CLLocationDistance(distance)!
 		let mapCamera    = MKMapCamera(lookingAtCenter  : coordinate,
 									   fromEyeCoordinate: coordinate,
