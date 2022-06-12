@@ -64,6 +64,22 @@ extension Resolver: ResolverRegistering {
 		Resolver.register {
 			RequestsRESTService()
 		}
+		
+		Resolver.register {
+			MainTableCellBuilder()
+		}
+		
+		Resolver.register {
+			MainTableViewsBuilder()
+		}
+		
+		Resolver.register {
+			DelayTaskService()
+		}
+		
+		Resolver.register {
+			LocationService()
+		}
     }
     
     private static func application(){
@@ -114,7 +130,7 @@ extension Resolver: ResolverRegistering {
         .scope(.application)
         
         Resolver.register {
-            MainCellsBuilder()
+            MainCollectionCellsBuilder()
         }
         .scope(.application)
         
@@ -134,11 +150,6 @@ extension Resolver: ResolverRegistering {
 		.scope(.application)
 		
 		Resolver.register {
-			LocationService()
-		}
-		.scope(.application)
-		
-		Resolver.register {
 			YandexMapService()
 		}
 		.scope(.application)
@@ -149,10 +160,14 @@ extension Resolver: ResolverRegistering {
 		.scope(.application)
 		
 		Resolver.register {
-			MapService()
+			GeoPositioningService()
 		}
 		.scope(.application)
 		
+		Resolver.register {
+			MapKitService()
+		}
+		.scope(.application)
     }
 }
 

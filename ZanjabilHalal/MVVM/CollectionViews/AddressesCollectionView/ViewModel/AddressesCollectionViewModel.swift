@@ -15,7 +15,7 @@ final class AddressesCollectionViewModel: MVVMViewModelProtocol {
     }
     //DI
     @Injected
-    private var mainCellsBuilder: MainCellsBuilder
+    private var mainCellsBuilder: MainCollectionCellsBuilder
     @Injected
     private var addressesService: AddressesService
     // MARK: - Private
@@ -28,9 +28,10 @@ final class AddressesCollectionViewModel: MVVMViewModelProtocol {
     private func stateAddressesModel(){
         guard let model = self.model else { return }
         switch model {
-            case .createViewProperties:
+            case .createViewProperties(let addressCollectionType):
                 self.addressesService.subscribeUpdate.sink { addresses in
-                    let viewProperties = AddressesCollectionView.ViewProperties(addresses: addresses)
+					let viewProperties = AddressesCollectionView.ViewProperties(addressCollectionType: addressCollectionType,
+																				addresses: addresses)
                     self.mainView?.update(with: viewProperties)
                 }
                 .store(in: &cancelable)

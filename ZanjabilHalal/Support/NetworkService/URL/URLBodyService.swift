@@ -20,6 +20,7 @@ final class URLBody {
 	enum EncodableType {
 		
 		case addressSuggestion(ENCAddressSuggestion)
+		case coordinate(ENCCoordinate)
 	}
     
     public func create<T: Encodable>(with encodableType: EncodableDefault<T>) -> Data? {
@@ -36,6 +37,9 @@ final class URLBody {
 		switch encodableType {
 			case .addressSuggestion(let addressSuggestion):
 				let data = jsonEncoderService.encode(with: addressSuggestion)
+				return data
+			case .coordinate(let coordinate):
+				let data = jsonEncoderService.encode(with: coordinate)
 				return data
 		}
 	}

@@ -28,6 +28,10 @@ final class MainRouter {
         self.currentPresentationVC = self.mainCreateController.createVC(id: mainNavigationControllersID)
         self.navigationViewController.pushViewController(self.currentPresentationVC, animated: animated)
     }
+	public func popMainNavigation(id mainNavigationControllersID: MainCreateController.ControllersID, animated: Bool){
+		self.currentPresentationVC = self.mainCreateController.createVC(id: mainNavigationControllersID)
+		self.navigationViewController.popToViewController(self.currentPresentationVC, animated: animated)
+	}
     // MARK: - Logic presentation in NavigationViewController
     public func presentNavigation(id mainNavigationControllersID: MainCreateController.ControllersID, animated: Bool = false){
         self.currentPresentationVC = self.mainCreateController.createVC(id: mainNavigationControllersID)
@@ -44,7 +48,7 @@ final class MainRouter {
         self.newNavigationVC.pushViewController(self.currentPresentationVC, animated: animated)
     }
     
-    public func popRootInCurrentNavigationVC(id rootVcID: MainCreateController.ControllersID, animated: Bool){
+    public func popRootInCurrentNavigationVC(animated: Bool){
         self.newNavigationVC.popViewController(animated: animated)
     }
     
@@ -56,6 +60,10 @@ final class MainRouter {
         window??.rootViewController = rootViewController
         window??.makeKeyAndVisible()
     }
+	
+	public func dismiss(animated: Bool){
+		self.currentPresentationVC.dismiss(animated: animated)
+	}
     
 //    public func setupNewNavigationVC(isNavigationBarHidden: Bool = false, animatedHidden: Bool = false, tintColor: UIColor = .blue, backButtonTitle: String = "", title: TextResources.Router.NavigationTitle = .empty){
 //        self.newNavigationVC.navigationBar.tintColor       = tintColor

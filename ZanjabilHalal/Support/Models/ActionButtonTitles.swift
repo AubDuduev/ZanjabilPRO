@@ -13,6 +13,7 @@ enum ActionButtonType {
     case payOrder
     case editAddress
     case saveAddress
+	case addAddress
     
     public func title() -> String {
         
@@ -21,6 +22,8 @@ enum ActionButtonType {
                 return R.Titles.pay.localizedString()
             case .editAddress:
                 return R.Titles.edit.localizedString()
+			case .addAddress:
+				return R.Titles.add.localizedString()
             case .saveAddress:
                 return R.Titles.save.localizedString()
         }

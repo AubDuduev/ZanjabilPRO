@@ -13,68 +13,66 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChangeAddressViewController" customModule="ZanjabilHalal" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="kns-3F-tW8" customClass="ChangeAddressView" customModule="ZanjabilHalal" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="470" height="204"/>
+            <rect key="frame" x="0.0" y="0.0" width="470" height="150"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tho-Ar-RRI" userLabel="MainView">
-                    <rect key="frame" x="0.0" y="0.0" width="470" height="204"/>
+                    <rect key="frame" x="0.0" y="0.0" width="470" height="150"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2KI-c2-p8a" userLabel="MainStackView">
-                            <rect key="frame" x="0.0" y="0.0" width="470" height="204"/>
+                            <rect key="frame" x="0.0" y="0.0" width="470" height="150"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZgE-Dr-GyH" userLabel="CurrentAaddresView">
                                     <rect key="frame" x="0.0" y="0.0" width="470" height="48"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Uk3-wM-gri" userLabel="CurrentAaddresStackView">
-                                            <rect key="frame" x="8" y="8" width="454" height="32"/>
-                                            <subviews>
-                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите адрес" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kxq-nd-BGj">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="32"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VbD-O2-OPJ">
-                                                    <rect key="frame" x="422" y="0.0" width="32" height="32"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="VbD-O2-OPJ" secondAttribute="height" id="maS-1Y-nsM"/>
-                                                    </constraints>
-                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                    <state key="normal" title="Button" image="search"/>
-                                                </button>
-                                            </subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Введите адрес" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzS-Ru-qQD">
+                                            <rect key="frame" x="16" y="8" width="398" height="32"/>
+                                            <gestureRecognizers/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <connections>
+                                                <outletCollection property="gestureRecognizers" destination="Ipf-AR-sYN" appends="YES" id="2l8-qt-kFe"/>
+                                            </connections>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VbD-O2-OPJ">
+                                            <rect key="frame" x="430" y="8" width="32" height="32"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="32" id="VB2-S4-IdP"/>
+                                                <constraint firstAttribute="width" secondItem="VbD-O2-OPJ" secondAttribute="height" id="maS-1Y-nsM"/>
+                                            </constraints>
                                             <color key="tintColor" name="greenFore"/>
-                                        </stackView>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" image="magnifyingglass" catalog="system">
+                                                <color key="titleColor" name="greenFore"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="didTapSearchAddressButtonWithButton:" destination="kns-3F-tW8" eventType="touchUpInside" id="3uX-u4-UOA"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <gestureRecognizers/>
                                     <constraints>
-                                        <constraint firstItem="Uk3-wM-gri" firstAttribute="top" secondItem="ZgE-Dr-GyH" secondAttribute="top" constant="8" id="BIp-x3-zXn"/>
-                                        <constraint firstAttribute="bottom" secondItem="Uk3-wM-gri" secondAttribute="bottom" constant="8" id="HGx-BN-V1F"/>
-                                        <constraint firstAttribute="height" constant="48" id="QD7-LC-XKM"/>
-                                        <constraint firstAttribute="trailing" secondItem="Uk3-wM-gri" secondAttribute="trailing" constant="8" id="VLd-Fn-RSl"/>
-                                        <constraint firstItem="Uk3-wM-gri" firstAttribute="leading" secondItem="ZgE-Dr-GyH" secondAttribute="leading" constant="8" id="e7s-xs-eiC"/>
-                                    </constraints>
-                                    <connections>
-                                        <outletCollection property="gestureRecognizers" destination="GWp-Gr-jx1" appends="YES" id="SFd-HD-vIR"/>
-                                    </connections>
-                                </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hgL-bb-Jm6" userLabel="EmptyView">
-                                    <rect key="frame" x="0.0" y="48" width="470" height="16"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="16" id="6b7-xo-aMc"/>
-                                    </constraints>
-                                </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d0X-rI-ogV" userLabel="ContainerAddressesCollectionView">
-                                    <rect key="frame" x="0.0" y="64" width="470" height="56"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="56" id="9CL-OP-hjo"/>
+                                        <constraint firstItem="nzS-Ru-qQD" firstAttribute="top" secondItem="ZgE-Dr-GyH" secondAttribute="top" constant="8" id="5ev-VC-Nna"/>
+                                        <constraint firstItem="VbD-O2-OPJ" firstAttribute="top" secondItem="ZgE-Dr-GyH" secondAttribute="top" constant="8" id="720-pD-oHy"/>
+                                        <constraint firstItem="VbD-O2-OPJ" firstAttribute="leading" secondItem="nzS-Ru-qQD" secondAttribute="trailing" constant="16" id="BB4-50-Tuo"/>
+                                        <constraint firstAttribute="trailing" secondItem="VbD-O2-OPJ" secondAttribute="trailing" constant="8" id="IWe-m9-I3g"/>
+                                        <constraint firstAttribute="bottom" secondItem="nzS-Ru-qQD" secondAttribute="bottom" constant="8" id="JtI-kS-M4Y"/>
+                                        <constraint firstItem="nzS-Ru-qQD" firstAttribute="leading" secondItem="ZgE-Dr-GyH" secondAttribute="leading" constant="16" id="MlX-pf-Kj5"/>
+                                        <constraint firstAttribute="height" priority="999" constant="48" id="QD7-LC-XKM"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xtB-ax-wYD" userLabel="EmptyView">
-                                    <rect key="frame" x="0.0" y="120" width="470" height="84"/>
+                                    <rect key="frame" x="0.0" y="48" width="470" height="30"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X4o-VZ-G3s" userLabel="ContainerActionButtonView">
+                                    <rect key="frame" x="0.0" y="78" width="470" height="72"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="72" id="No1-4H-5Ky"/>
+                                    </constraints>
                                 </view>
                             </subviews>
                         </stackView>
@@ -98,19 +96,19 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="containerAddressesCollectionView" destination="d0X-rI-ogV" id="22v-ce-F84"/>
-                <outlet property="currentAddressTextField" destination="kxq-nd-BGj" id="seE-SH-hYa"/>
+                <outlet property="containerActionButtonView" destination="X4o-VZ-G3s" id="SE6-Vn-uup"/>
+                <outlet property="currentAddressLabel" destination="nzS-Ru-qQD" id="Ldc-t3-QLz"/>
             </connections>
             <point key="canvasLocation" x="-689.85507246376812" y="-204.91071428571428"/>
         </view>
-        <tapGestureRecognizer id="GWp-Gr-jx1">
+        <tapGestureRecognizer id="Ipf-AR-sYN">
             <connections>
-                <action selector="didTapSearchAddressGestureWithGesture:" destination="kns-3F-tW8" id="bWs-1g-Uym"/>
+                <action selector="didTapSearchAddressGestureWithGesture:" destination="kns-3F-tW8" id="TQo-zn-uzw"/>
             </connections>
         </tapGestureRecognizer>
     </objects>
     <resources>
-        <image name="search" width="256" height="256"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <namedColor name="greenFore">
             <color red="0.082000002264976501" green="0.34900000691413879" blue="0.14900000393390656" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

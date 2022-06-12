@@ -13,8 +13,6 @@ protocol MVVMViewModelProtocol where Self: AnyObject {
     
     // MARK: - Основное View
     var mainView: MainView?     { get set }
-    // MARK: - уведомляет об ViewProperties
-    var isUpdate: ClosureEmpty? { get set }
     
     // MARK: - Обновление ViewProperties Views связанных с основной View привязаной к ViewModel
     func updateAnyView<ViewProperties>(with viewProperties: ViewProperties?)

@@ -5,6 +5,7 @@
 //  Created by Senior Developer on 28.05.2022.
 //
 import Foundation
+//https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address
 
 final class URLAddressSuggestion: URLCreateProtocol {
 	
