@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="containerCenterMapPinView" destination="mE0-ld-Myy" id="wDV-gu-SIG"/>
                 <outlet property="containerChangeAddressView" destination="jtD-Hr-wB9" id="fn3-Ou-TCq"/>
+                <outlet property="containerMapView" destination="eKb-Mu-fUC" id="3d5-ka-ouL"/>
                 <outlet property="view" destination="kns-3F-tW8" id="UMe-1P-Rbc"/>
             </connections>
         </placeholder>
@@ -27,7 +28,7 @@
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="efZ-Nh-pf4" userLabel="MainStackView">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eKb-Mu-fUC" userLabel="MapView">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eKb-Mu-fUC" userLabel="ContainerMapView">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </view>

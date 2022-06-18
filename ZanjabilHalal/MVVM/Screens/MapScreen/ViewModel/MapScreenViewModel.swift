@@ -30,7 +30,7 @@ final class MapScreenViewModel: NSObject, MVVMViewModelProtocol {
 	private var cancellable: Set<AnyCancellable> = []
 	private var changeAddressViewModel: ChangeAddressViewModel!
 	private var centerMapPinViewModel : CenterMapPinViewModel!
-	private var centerMapPinViewModel : CenterMapPinViewModel!
+	private var yandexMapViewModel    : YandexMapViewModel!
     //MARK: - Main state view model
     private func stateModel(){
         guard let model = self.model else { return }
@@ -50,7 +50,9 @@ final class MapScreenViewModel: NSObject, MVVMViewModelProtocol {
 																			addMapView         : addMapView)
 				self.mainView?.create(with: viewProperties)
 			case .addMapView(let container):
-				print("")
+				self.yandexMapViewModel = self.createMapViewModel(with: container)
+				self.yandexMapViewModel.model = .createViewProperties
+				self.yandexMapViewModel.model = .setupGeoPositioningService
 			case .addChangeAddress(let container):
 				self.changeAddressViewModel       = self.createChangeAddressViewModel(with: container)
 				self.changeAddressViewModel.model = .createViewProperties
@@ -83,12 +85,12 @@ final class MapScreenViewModel: NSObject, MVVMViewModelProtocol {
 		return centerMapPinViewBuilder.viewModel
 	}
 	
-	public func createMapViewModel(with containerView: UIView) -> MapViewViewModel {
-		let agsMapViewBuilder = self.mainViewsBuilder.createMapViewBuilder()
+	public func createMapViewModel(with containerView: UIView) -> YandexMapViewModel {
+		let agsMapViewBuilder = self.mainViewsBuilder.createYandexMapViewBuilder()
 		let mapView           = agsMapViewBuilder.view
 		containerView.addSubview(mapView)
 		mapView.snp.makeConstraints { mapView in
-			agsMapView.edges.equalToSuperview()
+			mapView.edges.equalToSuperview()
 		}
 		return agsMapViewBuilder.viewModel
 	}
