@@ -61,6 +61,7 @@ final class GeoPositioningService {
 	
 	public func setCoordinate(with coordinate: CLLocationCoordinate2D) {
 		self.createMapCamera(with: coordinate)
+		self.createYandexCameraPosition(with: coordinate)
 	}
 	
 	public func saveAddressSuggestion(with addressSuggestion: DECAddressSuggestion){

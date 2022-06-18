@@ -41,10 +41,6 @@ final class YandexMapCameraListenerService: NSObject, ServiceProtocol, YMKMapCam
 			guard let self = self else { return }
 			self.getYandexReverseGeocoding(with: cameraPosition.target)
 		}
-		print("---▼---", "debug")
-		print(cameraPosition.target.latitude)
-		print(cameraPosition.target.longitude)
-		print("---▲---", "debug")
 	}
 }
 
