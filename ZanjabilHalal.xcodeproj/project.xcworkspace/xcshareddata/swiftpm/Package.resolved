@@ -19,6 +19,15 @@
       }
     },
     {
+      "identity" : "arcgis-runtime-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/esri/arcgis-runtime-ios",
+      "state" : {
+        "revision" : "df0544ed3be700c1345e1d57c69dcb9a709d4036",
+        "version" : "100.14.1"
+      }
+    },
+    {
       "identity" : "boringssl-swiftpm",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/firebase/boringssl-SwiftPM.git",

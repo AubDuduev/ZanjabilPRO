@@ -14,15 +14,14 @@ final class MapScreenViewController: UIViewController, MVVMViewProtocol {
     
     //MARK: - Main ViewProperties
     struct ViewProperties {
-		let mapViewDelegate    : MKMapViewDelegate
-		var mapCamera          : MKMapCamera?
 		var addChangeAddress   : Closure<UIView>
 		var addCenterMapPinView: Closure<UIView>
+		var addAgsMapView      : Closure<UIView>
     }
     var viewProperties: ViewProperties?
     
     //MARK: - Outlets
-	@IBOutlet weak private var mapView                   : MKMapView!
+	@IBOutlet weak private var containerMapView          : UIView!
 	@IBOutlet weak private var containerChangeAddressView: UIView!
 	@IBOutlet weak private var containerCenterMapPinView : UIView!
 	
@@ -37,23 +36,19 @@ final class MapScreenViewController: UIViewController, MVVMViewProtocol {
 	
 	func create(with viewProperties: ViewProperties?) {
 		self.viewProperties = viewProperties
-		self.setup()
 		self.setupContainerChangeAddressView()
 		self.viewProperties?.addChangeAddress(self.containerChangeAddressView)
+		self.viewProperties?.addAgsMapView(self.containerMapView)
 		self.viewProperties?.addCenterMapPinView(self.containerCenterMapPinView)
+	}
+	
+	private func setupContainerCenterMapPinView(){
+		self.containerCenterMapPinView.isHidden = true
 	}
 	
 	func update(with viewProperties: ViewProperties?) {
 		self.viewProperties = viewProperties
-		self.setup()
 		self.setupContainerChangeAddressView()
-	}
-	
-	private func setup(){
-		guard let mapCamera       = self.viewProperties?.mapCamera else { return }
-		guard let mapViewDelegate = self.viewProperties?.mapViewDelegate else { return }
-		self.mapView.camera   = mapCamera
-		self.mapView.delegate = mapViewDelegate
 	}
 	
 	private func setupContainerChangeAddressView(){

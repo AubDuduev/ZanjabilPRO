@@ -9,6 +9,7 @@ import Combine
 import CoreLocation
 import Foundation
 import MapKit
+import ArcGIS
 
 final class GeoPositioningService {
 	// MARK: - DI
@@ -23,7 +24,9 @@ final class GeoPositioningService {
 	public var completionUserCoordinate     = PassthroughSubject<CLLocationCoordinate2D, Never>()
 	public var completionRegionCoordinate   = PassthroughSubject<CLLocationCoordinate2D, Never>()
 	public var completionMapCamera          = PassthroughSubject<MKMapCamera, Never>()
+	public var completionAGSPoint           = PassthroughSubject<AGSViewpoint, Never>()
 	public var completionRegionChange       = PassthroughSubject<RegionChange, Never>()
+	
 	
 	private var addressSuggestion: DECAddressSuggestion?
 	
@@ -33,6 +36,7 @@ final class GeoPositioningService {
 		self.locationService.didUpdateLocations = { [weak self] coordinate in
 			guard let self = self else { return }
 			self.createMapCamera(with: coordinate)
+			self.createAGSPoint(with: coordinate)
 			self.completionUserCoordinate.send(coordinate)
 			self.postReverseGeocoding(with: coordinate)
 		}
@@ -74,6 +78,14 @@ final class GeoPositioningService {
 	
 	public func startUserLocation(){
 		self.locationService.getUserLocation()
+	}
+	
+	private func createAGSPoint(with coordinate: CLLocationCoordinate2D) {
+		let scale    : Double = 8000
+		let agsPoint = AGSViewpoint(latitude : coordinate.latitude,
+									longitude: coordinate.longitude,
+									scale    : scale)
+		self.completionAGSPoint.send(agsPoint)
 	}
 	
 	private func createMapCamera(with coordinate: CLLocationCoordinate2D) {

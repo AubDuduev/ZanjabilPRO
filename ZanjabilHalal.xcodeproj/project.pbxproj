@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		82004CC7285DBC0A001CFA5E /* ArcGIS in Frameworks */ = {isa = PBXBuildFile; productRef = 82004CC6285DBC0A001CFA5E /* ArcGIS */; };
+		82004CCA285DBCCF001CFA5E /* ArcGISService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82004CC9285DBCCF001CFA5E /* ArcGISService.swift */; };
+		82004CD1285DBF33001CFA5E /* AgsMapViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82004CCC285DBF33001CFA5E /* AgsMapViewBuilder.swift */; };
+		82004CD2285DBF33001CFA5E /* AgsMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82004CCD285DBF33001CFA5E /* AgsMapView.swift */; };
+		82004CD3285DBF33001CFA5E /* AgsMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82004CCE285DBF33001CFA5E /* AgsMapViewModel.swift */; };
+		82004CD4285DBF33001CFA5E /* AgsMapViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82004CCF285DBF33001CFA5E /* AgsMapViewViewModel.swift */; };
+		82004CD5285DBF33001CFA5E /* AgsMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82004CD0285DBF33001CFA5E /* AgsMapView.xib */; };
+		82004CDB285DD512001CFA5E /* AgsMapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82004CDA285DD512001CFA5E /* AgsMapService.swift */; };
 		820083E6283A3FD900A0F8BB /* MapScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820083DA283A3FD900A0F8BB /* MapScreenViewController.swift */; };
 		820083E9283A3FD900A0F8BB /* MapScreenViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820083DD283A3FD900A0F8BB /* MapScreenViewBuilder.swift */; };
 		820083EC283A3FD900A0F8BB /* MapScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820083E0283A3FD900A0F8BB /* MapScreenModel.swift */; };
@@ -533,6 +541,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		82004CC9285DBCCF001CFA5E /* ArcGISService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcGISService.swift; sourceTree = "<group>"; };
+		82004CCC285DBF33001CFA5E /* AgsMapViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgsMapViewBuilder.swift; sourceTree = "<group>"; };
+		82004CCD285DBF33001CFA5E /* AgsMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgsMapView.swift; sourceTree = "<group>"; };
+		82004CCE285DBF33001CFA5E /* AgsMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgsMapViewModel.swift; sourceTree = "<group>"; };
+		82004CCF285DBF33001CFA5E /* AgsMapViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgsMapViewViewModel.swift; sourceTree = "<group>"; };
+		82004CD0285DBF33001CFA5E /* AgsMapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AgsMapView.xib; sourceTree = "<group>"; };
+		82004CDA285DD512001CFA5E /* AgsMapService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgsMapService.swift; sourceTree = "<group>"; };
 		820083DA283A3FD900A0F8BB /* MapScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreenViewController.swift; sourceTree = "<group>"; };
 		820083DD283A3FD900A0F8BB /* MapScreenViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreenViewBuilder.swift; sourceTree = "<group>"; };
 		820083E0283A3FD900A0F8BB /* MapScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreenModel.swift; sourceTree = "<group>"; };
@@ -1041,6 +1056,7 @@
 				827C30842822E1550023282D /* FirebaseFunctionsCombine-Community in Frameworks */,
 				827C30742822E1550023282D /* FirebaseCrashlytics in Frameworks */,
 				827C30762822E1550023282D /* FirebaseDatabase in Frameworks */,
+				82004CC7285DBC0A001CFA5E /* ArcGIS in Frameworks */,
 				827C30922822E1550023282D /* FirebasePerformance in Frameworks */,
 				827C30662822E1550023282D /* FirebaseAnalytics in Frameworks */,
 				827C30862822E1550023282D /* FirebaseFunctionsSwift-Beta in Frameworks */,
@@ -1059,6 +1075,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		82004CC8285DBCB3001CFA5E /* ArcGISService */ = {
+			isa = PBXGroup;
+			children = (
+				82004CC9285DBCCF001CFA5E /* ArcGISService.swift */,
+			);
+			path = ArcGISService;
+			sourceTree = "<group>";
+		};
+		82004CCB285DBF15001CFA5E /* AGSMapView */ = {
+			isa = PBXGroup;
+			children = (
+				82004CD8285DBF44001CFA5E /* Model */,
+				82004CD7285DBF3F001CFA5E /* View */,
+				82004CD6285DBF38001CFA5E /* ViewModel */,
+			);
+			path = AGSMapView;
+			sourceTree = "<group>";
+		};
+		82004CD6285DBF38001CFA5E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				82004CCF285DBF33001CFA5E /* AgsMapViewViewModel.swift */,
+				82004CCC285DBF33001CFA5E /* AgsMapViewBuilder.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		82004CD7285DBF3F001CFA5E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				82004CD0285DBF33001CFA5E /* AgsMapView.xib */,
+				82004CCD285DBF33001CFA5E /* AgsMapView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		82004CD8285DBF44001CFA5E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				82004CCE285DBF33001CFA5E /* AgsMapViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		82004CD9285DD503001CFA5E /* AgsMapService */ = {
+			isa = PBXGroup;
+			children = (
+				82004CDA285DD512001CFA5E /* AgsMapService.swift */,
+			);
+			path = AgsMapService;
+			sourceTree = "<group>";
+		};
 		820083D4283A3FA800A0F8BB /* MapScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -1448,6 +1516,8 @@
 		8232115227D477FD00FE79E9 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				82004CD9285DD503001CFA5E /* AgsMapService */,
+				82004CC8285DBCB3001CFA5E /* ArcGISService */,
 				8270448F2855E7E800D9046E /* GeopositioningService */,
 				826A92612839531C004AAE0C /* LocationSevice */,
 				82B8EC152846849E001861E9 /* MapService */,
@@ -2428,6 +2498,7 @@
 		827E423427F8864600491AC3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				82004CCB285DBF15001CFA5E /* AGSMapView */,
 				827648BA284DC8D200D97971 /* CenterMapPinView */,
 				82E8BC3F284B64BA00BA2508 /* ChangeAddressView */,
 				82DB32882843722A00379554 /* SearchAddressView */,
@@ -4044,6 +4115,7 @@
 				827C30A72822E22E0023282D /* NVActivityIndicatorViewExtended */,
 				827C30A92822E2390023282D /* SnapKit */,
 				827C30AB2822E2570023282D /* Lottie */,
+				82004CC6285DBC0A001CFA5E /* ArcGIS */,
 			);
 			productName = ZanjabilHalal;
 			productReference = 8232108227D46EFF00FE79E9 /* ZanjabilHalal.app */;
@@ -4083,6 +4155,7 @@
 				82D3AE0F2821A23A0094CB4A /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
 				82D3AE102821A24A0094CB4A /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				82D3AE112821A2680094CB4A /* XCRemoteSwiftPackageReference "Resolver" */,
+				82004CC5285DBC09001CFA5E /* XCRemoteSwiftPackageReference "arcgis-runtime-ios" */,
 			);
 			productRefGroup = 8232108327D46EFF00FE79E9 /* Products */;
 			projectDirPath = "";
@@ -4160,6 +4233,7 @@
 				82F458132802DF79004BCD68 /* DishCategoryCollectionCell.xib in Resources */,
 				8232119427DD027F0019E6B6 /* TabBarView.xib in Resources */,
 				820188E028427D1C008916B5 /* Map.xcassets in Resources */,
+				82004CD5285DBF33001CFA5E /* AgsMapView.xib in Resources */,
 				82F457F128029144004BCD68 /* MenuCollectionView.xib in Resources */,
 				8280ABC427F01F5100DEFFE6 /* BasketViewController.xib in Resources */,
 				82EC8BFF27DE024700661F58 /* Menu.xcassets in Resources */,
@@ -4196,6 +4270,7 @@
 				82A268BA280A60E90051B997 /* InputAddressCollectionModel.swift in Sources */,
 				82E89F18282956E900CA17DC /* ChangeUserNameModel.swift in Sources */,
 				823AF153281E656600593C1C /* TabBarViewBuilder.swift in Sources */,
+				82004CD3285DBF33001CFA5E /* AgsMapViewModel.swift in Sources */,
 				82E89EFD2829005F00CA17DC /* ChangeCurrentCategoryService.swift in Sources */,
 				82F457CB28028A0B004BCD68 /* Extension + UIAplication.swift in Sources */,
 				820188ED284299E8008916B5 /* DECAddressSuggestionData.swift in Sources */,
@@ -4204,6 +4279,7 @@
 				820083FA283A412800A0F8BB /* MapCollectionCellBuilder.swift in Sources */,
 				823AF1B7281EC75E00593C1C /* AddAddressViewBuilder.swift in Sources */,
 				82F91E7727E5D88F00F5A5CC /* DECCategory.swift in Sources */,
+				82004CD4285DBF33001CFA5E /* AgsMapViewViewModel.swift in Sources */,
 				82C2661E2801CF7B007984B3 /* ErrorViewModel.swift in Sources */,
 				82C2661B2801CF7B007984B3 /* ErrorViewBuilder.swift in Sources */,
 				826A925E28394AC0004AAE0C /* DaDataService.swift in Sources */,
@@ -4292,6 +4368,7 @@
 				82F458042802DE76004BCD68 /* MenuCategoriesModel.swift in Sources */,
 				82EC8BF327DDFAF800661F58 /* OrderViewController.swift in Sources */,
 				82E8BC4A284B64F300BA2508 /* ChangeAddressModel.swift in Sources */,
+				82004CDB285DD512001CFA5E /* AgsMapService.swift in Sources */,
 				8262AF5C28145B01009A7E3A /* OrdersViewModel.swift in Sources */,
 				8262AF7A28145FE3009A7E3A /* AddressesModel.swift in Sources */,
 				82A268E1280AB3540051B997 /* PayOrderCollectionView.swift in Sources */,
@@ -4391,6 +4468,7 @@
 				827E242327DCD1410006E763 /* URLAbstractFactory.swift in Sources */,
 				8262AF89281466A2009A7E3A /* AddressCollectionCellModel.swift in Sources */,
 				8294A3F227F95D270094CAEB /* SwitchMenuModel.swift in Sources */,
+				82004CD2285DBF33001CFA5E /* AgsMapView.swift in Sources */,
 				82EC8BD527DDF24C00661F58 /* ProfileViewModel.swift in Sources */,
 				82A268A7280A5AE60051B997 /* InputAddressModel.swift in Sources */,
 				823AF155281E656600593C1C /* TabBarViewModel.swift in Sources */,
@@ -4443,6 +4521,7 @@
 				827472EF2841323C004D3FDF /* Extension + CLLocation.swift in Sources */,
 				82B637F9280B01A800E8DF72 /* BasketCollectionViewBuilder.swift in Sources */,
 				8232118727DCFDEE0019E6B6 /* BuilderMainTabBar.swift in Sources */,
+				82004CD1285DBF33001CFA5E /* AgsMapViewBuilder.swift in Sources */,
 				82B8EC2D28468DDA001861E9 /* AddressSuggestionScreenViewControllerBuilder.swift in Sources */,
 				8223D5E5284CC33F00729F52 /* MainTableViewsBuilder.swift in Sources */,
 				827E241C27DCD1410006E763 /* URLSchemeService.swift in Sources */,
@@ -4465,6 +4544,7 @@
 				82A268BB280A60E90051B997 /* InputAddressCollectionViewModel.swift in Sources */,
 				82741A9727D4E795006EBE80 /* BuilderLoading.swift in Sources */,
 				820188F328429D94008916B5 /* RequestsRESTService.swift in Sources */,
+				82004CCA285DBCCF001CFA5E /* ArcGISService.swift in Sources */,
 				8294A3F327F95D270094CAEB /* SwitchMenuViewModel.swift in Sources */,
 				82B637F4280B01A800E8DF72 /* BasketCollectionViewModel.swift in Sources */,
 				82CD8079281548A50048DC71 /* OrderCollectionCellViewModel.swift in Sources */,
@@ -4807,6 +4887,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		82004CC5285DBC09001CFA5E /* XCRemoteSwiftPackageReference "arcgis-runtime-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/esri/arcgis-runtime-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 100.0.0;
+			};
+		};
 		82D3AE092821A1C60094CB4A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -4882,6 +4970,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		82004CC6285DBC0A001CFA5E /* ArcGIS */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 82004CC5285DBC09001CFA5E /* XCRemoteSwiftPackageReference "arcgis-runtime-ios" */;
+			productName = ArcGIS;
+		};
 		827C30612822E1310023282D /* Resolver */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 82D3AE112821A2680094CB4A /* XCRemoteSwiftPackageReference "Resolver" */;

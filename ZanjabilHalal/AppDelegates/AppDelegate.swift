@@ -13,6 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private let mainRouter       = MainRouter()
     private let setupFirebase    = SetupFirebase()
 	private let yandexMapService = YandexMapService()
+	private let arcGISService    = ArcGISService()
+	
     
     public var window: UIWindow?
     
@@ -22,6 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.setupFirebase.setup()
 		// MARK: - setup yandexMapService
 		self.yandexMapService.activate()
+		// MARK: - ArcGISService
+		self.arcGISService.setup()
         //set root viewController
         self.mainRouter.setRootViewController(id: .loadingVC)
         return true

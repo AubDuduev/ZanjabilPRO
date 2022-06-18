@@ -80,6 +80,14 @@ extension Resolver: ResolverRegistering {
 		Resolver.register {
 			LocationService()
 		}
+		
+		Resolver.register {
+			ArcGISService()
+		}
+		
+		Resolver.register {
+			AgsMapService()
+		}
     }
     
     private static func application(){

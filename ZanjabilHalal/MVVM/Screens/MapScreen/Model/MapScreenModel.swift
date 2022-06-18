@@ -8,11 +8,10 @@ import MapKit
 import UIKit
 
 enum MapScreenModel {
-    
+	
 	case createViewProperties
-	case setupGeoPositioningService
-	case updateCameraPosition(MKMapCamera)
 	case addChangeAddress(UIView)
 	case addCenterMapPinView(UIView)
+	case addAgsMapView(UIView)
 	case animationCenterPinImageView(RegionChange)
 }

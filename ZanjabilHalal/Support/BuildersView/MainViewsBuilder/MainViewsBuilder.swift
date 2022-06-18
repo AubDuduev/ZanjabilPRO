@@ -111,6 +111,13 @@ final class MainViewsBuilder {
 		centerMapPinViewBuilder.viewModel.model = .createViewProperties
 		return centerMapPinViewBuilder
 	}
+	
+	public func createAgsMapViewBuilder() -> AgsMapViewBuilder {
+		let agsMapViewBuilder = AgsMapViewBuilder.create()
+		agsMapViewBuilder.viewModel.model = .createViewProperties
+		agsMapViewBuilder.viewModel.model = .setupGeoPositioningService
+		return agsMapViewBuilder
+	}
     
     enum Views {
         case menuPriceView
