@@ -111,6 +111,12 @@ final class MainViewsBuilder {
 		centerMapPinViewBuilder.viewModel.model = .createViewProperties
 		return centerMapPinViewBuilder
 	}
+	
+	public func createYandexMapViewBuilder() -> YandexMapViewBuilder {
+		let yandexMapViewBuilder = YandexMapViewBuilder.create()
+		yandexMapViewBuilder.viewModel.model = .createViewProperties
+		return yandexMapViewBuilder
+	}
     
     enum Views {
         case menuPriceView

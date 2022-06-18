@@ -80,6 +80,11 @@ extension Resolver: ResolverRegistering {
 		Resolver.register {
 			LocationService()
 		}
+		
+		Resolver.register {
+			YandexMapService()
+		}
+		
     }
     
     private static func application(){
