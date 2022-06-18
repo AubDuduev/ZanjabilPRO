@@ -7,16 +7,18 @@
 import Foundation
 
 struct DECYandexGeoObjects {
-   
-   
-   enum CodingKeys: String, CodingKey {
-      
-   }
+	
+	let geoObjects: DECYandexGEOObject?
+	
+	enum CodingKeys: String, CodingKey {
+		
+		case geoObjects = "GeoObject"
+	}
 }
 extension DECYandexGeoObjects: Decodable {
-   
-   init(from decoder: Decoder) throws {
-      let values = try decoder.container(keyedBy: CodingKeys.self)
-      self. = try? values.decode(.self, forKey: .offers)
-   }
+	
+	init(from decoder: Decoder) throws {
+		let values = try decoder.container(keyedBy: CodingKeys.self)
+		self.geoObjects = try? values.decode(DECYandexGEOObject?.self, forKey: .geoObjects)
+	}
 }

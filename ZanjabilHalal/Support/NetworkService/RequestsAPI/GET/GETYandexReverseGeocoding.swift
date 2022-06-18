@@ -1,5 +1,5 @@
 //
-//  POSTYandexReverseGeocoding.swift
+//  GETYandexReverseGeocoding.swift
 //  ZanjabilHalal
 //
 //  Created by Senior Developer on 18.06.2022.
@@ -21,14 +21,13 @@ public final class GETYandexReverseGeocoding: SessionProtocol {
 		//1 - Testing internet
 		guard self.internetСheck.check() else { return }
 		//2 - Creating URL, Header, Body, Parameters
-		let parameters = data as! ENCCoordinate
-		let body       = self.urlBody.create(with: .coordinate(parameters))
-		let urlObject  = URLReverseGeocoding()
-		let url        = self.abstractFactory.create(urlObject)?.URL
+		let parameters = data as! ParametersYandexReverseGeocoding
+		let urlObject  = URLYandexReverseGeocoding()
+		let url        = self.abstractFactory.create(urlObject, dataForUrl: parameters)?.URL
 		let header     = self.headers.create(type: .authorization_appJson(.Token, .daData))
 		//3 - Geting data
 		self.group.enter()
-		self.session(url: url, body: body, httpMethod: .post, header: header) { sessionResult in
+		self.session(url: url, httpMethod: .get, header: header) { sessionResult in
 			switch sessionResult {
 					// Success
 				case .data(let data):
@@ -50,11 +49,12 @@ public final class GETYandexReverseGeocoding: SessionProtocol {
 						completionRequest(.error(error))
 						// Success
 					case .json(let object):
-						if let geoObjects = (object as? DECYandexReverseGeocoding)?.response?.geoObjectCollection?.geoObjects {
-							completionRequest(.object(geoObjects))
+						if let yandexReverseGeocoding = object as? DECYandexReverseGeocoding {
+							completionRequest(.object(yandexReverseGeocoding))
 						}
 				}
 			}
 		}
 	}
 }
+

@@ -7,16 +7,21 @@
 import Foundation
 
 struct DECYandexGEOObject {
-   
-   
-   enum CodingKeys: String, CodingKey {
-      
-   }
+	
+	let fullStreet : String?
+	let fullAddress: String?
+	
+	enum CodingKeys: String, CodingKey {
+		
+		case fullStreet  = "name"
+		case fullAddress = "description"
+	}
 }
 extension DECYandexGEOObject: Decodable {
-   
-   init(from decoder: Decoder) throws {
-      let values = try decoder.container(keyedBy: CodingKeys.self)
-      self. = try? values.decode(.self, forKey: .offers)
-   }
+	
+	init(from decoder: Decoder) throws {
+		let values = try decoder.container(keyedBy: CodingKeys.self)
+		self.fullStreet  = try? values.decode(String?.self, forKey: .fullStreet)
+		self.fullAddress = try? values.decode(String?.self, forKey: .fullAddress)
+	}
 }

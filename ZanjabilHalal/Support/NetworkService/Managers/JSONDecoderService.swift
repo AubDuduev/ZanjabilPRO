@@ -12,7 +12,7 @@ final class JSONDecoderService {
    
    public func decode<T: Decodable>(jsonType: T.Type, data: Data?, completion: @escaping ClosureDecode){
       guard let data = data else { return }
-      do{
+      do {
          let json = try self.decoder.decode(T.self, from: data)
          completion(.json(json))
          //return error

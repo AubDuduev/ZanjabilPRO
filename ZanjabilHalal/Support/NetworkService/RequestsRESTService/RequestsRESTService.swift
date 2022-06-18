@@ -40,4 +40,21 @@ final class RequestsRESTService {
 			}
 		}
 	}
+	// MARK: - GET
+	public func getYandexReverseGeocoding(with parameters: ParametersYandexReverseGeocoding, completion: @escaping Closure<DECYandexGEOObject?>){
+		let getYandexReverseGeocoding = GETYandexReverseGeocoding()
+		getYandexReverseGeocoding.request(data: parameters) { requestResult in
+			DispatchQueue.main.async {
+				switch  requestResult {
+					case .error(let error):
+						print(error ?? "")
+					case .object(let yandexReverseGeocoding):
+						let yandexReverseGeocoding = yandexReverseGeocoding as? DECYandexReverseGeocoding
+						let yandexGEOObject        = yandexReverseGeocoding?.response?.geoObjectCollection?.collection?.first?.geoObjects
+						completion(yandexGEOObject)
+				}
+			}
+		}
+	}
 }
+

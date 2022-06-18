@@ -7,16 +7,18 @@
 import Foundation
 
 struct DECYandexReverseGeocoding {
-   
-   
-   enum CodingKeys: String, CodingKey {
-      
-   }
+	
+	let response: DECYandexReverseGeocodingResponse?
+	
+	enum CodingKeys: String, CodingKey {
+		
+		case response = "response"
+	}
 }
 extension DECYandexReverseGeocoding: Decodable {
-   
-   init(from decoder: Decoder) throws {
-      let values = try decoder.container(keyedBy: CodingKeys.self)
-      self. = try? values.decode(.self, forKey: .offers)
-   }
+	
+	init(from decoder: Decoder) throws {
+		let values = try decoder.container(keyedBy: CodingKeys.self)
+		self.response = try? values.decode(DECYandexReverseGeocodingResponse?.self, forKey: .response)
+	}
 }
