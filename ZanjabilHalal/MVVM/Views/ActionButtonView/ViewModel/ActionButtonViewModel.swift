@@ -69,8 +69,7 @@ final class ActionButtonViewModel: MVVMViewModelProtocol {
                             print("")
                         }
 					case .addAddress:
-						guard let addressSuggestion = self.geoPositioningService.getAddressSuggestion() else { return }
-						self.createAddressService.createForSuggestion(with: addressSuggestion)
+						self.createAddressService.createForYandexAddressSuggestion()
 						self.saveAddress { [weak self] in
 							guard let self = self else { return }
 							self.mainRouter.popMainNavigation(id: .payOrderVC, animated: true)

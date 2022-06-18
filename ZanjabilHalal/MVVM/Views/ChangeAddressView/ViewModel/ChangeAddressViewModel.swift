@@ -16,6 +16,10 @@ final class ChangeAddressViewModel: MVVMViewModelProtocol {
     }
 	// MARK: - DI
 	@Injected
+	private var createAddressService          : CreateAddressService
+	@Injected
+	private var geoPositioningService         : GeoPositioningService
+	@Injected
 	private var mainViewsBuilder              : MainViewsBuilder
 	@Injected
 	private var yandexMapCameraListenerService: YandexMapCameraListenerService
@@ -54,7 +58,6 @@ final class ChangeAddressViewModel: MVVMViewModelProtocol {
 				self.yandexMapCameraListenerService.completionAddress
 					.sink(receiveValue: { yandexGEOObject in
 						self.model = .updateAddress(yandexGEOObject)
-						//self.geoPositioningService.saveAddressSuggestion(with: suggestionsAddress)
 					})
 					.store(in: &self.cancellable)
 			case .addAddressCollectionView(let containerView):
@@ -63,6 +66,9 @@ final class ChangeAddressViewModel: MVVMViewModelProtocol {
 			case .updateAddress(let yandexGEOObject):
 				let currentAddress = yandexGEOObject.metaDataProperty?.geocoderMetaData?.fullAddress
 				self.mainView?.viewProperties?.currentAddress = currentAddress
+				if let yandexAddressSuggestion = yandexGEOObject.metaDataProperty?.geocoderMetaData?.yandexAddressSuggestion {
+					self.createAddressService.saveYandexAddressSuggestion(with: yandexAddressSuggestion)
+				}
 				self.reloadProperties()
 			case .didTapSearchAddress:
 				self.mainRouter.presentNavigation(id: .addressSuggestionScreenVC, animated: true)

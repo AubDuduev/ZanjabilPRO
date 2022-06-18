@@ -13,6 +13,9 @@ final class CreateAddressService: ServiceProtocol {
     public var address: ENCAddress {
         return ENCAddress(createAddressModel: self.createAddressModel)
     }
+	
+	private var addressSuggestion      : DECAddressSuggestion?
+	private var yandexAddressSuggestion: DECYandexAddressSuggestion?
     
     public var update: ClosureAny?
     
@@ -42,12 +45,25 @@ final class CreateAddressService: ServiceProtocol {
         self.update?(self.createAddressModel)
     }
 	
-	public func createForSuggestion(with addressSuggestion: DECAddressSuggestion) {
-		guard let addressSuggestionData = addressSuggestion.addressData else { return }
+	public func createForSuggestion() {
+		guard let addressSuggestionData = self.addressSuggestion?.addressData else { return }
 		self.createAddressModel = CreateAddressModel(addressSuggestionData: addressSuggestionData)
+	}
+	
+	public func createForYandexAddressSuggestion() {
+		guard let yandexAddressSuggestion = self.yandexAddressSuggestion else { return }
+		self.createAddressModel = CreateAddressModel(yandexAddressSuggestion: yandexAddressSuggestion)
 	}
     
     public func setAddress(with address: DECAddress) {
         self.createAddressModel = CreateAddressModel(address: address)
     }
+	
+	public func saveAddressSuggestion(with addressSuggestion: DECAddressSuggestion){
+		self.addressSuggestion = addressSuggestion
+	}
+	
+	public func saveYandexAddressSuggestion(with yandexAddressSuggestion: DECYandexAddressSuggestion){
+		self.yandexAddressSuggestion = yandexAddressSuggestion
+	}
 }

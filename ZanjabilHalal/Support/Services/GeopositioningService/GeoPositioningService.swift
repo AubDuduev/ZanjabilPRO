@@ -27,8 +27,6 @@ final class GeoPositioningService {
 	public var completionYandexCamera       = PassthroughSubject<YMKCameraPosition, Never>()
 	public var completionRegionChange       = PassthroughSubject<RegionChange, Never>()
 	
-	private var addressSuggestion: DECAddressSuggestion?
-	
 	public func setupLocationService() {
 		self.locationService.setup()
 		self.locationService.authorisation()
@@ -62,14 +60,6 @@ final class GeoPositioningService {
 	public func setCoordinate(with coordinate: CLLocationCoordinate2D) {
 		self.createMapCamera(with: coordinate)
 		self.createYandexCameraPosition(with: coordinate)
-	}
-	
-	public func saveAddressSuggestion(with addressSuggestion: DECAddressSuggestion){
-		self.addressSuggestion = addressSuggestion
-	}
-	
-	public func getAddressSuggestion() -> DECAddressSuggestion? {
-		return self.addressSuggestion
 	}
 	
 	public func stopUserLocation(){

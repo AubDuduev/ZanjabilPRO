@@ -23,6 +23,8 @@
 		82004D01285E22C0001CFA5E /* DECYandexGeoObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82004D00285E22C0001CFA5E /* DECYandexGeoObjects.swift */; };
 		82004D04285E2E15001CFA5E /* DECYandexMetaDataProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82004D03285E2E15001CFA5E /* DECYandexMetaDataProperty.swift */; };
 		82004D06285E2E9B001CFA5E /* DECYandexGeocoderMetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82004D05285E2E9B001CFA5E /* DECYandexGeocoderMetaData.swift */; };
+		82004D08285E3045001CFA5E /* DECYandexAddressSuggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82004D07285E3045001CFA5E /* DECYandexAddressSuggestion.swift */; };
+		82004D0A285E308B001CFA5E /* DECYandexAddressComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82004D09285E308B001CFA5E /* DECYandexAddressComponent.swift */; };
 		820083E6283A3FD900A0F8BB /* MapScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820083DA283A3FD900A0F8BB /* MapScreenViewController.swift */; };
 		820083E9283A3FD900A0F8BB /* MapScreenViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820083DD283A3FD900A0F8BB /* MapScreenViewBuilder.swift */; };
 		820083EC283A3FD900A0F8BB /* MapScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820083E0283A3FD900A0F8BB /* MapScreenModel.swift */; };
@@ -568,6 +570,8 @@
 		82004D00285E22C0001CFA5E /* DECYandexGeoObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DECYandexGeoObjects.swift; sourceTree = "<group>"; };
 		82004D03285E2E15001CFA5E /* DECYandexMetaDataProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DECYandexMetaDataProperty.swift; sourceTree = "<group>"; };
 		82004D05285E2E9B001CFA5E /* DECYandexGeocoderMetaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DECYandexGeocoderMetaData.swift; sourceTree = "<group>"; };
+		82004D07285E3045001CFA5E /* DECYandexAddressSuggestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DECYandexAddressSuggestion.swift; sourceTree = "<group>"; };
+		82004D09285E308B001CFA5E /* DECYandexAddressComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DECYandexAddressComponent.swift; sourceTree = "<group>"; };
 		820083DA283A3FD900A0F8BB /* MapScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreenViewController.swift; sourceTree = "<group>"; };
 		820083DD283A3FD900A0F8BB /* MapScreenViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreenViewBuilder.swift; sourceTree = "<group>"; };
 		820083E0283A3FD900A0F8BB /* MapScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreenModel.swift; sourceTree = "<group>"; };
@@ -1175,6 +1179,8 @@
 				82004CF2285E1659001CFA5E /* DECYandexGEOObject.swift */,
 				82004D03285E2E15001CFA5E /* DECYandexMetaDataProperty.swift */,
 				82004D05285E2E9B001CFA5E /* DECYandexGeocoderMetaData.swift */,
+				82004D07285E3045001CFA5E /* DECYandexAddressSuggestion.swift */,
+				82004D09285E308B001CFA5E /* DECYandexAddressComponent.swift */,
 			);
 			path = DECYandexGEOObject;
 			sourceTree = "<group>";
@@ -4650,6 +4656,7 @@
 				8280AC0627F086D600DEFFE6 /* PayOrderViewController.swift in Sources */,
 				820083ED283A3FD900A0F8BB /* MapScreenViewModel.swift in Sources */,
 				82E2F41827D5CC56005C4530 /* SetupFirebase.swift in Sources */,
+				82004D0A285E308B001CFA5E /* DECYandexAddressComponent.swift in Sources */,
 				827E243327DCD1CE0006E763 /* AlertService.swift in Sources */,
 				82E8BC4B284B64F300BA2508 /* ChangeAddressViewModel.swift in Sources */,
 				828C2DC32813086F0059A828 /* ProfileCollectionCellBuilder.swift in Sources */,
@@ -4769,6 +4776,7 @@
 				82C266252801DAC4007984B3 /* Extension + Profile.swift in Sources */,
 				82004CFF285E1ECC001CFA5E /* YandexMapCameraListenerService.swift in Sources */,
 				8262AF9128146A10009A7E3A /* Extension + AddressesViewController.swift in Sources */,
+				82004D08285E3045001CFA5E /* DECYandexAddressSuggestion.swift in Sources */,
 				82C266292801DADD007984B3 /* Extension + ActionButton.swift in Sources */,
 				826B35E2280C11D800A15424 /* BasketTotalSumViewModel.swift in Sources */,
 				82A268E2280AB3540051B997 /* PayOrderCollectionModel.swift in Sources */,
