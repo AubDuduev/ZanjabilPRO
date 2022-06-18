@@ -8,20 +8,17 @@ import Foundation
 
 struct DECYandexGEOObject {
 	
-	let fullStreet : String?
-	let fullAddress: String?
+	let metaDataProperty: DECYandexMetaDataProperty?
 	
 	enum CodingKeys: String, CodingKey {
 		
-		case fullStreet  = "name"
-		case fullAddress = "description"
+		case metaDataProperty = "metaDataProperty"
 	}
 }
 extension DECYandexGEOObject: Decodable {
 	
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
-		self.fullStreet  = try? values.decode(String?.self, forKey: .fullStreet)
-		self.fullAddress = try? values.decode(String?.self, forKey: .fullAddress)
+		self.metaDataProperty = try? values.decode(DECYandexMetaDataProperty?.self, forKey: .metaDataProperty)
 	}
 }

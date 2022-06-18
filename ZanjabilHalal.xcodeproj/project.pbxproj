@@ -21,6 +21,8 @@
 		82004CFC285E1A5C001CFA5E /* ParametersYandexReverseGeocoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82004CFB285E1A5C001CFA5E /* ParametersYandexReverseGeocoding.swift */; };
 		82004CFF285E1ECC001CFA5E /* YandexMapCameraListenerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82004CFE285E1ECC001CFA5E /* YandexMapCameraListenerService.swift */; };
 		82004D01285E22C0001CFA5E /* DECYandexGeoObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82004D00285E22C0001CFA5E /* DECYandexGeoObjects.swift */; };
+		82004D04285E2E15001CFA5E /* DECYandexMetaDataProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82004D03285E2E15001CFA5E /* DECYandexMetaDataProperty.swift */; };
+		82004D06285E2E9B001CFA5E /* DECYandexGeocoderMetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82004D05285E2E9B001CFA5E /* DECYandexGeocoderMetaData.swift */; };
 		820083E6283A3FD900A0F8BB /* MapScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820083DA283A3FD900A0F8BB /* MapScreenViewController.swift */; };
 		820083E9283A3FD900A0F8BB /* MapScreenViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820083DD283A3FD900A0F8BB /* MapScreenViewBuilder.swift */; };
 		820083EC283A3FD900A0F8BB /* MapScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820083E0283A3FD900A0F8BB /* MapScreenModel.swift */; };
@@ -564,6 +566,8 @@
 		82004CFB285E1A5C001CFA5E /* ParametersYandexReverseGeocoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametersYandexReverseGeocoding.swift; sourceTree = "<group>"; };
 		82004CFE285E1ECC001CFA5E /* YandexMapCameraListenerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexMapCameraListenerService.swift; sourceTree = "<group>"; };
 		82004D00285E22C0001CFA5E /* DECYandexGeoObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DECYandexGeoObjects.swift; sourceTree = "<group>"; };
+		82004D03285E2E15001CFA5E /* DECYandexMetaDataProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DECYandexMetaDataProperty.swift; sourceTree = "<group>"; };
+		82004D05285E2E9B001CFA5E /* DECYandexGeocoderMetaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DECYandexGeocoderMetaData.swift; sourceTree = "<group>"; };
 		820083DA283A3FD900A0F8BB /* MapScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreenViewController.swift; sourceTree = "<group>"; };
 		820083DD283A3FD900A0F8BB /* MapScreenViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreenViewBuilder.swift; sourceTree = "<group>"; };
 		820083E0283A3FD900A0F8BB /* MapScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreenModel.swift; sourceTree = "<group>"; };
@@ -1144,7 +1148,7 @@
 				82004CF4285E1690001CFA5E /* DECYandexReverseGeocodingResponse.swift */,
 				82004CF6285E16FB001CFA5E /* DECYandexGeoObjectCollection.swift */,
 				82004D00285E22C0001CFA5E /* DECYandexGeoObjects.swift */,
-				82004CF2285E1659001CFA5E /* DECYandexGEOObject.swift */,
+				82004D02285E2DF4001CFA5E /* DECYandexGEOObject */,
 			);
 			path = YandexReverseGeocoding;
 			sourceTree = "<group>";
@@ -1163,6 +1167,16 @@
 				82004CFE285E1ECC001CFA5E /* YandexMapCameraListenerService.swift */,
 			);
 			path = YandexMapCameraListenerService;
+			sourceTree = "<group>";
+		};
+		82004D02285E2DF4001CFA5E /* DECYandexGEOObject */ = {
+			isa = PBXGroup;
+			children = (
+				82004CF2285E1659001CFA5E /* DECYandexGEOObject.swift */,
+				82004D03285E2E15001CFA5E /* DECYandexMetaDataProperty.swift */,
+				82004D05285E2E9B001CFA5E /* DECYandexGeocoderMetaData.swift */,
+			);
+			path = DECYandexGEOObject;
 			sourceTree = "<group>";
 		};
 		820083D4283A3FA800A0F8BB /* MapScreen */ = {
@@ -4554,6 +4568,7 @@
 				8223D5AC284CA77D00729F52 /* AddressSuggestionsTableViewBuilder.swift in Sources */,
 				829A56C928202261005F110B /* StartLoadingViewBuilder.swift in Sources */,
 				82004CF5285E1690001CFA5E /* DECYandexReverseGeocodingResponse.swift in Sources */,
+				82004D06285E2E9B001CFA5E /* DECYandexGeocoderMetaData.swift in Sources */,
 				8223D5DE284CBDE900729F52 /* AddressSuggestionTableCellModel.swift in Sources */,
 				82C266122801CDC4007984B3 /* WarningService.swift in Sources */,
 				82004CEC285E154F001CFA5E /* GETYandexReverseGeocoding.swift in Sources */,
@@ -4599,6 +4614,7 @@
 				828C2DB4281307BF0059A828 /* ProfileCollectionModel.swift in Sources */,
 				82A268BD280A60E90051B997 /* InputAddressCollection.swift in Sources */,
 				82004CE8285DF2B1001CFA5E /* YandexMapModel.swift in Sources */,
+				82004D04285E2E15001CFA5E /* DECYandexMetaDataProperty.swift in Sources */,
 				8294A50927F9EEE60094CAEB /* POSTOrder.swift in Sources */,
 				823210CB27D475E200FE79E9 /* LoadNidoble.swift in Sources */,
 				82EC8BFA27DDFAF800661F58 /* OrderViewModel.swift in Sources */,

@@ -61,7 +61,7 @@ final class ChangeAddressViewModel: MVVMViewModelProtocol {
 				self.addressesCollectionViewModel       = self.createAddressCollectionViewViewModel(with: containerView)
 				self.addressesCollectionViewModel.model = .createViewProperties(addressCollectionType: .display)
 			case .updateAddress(let yandexGEOObject):
-				let currentAddress = yandexGEOObject.fullStreet
+				let currentAddress = yandexGEOObject.metaDataProperty?.geocoderMetaData?.fullAddress
 				self.mainView?.viewProperties?.currentAddress = currentAddress
 				self.reloadProperties()
 			case .didTapSearchAddress:
