@@ -6,11 +6,14 @@
 //
 import UIKit
 
+private typealias R = TextResources.Navigation.NavigationTitle
+
 final class AddressSuggestionScreenViewController: UIViewController, MVVMViewProtocol {
     
     //MARK: - Main ViewProperties
     struct ViewProperties {
-        
+		let addAddressSuggestionsListView: Closure<UIView>
+		let addSearchAddressView         : Closure<UIView>
     }
     var viewProperties: ViewProperties?
     
@@ -18,11 +21,20 @@ final class AddressSuggestionScreenViewController: UIViewController, MVVMViewPro
 	@IBOutlet weak private var containerSearchView: UIView!
 	@IBOutlet weak private var containerAddressSuggestionsCollectionView: UIView!
     
-    //MARK: - LifeCycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		self.setTitle()
+	}
+	
+	private func setTitle(){
+		self.title = R.addressList.localizedString()
+	}
+	
+	func create(with viewProperties: ViewProperties?) {
+		self.viewProperties = viewProperties
+		self.viewProperties?.addAddressSuggestionsListView(containerAddressSuggestionsCollectionView)
+		self.viewProperties?.addSearchAddressView(containerSearchView)
+	}
     
     func update(with viewProperties: ViewProperties?) {
         self.viewProperties = viewProperties

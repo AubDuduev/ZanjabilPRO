@@ -13,8 +13,6 @@ protocol MVVMViewModelProtocol where Self: AnyObject {
     
     // MARK: - Основное View
     var mainView: MainView?     { get set }
-    // MARK: - уведомляет об ViewProperties
-    var isUpdate: ClosureEmpty? { get set }
     
     // MARK: - Обновление ViewProperties Views связанных с основной View привязаной к ViewModel
     func updateAnyView<ViewProperties>(with viewProperties: ViewProperties?)
@@ -44,13 +42,15 @@ extension MVVMViewModelProtocol {
     }
 }
 
-protocol MVVMViewProtocol {
+protocol MVVMViewProtocol where Self: AnyObject {
     
     associatedtype ViewProperties
     
     var viewProperties: ViewProperties? { get set }
     
     func update(with viewProperties: ViewProperties?)
+	
+	func create(with viewProperties: ViewProperties?)
 }
 
 extension MVVMViewProtocol {
@@ -58,6 +58,10 @@ extension MVVMViewProtocol {
 	// MARK: - Обновление текущих ViewProperties
 	func reloadProperties() {
 		self.update(with: self.viewProperties)
+	}
+	
+	func create(with viewProperties: ViewProperties?) {
+		self.viewProperties = viewProperties
 	}
 }
 

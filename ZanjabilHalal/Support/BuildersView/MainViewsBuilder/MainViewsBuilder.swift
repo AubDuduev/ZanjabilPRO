@@ -99,6 +99,24 @@ final class MainViewsBuilder {
 		searchAddressViewBuilder.viewModel.model = .createViewProperties
 		return searchAddressViewBuilder
 	}
+	
+	public func createChangeAddressViewViewBuilder() -> ChangeAddressViewBuilder {
+		let changeAddressViewBuilder = ChangeAddressViewBuilder.create()
+		changeAddressViewBuilder.viewModel.model = .createViewProperties
+		return changeAddressViewBuilder
+	}
+	
+	public func createCenterMapPinViewBuilder() -> CenterMapPinViewBuilder {
+		let centerMapPinViewBuilder = CenterMapPinViewBuilder.create()
+		centerMapPinViewBuilder.viewModel.model = .createViewProperties
+		return centerMapPinViewBuilder
+	}
+	
+	public func createYandexMapViewBuilder() -> YandexMapViewBuilder {
+		let yandexMapViewBuilder = YandexMapViewBuilder.create()
+		yandexMapViewBuilder.viewModel.model = .createViewProperties
+		return yandexMapViewBuilder
+	}
     
     enum Views {
         case menuPriceView

@@ -14,17 +14,17 @@ final class AddressSuggestionScreenViewModel: MVVMViewModelProtocol {
     }
 	// MARK: - DI
 	@Injected
-	private var mapService                : MapService
+	private var mapService           : MapKitService
 	@Injected
-	private var mainViewsBuilder          : MainViewsBuilder
+	private var mainViewsBuilder     : MainViewsBuilder
 	@Injected
-	private var mainCollectionViewsBuilder: MainCollectionViewsBuilder
+	private var mainTableViewsBuilder: MainTableViewsBuilder
     //MARK: - implementation protocol
     public var mainView: AddressSuggestionScreenViewController?
     public var isUpdate: ClosureEmpty?
 	// MARK: - Private
-	private var searchAddressViewModel               : SearchAddressViewModel!
-	private var addressSuggestionsCollectionViewModel: AddressSuggestionsCollectionViewModel!
+	private var searchAddressViewModel          : SearchAddressViewModel!
+	private var addressSuggestionsTableViewModel: AddressSuggestionsTableViewModel!
 	//MARK: - Main state view model
 	private func stateModel(){
 		guard let model = self.model else { return }
@@ -33,9 +33,15 @@ final class AddressSuggestionScreenViewModel: MVVMViewModelProtocol {
 				let addAddressSuggestionsListView : Closure<UIView> = { container in
 					self.model = .addAddressSuggestionsListView(container)
 				}
+				let addSearchAddressView : Closure<UIView> = { container in
+					self.model = .addSearchAddressView(container)
+				}
+				let viewProperties = AddressSuggestionScreenViewController.ViewProperties(addAddressSuggestionsListView: addAddressSuggestionsListView,
+																						  addSearchAddressView         : addSearchAddressView)
+				self.mainView?.create(with: viewProperties)
 			case .addAddressSuggestionsListView(let container):
-				self.addressSuggestionsCollectionViewModel = self.createAddressSuggestionsCollectionViewViewModel(with: container)
-				self.addressSuggestionsCollectionViewModel.model = .getSuggestionsAddressList
+				self.addressSuggestionsTableViewModel       = self.createAddressSuggestionsTableViewViewModel(with: container)
+				self.addressSuggestionsTableViewModel.model = .getSuggestionsAddressList
 			case .addSearchAddressView(let container):
 				self.searchAddressViewModel = self.createSearchAddressViewModel(with: container)
 		}
@@ -51,16 +57,14 @@ final class AddressSuggestionScreenViewModel: MVVMViewModelProtocol {
 		return searchAddressViewBuilder.viewModel
 	}
 	
-	public func createAddressSuggestionsCollectionViewViewModel(with containerView: UIView) -> AddressSuggestionsCollectionViewModel {
-		let addressSuggestionsCollectionViewBuilder = self.mainCollectionViewsBuilder.createAddressSuggestionsCollectionViewBuilder()
-		let addressSuggestionsCollectionView        = addressSuggestionsCollectionViewBuilder.view
-		self.mainView?.view.insertSubview(addressSuggestionsCollectionView, at: 1000)
-		addressSuggestionsCollectionView.translatesAutoresizingMaskIntoConstraints = false
-		addressSuggestionsCollectionView.topAnchor.constraint(equalTo: containerView.bottomAnchor).isActive = true
-		addressSuggestionsCollectionView.leadingAnchor.constraint(equalTo: self.mainView!.view.leadingAnchor).isActive = true
-		addressSuggestionsCollectionView.trailingAnchor.constraint(equalTo: self.mainView!.view.trailingAnchor).isActive = true
-		addressSuggestionsCollectionView.heightAnchor.constraint(equalToConstant: 100).isActive = true
-		return addressSuggestionsCollectionViewBuilder.viewModel
+	public func createAddressSuggestionsTableViewViewModel(with containerView: UIView) -> AddressSuggestionsTableViewModel {
+		let addressSuggestionsTableViewBuilder = self.mainTableViewsBuilder.createAddressSuggestionsTableViewBuilder()
+		let addressSuggestionsTableView        = addressSuggestionsTableViewBuilder.view
+		containerView.addSubview(addressSuggestionsTableView)
+		addressSuggestionsTableView.snp.makeConstraints { addressSuggestionsTableView in
+			addressSuggestionsTableView.edges.equalToSuperview()
+		}
+		return addressSuggestionsTableViewBuilder.viewModel
 	}
     
     init(with mainView: AddressSuggestionScreenViewController) {

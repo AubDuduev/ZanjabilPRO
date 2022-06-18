@@ -7,7 +7,7 @@
 import Resolver
 import UIKit
 
-private typealias R = TextResources.Router
+private typealias R = TextResources.Navigation
 
 // MARK: - It is responsible for creating navigation in App
 final class MainRouter {
@@ -28,6 +28,10 @@ final class MainRouter {
         self.currentPresentationVC = self.mainCreateController.createVC(id: mainNavigationControllersID)
         self.navigationViewController.pushViewController(self.currentPresentationVC, animated: animated)
     }
+	public func popMainNavigation(id mainNavigationControllersID: MainCreateController.ControllersID, animated: Bool){
+		self.currentPresentationVC = self.mainCreateController.createVC(id: mainNavigationControllersID)
+		self.navigationViewController.popToViewController(self.currentPresentationVC, animated: animated)
+	}
     // MARK: - Logic presentation in NavigationViewController
     public func presentNavigation(id mainNavigationControllersID: MainCreateController.ControllersID, animated: Bool = false){
         self.currentPresentationVC = self.mainCreateController.createVC(id: mainNavigationControllersID)
@@ -44,7 +48,7 @@ final class MainRouter {
         self.newNavigationVC.pushViewController(self.currentPresentationVC, animated: animated)
     }
     
-    public func popRootInCurrentNavigationVC(id rootVcID: MainCreateController.ControllersID, animated: Bool){
+    public func popRootInCurrentNavigationVC(animated: Bool){
         self.newNavigationVC.popViewController(animated: animated)
     }
     
@@ -56,6 +60,10 @@ final class MainRouter {
         window??.rootViewController = rootViewController
         window??.makeKeyAndVisible()
     }
+	
+	public func dismiss(animated: Bool){
+		self.currentPresentationVC.dismiss(animated: animated)
+	}
     
 //    public func setupNewNavigationVC(isNavigationBarHidden: Bool = false, animatedHidden: Bool = false, tintColor: UIColor = .blue, backButtonTitle: String = "", title: TextResources.Router.NavigationTitle = .empty){
 //        self.newNavigationVC.navigationBar.tintColor       = tintColor
@@ -64,12 +72,12 @@ final class MainRouter {
 //        self.newNavigationVC.setNavigationBarHidden(isNavigationBarHidden, animated: animatedHidden)
 //    }
     
-    public func setupMainNavigationVC(isNavigationBarHidden: Bool = false, animatedHidden: Bool = false, tintColor: UIColor = .blue, backButtonTitle: String = "", title: TextResources.Router.NavigationTitle = .empty){
+	public func setupMainNavigationVC(isNavigationBarHidden: Bool = false, animatedHidden: Bool = false, tintColor: UIColor = .blue, backButtonTitle: TextResources.Navigation.NavigationButtonTitle = .back, title: TextResources.Navigation.NavigationTitle = .empty) {
         self.navigationViewController.navigationBar.tintColor        = tintColor
-        self.navigationViewController.navigationBar.backItem?.title  = "Назад"
+        self.navigationViewController.navigationBar.backItem?.title  = backButtonTitle.localizedString()
         self.navigationViewController.navigationBar.isTranslucent    = true
         self.navigationViewController.title                          = title.localizedString()
-        self.navigationViewController.navigationItem.backButtonTitle = "Назад"
+        self.navigationViewController.navigationItem.backButtonTitle = backButtonTitle.localizedString()
         self.navigationViewController.navigationBar.shadowImage      = UIImage()
         self.navigationViewController.setNavigationBarHidden(isNavigationBarHidden, animated: animatedHidden)
     }

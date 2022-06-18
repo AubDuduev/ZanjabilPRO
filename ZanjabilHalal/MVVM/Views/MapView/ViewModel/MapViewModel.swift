@@ -17,9 +17,9 @@ final class MapViewModel: MVVMViewModelProtocol {
     }
     // MARK: - DI
 	@Injected
-	private var mapService: MapService
+	private var geoPositioningService: GeoPositioningService
 	@Injected
-	private var mainRouter: MainRouter
+	private var mainRouter           : MainRouter
     //MARK: - implementation protocol
     public var mainView: MapView?
     public var isUpdate: ClosureEmpty?
@@ -30,35 +30,35 @@ final class MapViewModel: MVVMViewModelProtocol {
     private func stateMapModel(){
         guard let model = self.model else { return }
         switch model {
-			case .setupLocationService:
-				self.mapService.setupLocationService()
-				self.mapService.startUserLocation()
+			case .setupGeoPositioningService:
+				self.geoPositioningService.setupLocationService()
+				self.geoPositioningService.startUserLocation()
+				// MARK: - возврат адреса пользователя
+				self.geoPositioningService.completionSuggestionsAddress
+					.sink(receiveValue: { suggestionsAddress in
+						self.model = .updateAddress(suggestionsAddress)
+					})
+					.store(in: &self.cancellable)
+				// MARK: - возврат камеры карты
+				self.geoPositioningService.completionMapCamera
+					.sink(receiveValue: { mapCamera in
+						self.model = .updateCameraPosition(mapCamera)
+						self.geoPositioningService.stopUserLocation()
+					})
+					.store(in: &self.cancellable)
+				
             case .createViewProperties:
 				let didTapMapView: ClosureEmpty = {
 					self.mainRouter.pushMainNavigation(id: .mapScreenVC, animated: true)
-					self.mainRouter.setupMainNavigationVC(isNavigationBarHidden: false, animatedHidden: true, tintColor: .set(.greenFore))
+					self.mainRouter.setupMainNavigationVC(isNavigationBarHidden: false, animatedHidden: true, tintColor: .set(.greenFore), title: .map)
 				}
 				
 				let viewProperties = MapView.ViewProperties(mapCamera     : nil,
 															currentAddress: "",
 															didTapMapView : didTapMapView)
-				
-				self.mapService.completionAddress
-					.sink(receiveValue: { address in
-						//guard let self = self else { return }
-						self.model = .updateAddress(address)
-					})
-					.store(in: &self.cancellable)
-				
-				self.mapService.completionMapCamera
-					.sink(receiveValue: { mapCamera in
-						//guard let self = self else { return }
-						self.model = .updateCameraPosition(mapCamera)
-						self.mapService.stopUserLocation()
-					})
-					.store(in: &self.cancellable)
 				self.mainView?.update(with: viewProperties)
-			case .updateAddress(let currentAddress):
+			case .updateAddress(let suggestionsAddress):
+				let currentAddress = suggestionsAddress.fullAddress
 				self.mainView?.viewProperties?.currentAddress = currentAddress
 				self.reloadProperties()
 			case .updateCameraPosition(let mapCamera):

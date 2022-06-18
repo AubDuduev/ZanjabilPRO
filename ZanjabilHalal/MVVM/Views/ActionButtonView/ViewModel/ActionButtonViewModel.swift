@@ -28,6 +28,10 @@ final class ActionButtonViewModel: MVVMViewModelProtocol {
     private var menuService          : MenuService
     @Injected
     private var ordersService        : OrdersService
+	@Injected
+	private var geoPositioningService: GeoPositioningService
+	@Injected
+	private var mainRouter           : MainRouter
     
     //MARK: - implementation protocol
     public var mainView: ActionButtonView?
@@ -64,6 +68,13 @@ final class ActionButtonViewModel: MVVMViewModelProtocol {
                         self.testingAddress() {
                             print("")
                         }
+					case .addAddress:
+						guard let addressSuggestion = self.geoPositioningService.getAddressSuggestion() else { return }
+						self.createAddressService.createForSuggestion(with: addressSuggestion)
+						self.saveAddress { [weak self] in
+							guard let self = self else { return }
+							self.mainRouter.popMainNavigation(id: .payOrderVC, animated: true)
+						}
                     default:
                         break
                 }
@@ -77,6 +88,13 @@ final class ActionButtonViewModel: MVVMViewModelProtocol {
             }
             .store(in: &cancellable)
     }
+	
+	private func saveAddress(executeSaving: @escaping ClosureEmpty){
+		//сохранение адреса
+		self.addressesService.changeDefaultAddress(with: self.createAddressService.address) {
+			executeSaving()
+		}
+	}
     
     private func testingAddress(executeTesting: @escaping ClosureEmpty){
         let createAddressModel = self.createAddressService.createAddressModel
@@ -85,14 +103,12 @@ final class ActionButtonViewModel: MVVMViewModelProtocol {
             self.warningService.present(with: warningTextType, dismiss: true)
             return
         }
-        //смотрим есть ли этот адрес в базе
-        guard !addressesService.equitable(with: self.createAddressService.address ) else {
-            executeTesting()
-            return }
-        //сохранение адреса
-        self.addressesService.changeDefaultAddress(with: self.createAddressService.address) {
-            executeTesting()
-        }
+		//смотрим есть ли этот адрес в базе
+		guard !addressesService.equitable(with: self.createAddressService.address) else { return }
+		
+		self.saveAddress {
+			executeTesting()
+		}
     }
 
     init(with mainView: ActionButtonView) {

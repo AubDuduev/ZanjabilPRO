@@ -40,7 +40,7 @@ final class AddressesViewModel: MVVMViewModelProtocol {
                 self.mainView?.update(with: viewProperties)
             case .addressesCollectionView(let containerView):
                 self.addressesCollectionViewModel       = self.createAddressCollectionViewViewModel(with: containerView)
-                self.addressesCollectionViewModel.model = .createViewProperties
+                self.addressesCollectionViewModel.model = .createViewProperties(addressCollectionType: .edit)
             case .addAddressButtonView(let containerView):
                 self.addAddressViewModel       = self.createAddAddressViewModel(with: containerView)
                 self.addAddressViewModel.model = .createViewProperties

@@ -103,9 +103,15 @@ final class MainCreateController {
 	private func createMapScreenViewController() -> MapScreenViewController {
 		let mapScreenViewControllerBuilder = self.mainViewControllersBuilder.createMapScreenViewControllerBuilder()
 		mapScreenViewControllerBuilder.viewModel.model = .createViewProperties
-		mapScreenViewControllerBuilder.viewModel.model = .setupLocationService
 		let mapScreenViewController = mapScreenViewControllerBuilder.view
 		return mapScreenViewController
+	}
+	// MARK: - Create controller of AddressSuggestionScreen
+	private func createAddressSuggestionScreenViewController() -> AddressSuggestionScreenViewController {
+		let addressSuggestionScreenViewControllerBuilder = self.mainViewControllersBuilder.createAddressSuggestionScreenViewControllerBuilder()
+		addressSuggestionScreenViewControllerBuilder.viewModel.model = .createViewProperties
+		let addressSuggestionScreenViewController = addressSuggestionScreenViewControllerBuilder.view
+		return addressSuggestionScreenViewController
 	}
     // MARK: - Создаем контроллеры для переходов
     public func createVC<T: UIViewController>(id controllerID: ControllersID) -> T {
@@ -136,6 +142,8 @@ final class MainCreateController {
 				return self.createChangeUserNameViewController() as! T
 			case .mapScreenVC:
 				return self.createMapScreenViewController() as! T
+			case .addressSuggestionScreenVC:
+				return self.createAddressSuggestionScreenViewController() as! T
         }
     }
     
@@ -153,5 +161,6 @@ final class MainCreateController {
         case addressesVC
 		case changeUserNameVC
 		case mapScreenVC
+		case addressSuggestionScreenVC
     }
 }

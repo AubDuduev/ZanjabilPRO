@@ -15,6 +15,7 @@ extension TextResources {
             case pay  = "Оплатить"
             case save = "Сохранить"
             case edit = "Изменить"
+			case add  = "Добавить"
             
             func localizedString() -> String {
                 return NSLocalizedString(self.rawValue, comment: "")

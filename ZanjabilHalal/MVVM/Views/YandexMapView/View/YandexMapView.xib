@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YandexMapViewController" customModule="ZanjabilHalal" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="kns-3F-tW8" customClass="YandexMapView" customModule="ZanjabilHalal" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="470" height="204"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iHv-7A-lKf" userLabel="YandexMapView" customClass="YMKMapView">
+                    <rect key="frame" x="0.0" y="0.0" width="470" height="204"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="Pmi-a7-4oC"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="iHv-7A-lKf" firstAttribute="leading" secondItem="Pmi-a7-4oC" secondAttribute="leading" id="3Bv-RP-174"/>
+                <constraint firstItem="iHv-7A-lKf" firstAttribute="top" secondItem="kns-3F-tW8" secondAttribute="top" id="5n0-pO-dAH"/>
+                <constraint firstAttribute="bottom" secondItem="iHv-7A-lKf" secondAttribute="bottom" id="VLL-PK-hVA"/>
+                <constraint firstItem="iHv-7A-lKf" firstAttribute="trailing" secondItem="Pmi-a7-4oC" secondAttribute="trailing" id="tV9-0H-agd"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="mapView" destination="iHv-7A-lKf" id="Z1r-Yr-Tyh"/>
+            </connections>
+            <point key="canvasLocation" x="-689.85507246376812" y="-204.91071428571428"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
