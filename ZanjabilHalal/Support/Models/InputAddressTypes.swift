@@ -88,4 +88,22 @@ enum InputAddressTypes {
                 return true
         }
     }
+	
+	public func isUserInteraction() -> Bool {
+		
+		switch self {
+			case .city:
+				return false
+			case .street:
+				return false
+			case .build:
+				return true
+			case .apartment:
+				return true
+			case .floor:
+				return true
+			case .intercom:
+				return true
+		}
+	}
 }

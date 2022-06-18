@@ -56,7 +56,9 @@ final class InputAddressCollectionCell: UICollectionViewCell, LoadNidoble, MVVMV
     }
     
     private func setInputDataTextField(){
-        self.inputDataTextField.text = self.viewProperties?.inputAddressType.name()
+		guard let viewProperties = self.viewProperties else { return }
+        self.inputDataTextField.text = viewProperties.inputAddressType.name()
+		self.inputDataTextField.isUserInteractionEnabled = viewProperties.inputAddressType.isUserInteraction()
     }
     
     private func setTitle(){
