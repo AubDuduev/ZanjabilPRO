@@ -5,8 +5,8 @@
 //  Created by Senior Developer on 11.06.2022.
 //
 import Foundation
-//https://suggestions.dadata.ru/suggestions/api/4_1/rs/geolocate/address
 
+//https://suggestions.dadata.ru/suggestions/api/4_1/rs/geolocate/address
 final class URLReverseGeocoding: URLCreateProtocol {
 	
 	private var urlPath    = URLPath()

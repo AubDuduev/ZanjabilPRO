@@ -12,6 +12,7 @@ final class NetworkService {
     private var requestoble          : RequestProtocol!
     private let internetСheckService = InternetСheckService()
     
-    public let requestFirebase = RequestFirebase()
-    
+    public let requestFirebase     = RequestFirebase()
+	public let requestsRESTService = RequestsRESTService()
+	
 }

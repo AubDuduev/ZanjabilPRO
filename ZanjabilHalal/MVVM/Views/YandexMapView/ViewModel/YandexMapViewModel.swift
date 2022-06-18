@@ -17,7 +17,9 @@ final class YandexMapViewModel: MVVMViewModelProtocol {
     }
 	// MARK: - DI
 	@Injected
-	private var geoPositioningService: GeoPositioningService
+	private var geoPositioningService         : GeoPositioningService
+	@Injected
+	private var yandexMapCameraListenerService: YandexMapCameraListenerService
     //MARK: - implementation protocol
     public var mainView: YandexMapView?
     public var isUpdate: ClosureEmpty?
@@ -40,11 +42,10 @@ final class YandexMapViewModel: MVVMViewModelProtocol {
 					.store(in: &self.cancellable)
 				
             case .createViewProperties:
-				let cameraListener = MapCameraListener()
 				let animation      = YMKAnimation(type: .linear, duration: 2)
 				let viewProperties = YandexMapView.ViewProperties(yandexCamera  : nil,
 																  animation     : animation,
-																  cameraListener: cameraListener)
+																  cameraListener: yandexMapCameraListenerService)
 				self.mainView?.create(with: viewProperties)
             case .updateCameraPosition(let yandexCamera):
 				self.mainView?.viewProperties?.yandexCamera = yandexCamera
@@ -55,14 +56,4 @@ final class YandexMapViewModel: MVVMViewModelProtocol {
     init(with mainView: YandexMapView) {
         self.mainView = mainView
     }
-}
-
-final class MapCameraListener: NSObject, YMKMapCameraListener {
-	
-	func onCameraPositionChanged(with map: YMKMap, cameraPosition: YMKCameraPosition, cameraUpdateReason: YMKCameraUpdateReason, finished: Bool) {
-		print("---▼---", "debug")
-		print(cameraPosition.target.latitude)
-		print(cameraPosition.target.longitude)
-		print("---▲---", "debug")
-	}
 }

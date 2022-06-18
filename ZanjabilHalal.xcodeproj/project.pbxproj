@@ -12,6 +12,15 @@
 		82004CE8285DF2B1001CFA5E /* YandexMapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82004CE3285DF2B1001CFA5E /* YandexMapModel.swift */; };
 		82004CE9285DF2B1001CFA5E /* YandexMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82004CE4285DF2B1001CFA5E /* YandexMapViewModel.swift */; };
 		82004CEA285DF2B1001CFA5E /* YandexMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82004CE5285DF2B1001CFA5E /* YandexMapView.xib */; };
+		82004CEC285E154F001CFA5E /* GETYandexReverseGeocoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82004CEB285E154F001CFA5E /* GETYandexReverseGeocoding.swift */; };
+		82004CEF285E158C001CFA5E /* DECYandexReverseGeocoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82004CEE285E158C001CFA5E /* DECYandexReverseGeocoding.swift */; };
+		82004CF3285E1659001CFA5E /* DECYandexGEOObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82004CF2285E1659001CFA5E /* DECYandexGEOObject.swift */; };
+		82004CF5285E1690001CFA5E /* DECYandexReverseGeocodingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82004CF4285E1690001CFA5E /* DECYandexReverseGeocodingResponse.swift */; };
+		82004CF7285E16FB001CFA5E /* DECYandexGeoObjectCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82004CF6285E16FB001CFA5E /* DECYandexGeoObjectCollection.swift */; };
+		82004CF9285E190C001CFA5E /* URLYandexReverseGeocoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82004CF8285E190C001CFA5E /* URLYandexReverseGeocoding.swift */; };
+		82004CFC285E1A5C001CFA5E /* ParametersYandexReverseGeocoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82004CFB285E1A5C001CFA5E /* ParametersYandexReverseGeocoding.swift */; };
+		82004CFF285E1ECC001CFA5E /* YandexMapCameraListenerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82004CFE285E1ECC001CFA5E /* YandexMapCameraListenerService.swift */; };
+		82004D01285E22C0001CFA5E /* DECYandexGeoObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82004D00285E22C0001CFA5E /* DECYandexGeoObjects.swift */; };
 		820083E6283A3FD900A0F8BB /* MapScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820083DA283A3FD900A0F8BB /* MapScreenViewController.swift */; };
 		820083E9283A3FD900A0F8BB /* MapScreenViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820083DD283A3FD900A0F8BB /* MapScreenViewBuilder.swift */; };
 		820083EC283A3FD900A0F8BB /* MapScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820083E0283A3FD900A0F8BB /* MapScreenModel.swift */; };
@@ -546,6 +555,15 @@
 		82004CE3285DF2B1001CFA5E /* YandexMapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexMapModel.swift; sourceTree = "<group>"; };
 		82004CE4285DF2B1001CFA5E /* YandexMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexMapViewModel.swift; sourceTree = "<group>"; };
 		82004CE5285DF2B1001CFA5E /* YandexMapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YandexMapView.xib; sourceTree = "<group>"; };
+		82004CEB285E154F001CFA5E /* GETYandexReverseGeocoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GETYandexReverseGeocoding.swift; sourceTree = "<group>"; };
+		82004CEE285E158C001CFA5E /* DECYandexReverseGeocoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DECYandexReverseGeocoding.swift; sourceTree = "<group>"; };
+		82004CF2285E1659001CFA5E /* DECYandexGEOObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DECYandexGEOObject.swift; sourceTree = "<group>"; };
+		82004CF4285E1690001CFA5E /* DECYandexReverseGeocodingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DECYandexReverseGeocodingResponse.swift; sourceTree = "<group>"; };
+		82004CF6285E16FB001CFA5E /* DECYandexGeoObjectCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DECYandexGeoObjectCollection.swift; sourceTree = "<group>"; };
+		82004CF8285E190C001CFA5E /* URLYandexReverseGeocoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLYandexReverseGeocoding.swift; sourceTree = "<group>"; };
+		82004CFB285E1A5C001CFA5E /* ParametersYandexReverseGeocoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametersYandexReverseGeocoding.swift; sourceTree = "<group>"; };
+		82004CFE285E1ECC001CFA5E /* YandexMapCameraListenerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexMapCameraListenerService.swift; sourceTree = "<group>"; };
+		82004D00285E22C0001CFA5E /* DECYandexGeoObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DECYandexGeoObjects.swift; sourceTree = "<group>"; };
 		820083DA283A3FD900A0F8BB /* MapScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreenViewController.swift; sourceTree = "<group>"; };
 		820083DD283A3FD900A0F8BB /* MapScreenViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreenViewBuilder.swift; sourceTree = "<group>"; };
 		820083E0283A3FD900A0F8BB /* MapScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreenModel.swift; sourceTree = "<group>"; };
@@ -1119,6 +1137,34 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		82004CED285E1569001CFA5E /* YandexReverseGeocoding */ = {
+			isa = PBXGroup;
+			children = (
+				82004CEE285E158C001CFA5E /* DECYandexReverseGeocoding.swift */,
+				82004CF4285E1690001CFA5E /* DECYandexReverseGeocodingResponse.swift */,
+				82004CF6285E16FB001CFA5E /* DECYandexGeoObjectCollection.swift */,
+				82004D00285E22C0001CFA5E /* DECYandexGeoObjects.swift */,
+				82004CF2285E1659001CFA5E /* DECYandexGEOObject.swift */,
+			);
+			path = YandexReverseGeocoding;
+			sourceTree = "<group>";
+		};
+		82004CFA285E1A3A001CFA5E /* URLParametersModels */ = {
+			isa = PBXGroup;
+			children = (
+				82004CFB285E1A5C001CFA5E /* ParametersYandexReverseGeocoding.swift */,
+			);
+			path = URLParametersModels;
+			sourceTree = "<group>";
+		};
+		82004CFD285E1EBC001CFA5E /* YandexMapCameraListenerService */ = {
+			isa = PBXGroup;
+			children = (
+				82004CFE285E1ECC001CFA5E /* YandexMapCameraListenerService.swift */,
+			);
+			path = YandexMapCameraListenerService;
+			sourceTree = "<group>";
+		};
 		820083D4283A3FA800A0F8BB /* MapScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -1510,6 +1556,7 @@
 		8232115227D477FD00FE79E9 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				82004CFD285E1EBC001CFA5E /* YandexMapCameraListenerService */,
 				8270448F2855E7E800D9046E /* GeopositioningService */,
 				826A92612839531C004AAE0C /* LocationSevice */,
 				82B8EC152846849E001861E9 /* MapService */,
@@ -2350,6 +2397,7 @@
 				827E23F527DCD1410006E763 /* RequestsAPI */,
 				82EC8C0E27DE4FBB00661F58 /* RequestFirebase */,
 				82EC8C0827DE4DE900661F58 /* RequestsFirebase */,
+				82004CFA285E1A3A001CFA5E /* URLParametersModels */,
 				827E244727DCD2CA0006E763 /* RequestModels */,
 				827E23F927DCD1410006E763 /* Managers */,
 				827E240127DCD1410006E763 /* Protocols */,
@@ -2381,6 +2429,7 @@
 			isa = PBXGroup;
 			children = (
 				827E23F827DCD1410006E763 /* GETProducts.swift */,
+				82004CEB285E154F001CFA5E /* GETYandexReverseGeocoding.swift */,
 			);
 			path = GET;
 			sourceTree = "<group>";
@@ -3759,6 +3808,7 @@
 				827E244C27DCD6320006E763 /* URLProduct.swift */,
 				820188E328429449008916B5 /* URLAddressSuggestion.swift */,
 				820B866F285504A100A0B9B9 /* URLReverseGeocoding.swift */,
+				82004CF8285E190C001CFA5E /* URLYandexReverseGeocoding.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -3806,6 +3856,7 @@
 		82EC8C1427DE5BC500661F58 /* Decodable */ = {
 			isa = PBXGroup;
 			children = (
+				82004CED285E1569001CFA5E /* YandexReverseGeocoding */,
 				820188E72842989A008916B5 /* AddressSuggestion */,
 				82741AFF27D5230E006EBE80 /* DECProduct.swift */,
 				82EC8C1527DE5BDA00661F58 /* DECMenu.swift */,
@@ -4427,6 +4478,7 @@
 				8223D5A9284CA77D00729F52 /* AddressSuggestionsTableModel.swift in Sources */,
 				8280ABB827F01F5100DEFFE6 /* BasketManagers.swift in Sources */,
 				82C265F22801C568007984B3 /* CreateAddressModel.swift in Sources */,
+				82004CF7285E16FB001CFA5E /* DECYandexGeoObjectCollection.swift in Sources */,
 				82F458032802DE76004BCD68 /* MenuCategoriesView.swift in Sources */,
 				827E245227DCD9C40006E763 /* Extension + Decimal.swift in Sources */,
 				827E241F27DCD1410006E763 /* URLCreateStatic.swift in Sources */,
@@ -4501,8 +4553,10 @@
 				8208FED327F8AA46003955D0 /* CoreDataService.swift in Sources */,
 				8223D5AC284CA77D00729F52 /* AddressSuggestionsTableViewBuilder.swift in Sources */,
 				829A56C928202261005F110B /* StartLoadingViewBuilder.swift in Sources */,
+				82004CF5285E1690001CFA5E /* DECYandexReverseGeocodingResponse.swift in Sources */,
 				8223D5DE284CBDE900729F52 /* AddressSuggestionTableCellModel.swift in Sources */,
 				82C266122801CDC4007984B3 /* WarningService.swift in Sources */,
+				82004CEC285E154F001CFA5E /* GETYandexReverseGeocoding.swift in Sources */,
 				8280ABC227F01F5100DEFFE6 /* BasketViewModel.swift in Sources */,
 				827E242327DCD1410006E763 /* URLAbstractFactory.swift in Sources */,
 				82004CE7285DF2B1001CFA5E /* YandexMapView.swift in Sources */,
@@ -4527,7 +4581,9 @@
 				82CD808B2815AE390048DC71 /* OrdersCollectionModel.swift in Sources */,
 				827E244527DCD2300006E763 /* Extension + StringConverter.swift in Sources */,
 				82CD808E2815AE390048DC71 /* OrdersCollectionLayout.swift in Sources */,
+				82004CF9285E190C001CFA5E /* URLYandexReverseGeocoding.swift in Sources */,
 				82C265E628015323007984B3 /* PayOrderCollectionCellModel.swift in Sources */,
+				82004CF3285E1659001CFA5E /* DECYandexGEOObject.swift in Sources */,
 				828E0D95280C66A6005239F1 /* InfoAlertView.swift in Sources */,
 				82741AEA27D4F38C006EBE80 /* MainNavigationModel.swift in Sources */,
 				823AF1B8281EC75E00593C1C /* AddAddressView.swift in Sources */,
@@ -4555,6 +4611,7 @@
 				8232116327D4C90C00FE79E9 /* Extension + UIStoryboard.swift in Sources */,
 				82EC8C0D27DE4EA700661F58 /* URLFirebaseRestaurants.swift in Sources */,
 				82A268E3280AB3540051B997 /* PayOrderCollection.swift in Sources */,
+				82004CFC285E1A5C001CFA5E /* ParametersYandexReverseGeocoding.swift in Sources */,
 				82DB32BF2843E1BC00379554 /* AddressSuggestionsCollectionViewModel.swift in Sources */,
 				82F457D328028B37004BCD68 /* VerticalDishCollectionCell.swift in Sources */,
 				8208FED427F8AA46003955D0 /* PersistenService.swift in Sources */,
@@ -4569,6 +4626,7 @@
 				826B35DF280C11D800A15424 /* BasketTotalSumViewBuilder.swift in Sources */,
 				8280AC1727F0918D00DEFFE6 /* PayOrderCollectionCell.swift in Sources */,
 				826B35E1280C11D800A15424 /* BasketTotalSumModel.swift in Sources */,
+				82004CEF285E158C001CFA5E /* DECYandexReverseGeocoding.swift in Sources */,
 				820B8670285504A100A0B9B9 /* URLReverseGeocoding.swift in Sources */,
 				82C2660E2801CAC7007984B3 /* WarningView.swift in Sources */,
 				8223D5DD284CBDE900729F52 /* AddressSuggestionTableCellBuilder.swift in Sources */,
@@ -4588,6 +4646,7 @@
 				82CD8079281548A50048DC71 /* OrderCollectionCellViewModel.swift in Sources */,
 				8223D5AD284CA77D00729F52 /* AddressSuggestionsTableViewModel.swift in Sources */,
 				82A268FD280AD5A50051B997 /* PayInfoViewBuilder.swift in Sources */,
+				82004D01285E22C0001CFA5E /* DECYandexGeoObjects.swift in Sources */,
 				828E0D96280C66A6005239F1 /* InfoAlertModel.swift in Sources */,
 				827E242527DCD1410006E763 /* URLCreateProtocol.swift in Sources */,
 				82DB32C12843E1BC00379554 /* AddressSuggestionsCollectionView.swift in Sources */,
@@ -4692,6 +4751,7 @@
 				8294A50D27F9F3290094CAEB /* ENCDish.swift in Sources */,
 				82DB32C52843E1BC00379554 /* AddressSuggestionsCollectionLayout.swift in Sources */,
 				82C266252801DAC4007984B3 /* Extension + Profile.swift in Sources */,
+				82004CFF285E1ECC001CFA5E /* YandexMapCameraListenerService.swift in Sources */,
 				8262AF9128146A10009A7E3A /* Extension + AddressesViewController.swift in Sources */,
 				82C266292801DADD007984B3 /* Extension + ActionButton.swift in Sources */,
 				826B35E2280C11D800A15424 /* BasketTotalSumViewModel.swift in Sources */,
