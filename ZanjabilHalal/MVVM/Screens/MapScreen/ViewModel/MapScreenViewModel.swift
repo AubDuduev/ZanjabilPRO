@@ -56,7 +56,7 @@ final class MapScreenViewModel: NSObject, MVVMViewModelProtocol {
 			case .addChangeAddress(let container):
 				self.changeAddressViewModel       = self.createChangeAddressViewModel(with: container)
 				self.changeAddressViewModel.model = .createViewProperties
-				self.changeAddressViewModel.model = .setupGeoPositioningService
+				self.changeAddressViewModel.model = .setupYandexMapCameraListenerService
 			case .addCenterMapPinView(let container):
 				self.centerMapPinViewModel       = self.createCenterMapPinViewModel(with: container)
 				self.centerMapPinViewModel.model = .createViewProperties

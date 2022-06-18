@@ -19,14 +19,13 @@ final class YandexMapCameraListenerService: NSObject, ServiceProtocol, YMKMapCam
 	@Injected
 	private var delayTaskService   : DelayTaskService
 	
-	public var completionAddress = PassthroughSubject<String, Never>()
+	public var completionAddress = PassthroughSubject<DECYandexGEOObject, Never>()
 	
 	private func getYandexReverseGeocoding(with coordinate: YMKPoint){
 		let parameters = self.createParametersYandexReverseGeocoding(with: coordinate)
 		self.requestsRESTService.getYandexReverseGeocoding(with: parameters) { yandexGEOObject in
-			print(yandexGEOObject)
-			let address = yandexGEOObject?.fullAddress ?? "No geocoding"
-			self.completionAddress.send(address)
+			guard let yandexGEOObject = yandexGEOObject else { return }
+			self.completionAddress.send(yandexGEOObject)
 		}
 	}
 	

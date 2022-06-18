@@ -16,13 +16,13 @@ final class ChangeAddressViewModel: MVVMViewModelProtocol {
     }
 	// MARK: - DI
 	@Injected
-	private var mainViewsBuilder          : MainViewsBuilder
+	private var mainViewsBuilder              : MainViewsBuilder
 	@Injected
-	private var geoPositioningService     : GeoPositioningService
+	private var yandexMapCameraListenerService: YandexMapCameraListenerService
 	@Injected
-	private var mainRouter                : MainRouter
+	private var mainRouter                    : MainRouter
 	@Injected
-	private var mainCollectionViewsBuilder: MainCollectionViewsBuilder
+	private var mainCollectionViewsBuilder    : MainCollectionViewsBuilder
     //MARK: - implementation protocol
     public var mainView: ChangeAddressView?
     public var isUpdate: ClosureEmpty?
@@ -49,21 +49,19 @@ final class ChangeAddressViewModel: MVVMViewModelProtocol {
 																	  addAddressCollectionView: addAddressCollectionView,
 																	  addActionButton         : addActionButton)
 				self.mainView?.create(with: viewProperties)
-			case .setupGeoPositioningService:
-				self.geoPositioningService.setupLocationService()
-				self.geoPositioningService.startUserLocation()
+			case .setupYandexMapCameraListenerService:
 				// MARK: - изменения геопозиции пользователя
-				self.geoPositioningService.completionSuggestionsAddress
-					.sink(receiveValue: { suggestionsAddress in
-						self.model = .updateAddress(suggestionsAddress)
-						self.geoPositioningService.saveAddressSuggestion(with: suggestionsAddress)
+				self.yandexMapCameraListenerService.completionAddress
+					.sink(receiveValue: { yandexGEOObject in
+						self.model = .updateAddress(yandexGEOObject)
+						//self.geoPositioningService.saveAddressSuggestion(with: suggestionsAddress)
 					})
 					.store(in: &self.cancellable)
 			case .addAddressCollectionView(let containerView):
 				self.addressesCollectionViewModel       = self.createAddressCollectionViewViewModel(with: containerView)
 				self.addressesCollectionViewModel.model = .createViewProperties(addressCollectionType: .display)
-			case .updateAddress(let suggestionsAddress):
-				let currentAddress = suggestionsAddress.fullAddress
+			case .updateAddress(let yandexGEOObject):
+				let currentAddress = yandexGEOObject.fullStreet
 				self.mainView?.viewProperties?.currentAddress = currentAddress
 				self.reloadProperties()
 			case .didTapSearchAddress:
