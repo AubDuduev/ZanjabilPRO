@@ -17,10 +17,9 @@ final class URLProduct: URLCreateProtocol {
     
     
     public func create(with data: Any? = nil) -> ReturnURL? {
-        let queryItems = self.parameters.create(queryItems: .none)
         let path       = self.urlPath.create(change: .non)
 		let host       = self.host.create(.Static(.daDataSuggestion))
-        let customURL  = self.custom.create(type: .init(scheme: .http, host: host, path: path, queryItems: queryItems))
+        let customURL  = self.custom.create(type: .init(scheme: .http, host: host, path: path))
         let url        = URL(string: customURL.string ?? "")
         return (customURL.string, url)
     }

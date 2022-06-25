@@ -37,7 +37,6 @@ final class AddressSuggestionsTableViewModel: MVVMViewModelProtocol {
 				let didSelectRowAt: Closure<IndexPath> = { indexPath in
 					self.mainRouter.dismiss(animated: true)
 					if let addressSuggestion = self.createAddressSuggestion(with: indexPath) {
-						self.model = .createAddressForSuggestion(addressSuggestion)
 						self.model = .setCoordinateToMap(addressSuggestion)
 					}
 				}
@@ -46,14 +45,12 @@ final class AddressSuggestionsTableViewModel: MVVMViewModelProtocol {
 																				countCells           : countCells,
 																				decAddressSuggestions: decAddressSuggestions)
 				self.mainView?.update(with: viewProperties)
-			case .createAddressForSuggestion(let addressSuggestion):
-				self.createAddressService.createForSuggestion(with: addressSuggestion)
 			case .setCoordinateToMap(let addressSuggestion):
 				guard let addressSuggestionData = addressSuggestion.addressData else { return }
 				let coordinate = CLLocationCoordinate2D(latitude : addressSuggestionData.latitude,
 														longitude: addressSuggestionData.longitude)
 				self.geoPositioningService.setCoordinate(with: coordinate)
-				self.geoPositioningService.saveAddressSuggestion(with: addressSuggestion)
+				self.createAddressService.saveAddressSuggestion(with: addressSuggestion)
 			case .getSuggestionsAddressList:
 				self.daDataService.suggestionsAddressesList
 					.sink { [weak self] addressSuggestions in

@@ -12,6 +12,7 @@ final class URLHostService {
 		
 		case non
 		case daDataSuggestion = "suggestions.dadata.ru"
+		case yandexGeocoding  = "geocode-maps.yandex.ru"
 	}
 	enum Types {
 		case Static(Host)

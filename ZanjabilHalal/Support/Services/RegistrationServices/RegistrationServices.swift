@@ -5,6 +5,7 @@
 //  Created by Senior Developer on 06.03.2022.
 //
 import Resolver
+import YandexMapsMobile
 
 extension Resolver: ResolverRegistering {
 
@@ -80,6 +81,11 @@ extension Resolver: ResolverRegistering {
 		Resolver.register {
 			LocationService()
 		}
+		
+		Resolver.register {
+			YandexMapService()
+		}
+		
     }
     
     private static func application(){
@@ -167,6 +173,12 @@ extension Resolver: ResolverRegistering {
 		Resolver.register {
 			MapKitService()
 		}
+		.scope(.application)
+		
+		Resolver.register {
+			YandexMapCameraListenerService()
+		}
+		.implements(YMKMapCameraListener.self)
 		.scope(.application)
     }
 }

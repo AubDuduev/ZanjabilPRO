@@ -7,6 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		82004CE6285DF2B1001CFA5E /* YandexMapViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82004CE1285DF2B1001CFA5E /* YandexMapViewBuilder.swift */; };
+		82004CE7285DF2B1001CFA5E /* YandexMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82004CE2285DF2B1001CFA5E /* YandexMapView.swift */; };
+		82004CE8285DF2B1001CFA5E /* YandexMapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82004CE3285DF2B1001CFA5E /* YandexMapModel.swift */; };
+		82004CE9285DF2B1001CFA5E /* YandexMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82004CE4285DF2B1001CFA5E /* YandexMapViewModel.swift */; };
+		82004CEA285DF2B1001CFA5E /* YandexMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82004CE5285DF2B1001CFA5E /* YandexMapView.xib */; };
+		82004CEC285E154F001CFA5E /* GETYandexReverseGeocoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82004CEB285E154F001CFA5E /* GETYandexReverseGeocoding.swift */; };
+		82004CEF285E158C001CFA5E /* DECYandexReverseGeocoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82004CEE285E158C001CFA5E /* DECYandexReverseGeocoding.swift */; };
+		82004CF3285E1659001CFA5E /* DECYandexGEOObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82004CF2285E1659001CFA5E /* DECYandexGEOObject.swift */; };
+		82004CF5285E1690001CFA5E /* DECYandexReverseGeocodingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82004CF4285E1690001CFA5E /* DECYandexReverseGeocodingResponse.swift */; };
+		82004CF7285E16FB001CFA5E /* DECYandexGeoObjectCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82004CF6285E16FB001CFA5E /* DECYandexGeoObjectCollection.swift */; };
+		82004CF9285E190C001CFA5E /* URLYandexReverseGeocoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82004CF8285E190C001CFA5E /* URLYandexReverseGeocoding.swift */; };
+		82004CFC285E1A5C001CFA5E /* ParametersYandexReverseGeocoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82004CFB285E1A5C001CFA5E /* ParametersYandexReverseGeocoding.swift */; };
+		82004CFF285E1ECC001CFA5E /* YandexMapCameraListenerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82004CFE285E1ECC001CFA5E /* YandexMapCameraListenerService.swift */; };
+		82004D01285E22C0001CFA5E /* DECYandexGeoObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82004D00285E22C0001CFA5E /* DECYandexGeoObjects.swift */; };
+		82004D04285E2E15001CFA5E /* DECYandexMetaDataProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82004D03285E2E15001CFA5E /* DECYandexMetaDataProperty.swift */; };
+		82004D06285E2E9B001CFA5E /* DECYandexGeocoderMetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82004D05285E2E9B001CFA5E /* DECYandexGeocoderMetaData.swift */; };
+		82004D08285E3045001CFA5E /* DECYandexAddressSuggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82004D07285E3045001CFA5E /* DECYandexAddressSuggestion.swift */; };
+		82004D0A285E308B001CFA5E /* DECYandexAddressComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82004D09285E308B001CFA5E /* DECYandexAddressComponent.swift */; };
 		820083E6283A3FD900A0F8BB /* MapScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820083DA283A3FD900A0F8BB /* MapScreenViewController.swift */; };
 		820083E9283A3FD900A0F8BB /* MapScreenViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820083DD283A3FD900A0F8BB /* MapScreenViewBuilder.swift */; };
 		820083EC283A3FD900A0F8BB /* MapScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820083E0283A3FD900A0F8BB /* MapScreenModel.swift */; };
@@ -517,6 +535,7 @@
 		82F91E7727E5D88F00F5A5CC /* DECCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F91E7627E5D88F00F5A5CC /* DECCategory.swift */; };
 		82F91E7D27E5E38700F5A5CC /* MenuCategoriesCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F91E7C27E5E38700F5A5CC /* MenuCategoriesCollectionLayout.swift */; };
 		82F91E7F27E5F81000F5A5CC /* ActionsMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F91E7E27E5F81000F5A5CC /* ActionsMenuViewController.swift */; };
+		9008D37E41D3EB542020CBA8 /* Pods_ZanjabilHalal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0814910A539DCDB765A01A3B /* Pods_ZanjabilHalal.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -533,6 +552,26 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0814910A539DCDB765A01A3B /* Pods_ZanjabilHalal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZanjabilHalal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		24D55ACC031F2D623A1F08F3 /* Pods-ZanjabilHalal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZanjabilHalal.release.xcconfig"; path = "Target Support Files/Pods-ZanjabilHalal/Pods-ZanjabilHalal.release.xcconfig"; sourceTree = "<group>"; };
+		82004CE1285DF2B1001CFA5E /* YandexMapViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexMapViewBuilder.swift; sourceTree = "<group>"; };
+		82004CE2285DF2B1001CFA5E /* YandexMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexMapView.swift; sourceTree = "<group>"; };
+		82004CE3285DF2B1001CFA5E /* YandexMapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexMapModel.swift; sourceTree = "<group>"; };
+		82004CE4285DF2B1001CFA5E /* YandexMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexMapViewModel.swift; sourceTree = "<group>"; };
+		82004CE5285DF2B1001CFA5E /* YandexMapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YandexMapView.xib; sourceTree = "<group>"; };
+		82004CEB285E154F001CFA5E /* GETYandexReverseGeocoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GETYandexReverseGeocoding.swift; sourceTree = "<group>"; };
+		82004CEE285E158C001CFA5E /* DECYandexReverseGeocoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DECYandexReverseGeocoding.swift; sourceTree = "<group>"; };
+		82004CF2285E1659001CFA5E /* DECYandexGEOObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DECYandexGEOObject.swift; sourceTree = "<group>"; };
+		82004CF4285E1690001CFA5E /* DECYandexReverseGeocodingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DECYandexReverseGeocodingResponse.swift; sourceTree = "<group>"; };
+		82004CF6285E16FB001CFA5E /* DECYandexGeoObjectCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DECYandexGeoObjectCollection.swift; sourceTree = "<group>"; };
+		82004CF8285E190C001CFA5E /* URLYandexReverseGeocoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLYandexReverseGeocoding.swift; sourceTree = "<group>"; };
+		82004CFB285E1A5C001CFA5E /* ParametersYandexReverseGeocoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametersYandexReverseGeocoding.swift; sourceTree = "<group>"; };
+		82004CFE285E1ECC001CFA5E /* YandexMapCameraListenerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexMapCameraListenerService.swift; sourceTree = "<group>"; };
+		82004D00285E22C0001CFA5E /* DECYandexGeoObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DECYandexGeoObjects.swift; sourceTree = "<group>"; };
+		82004D03285E2E15001CFA5E /* DECYandexMetaDataProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DECYandexMetaDataProperty.swift; sourceTree = "<group>"; };
+		82004D05285E2E9B001CFA5E /* DECYandexGeocoderMetaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DECYandexGeocoderMetaData.swift; sourceTree = "<group>"; };
+		82004D07285E3045001CFA5E /* DECYandexAddressSuggestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DECYandexAddressSuggestion.swift; sourceTree = "<group>"; };
+		82004D09285E308B001CFA5E /* DECYandexAddressComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DECYandexAddressComponent.swift; sourceTree = "<group>"; };
 		820083DA283A3FD900A0F8BB /* MapScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreenViewController.swift; sourceTree = "<group>"; };
 		820083DD283A3FD900A0F8BB /* MapScreenViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreenViewBuilder.swift; sourceTree = "<group>"; };
 		820083E0283A3FD900A0F8BB /* MapScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreenModel.swift; sourceTree = "<group>"; };
@@ -1008,6 +1047,7 @@
 		82F91E7627E5D88F00F5A5CC /* DECCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DECCategory.swift; sourceTree = "<group>"; };
 		82F91E7C27E5E38700F5A5CC /* MenuCategoriesCollectionLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCategoriesCollectionLayout.swift; sourceTree = "<group>"; };
 		82F91E7E27E5F81000F5A5CC /* ActionsMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsMenuViewController.swift; sourceTree = "<group>"; };
+		87A35AE318F0870C4BB9B8D3 /* Pods-ZanjabilHalal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZanjabilHalal.debug.xcconfig"; path = "Target Support Files/Pods-ZanjabilHalal/Pods-ZanjabilHalal.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1053,12 +1093,98 @@
 				827C309A2822E1560023282D /* FirebaseStorageCombine-Community in Frameworks */,
 				827C30AA2822E2390023282D /* SnapKit in Frameworks */,
 				827C30882822E1550023282D /* FirebaseInAppMessaging-Beta in Frameworks */,
+				9008D37E41D3EB542020CBA8 /* Pods_ZanjabilHalal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		74A7675719B39DEC1FE532E6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				87A35AE318F0870C4BB9B8D3 /* Pods-ZanjabilHalal.debug.xcconfig */,
+				24D55ACC031F2D623A1F08F3 /* Pods-ZanjabilHalal.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		82004CDC285DF288001CFA5E /* YandexMapView */ = {
+			isa = PBXGroup;
+			children = (
+				82004CDF285DF29B001CFA5E /* Model */,
+				82004CDE285DF296001CFA5E /* View */,
+				82004CDD285DF28F001CFA5E /* ViewModel */,
+			);
+			path = YandexMapView;
+			sourceTree = "<group>";
+		};
+		82004CDD285DF28F001CFA5E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				82004CE1285DF2B1001CFA5E /* YandexMapViewBuilder.swift */,
+				82004CE4285DF2B1001CFA5E /* YandexMapViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		82004CDE285DF296001CFA5E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				82004CE5285DF2B1001CFA5E /* YandexMapView.xib */,
+				82004CE2285DF2B1001CFA5E /* YandexMapView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		82004CDF285DF29B001CFA5E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				82004CE3285DF2B1001CFA5E /* YandexMapModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		82004CED285E1569001CFA5E /* YandexReverseGeocoding */ = {
+			isa = PBXGroup;
+			children = (
+				82004CEE285E158C001CFA5E /* DECYandexReverseGeocoding.swift */,
+				82004CF4285E1690001CFA5E /* DECYandexReverseGeocodingResponse.swift */,
+				82004CF6285E16FB001CFA5E /* DECYandexGeoObjectCollection.swift */,
+				82004D00285E22C0001CFA5E /* DECYandexGeoObjects.swift */,
+				82004D02285E2DF4001CFA5E /* DECYandexGEOObject */,
+			);
+			path = YandexReverseGeocoding;
+			sourceTree = "<group>";
+		};
+		82004CFA285E1A3A001CFA5E /* URLParametersModels */ = {
+			isa = PBXGroup;
+			children = (
+				82004CFB285E1A5C001CFA5E /* ParametersYandexReverseGeocoding.swift */,
+			);
+			path = URLParametersModels;
+			sourceTree = "<group>";
+		};
+		82004CFD285E1EBC001CFA5E /* YandexMapCameraListenerService */ = {
+			isa = PBXGroup;
+			children = (
+				82004CFE285E1ECC001CFA5E /* YandexMapCameraListenerService.swift */,
+			);
+			path = YandexMapCameraListenerService;
+			sourceTree = "<group>";
+		};
+		82004D02285E2DF4001CFA5E /* DECYandexGEOObject */ = {
+			isa = PBXGroup;
+			children = (
+				82004CF2285E1659001CFA5E /* DECYandexGEOObject.swift */,
+				82004D03285E2E15001CFA5E /* DECYandexMetaDataProperty.swift */,
+				82004D05285E2E9B001CFA5E /* DECYandexGeocoderMetaData.swift */,
+				82004D07285E3045001CFA5E /* DECYandexAddressSuggestion.swift */,
+				82004D09285E308B001CFA5E /* DECYandexAddressComponent.swift */,
+			);
+			path = DECYandexGEOObject;
+			sourceTree = "<group>";
+		};
 		820083D4283A3FA800A0F8BB /* MapScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -1322,6 +1448,8 @@
 			children = (
 				8232108427D46EFF00FE79E9 /* ZanjabilHalal */,
 				8232108327D46EFF00FE79E9 /* Products */,
+				74A7675719B39DEC1FE532E6 /* Pods */,
+				EF356307A2BB8278FB27CFCA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1448,6 +1576,7 @@
 		8232115227D477FD00FE79E9 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				82004CFD285E1EBC001CFA5E /* YandexMapCameraListenerService */,
 				8270448F2855E7E800D9046E /* GeopositioningService */,
 				826A92612839531C004AAE0C /* LocationSevice */,
 				82B8EC152846849E001861E9 /* MapService */,
@@ -2288,6 +2417,7 @@
 				827E23F527DCD1410006E763 /* RequestsAPI */,
 				82EC8C0E27DE4FBB00661F58 /* RequestFirebase */,
 				82EC8C0827DE4DE900661F58 /* RequestsFirebase */,
+				82004CFA285E1A3A001CFA5E /* URLParametersModels */,
 				827E244727DCD2CA0006E763 /* RequestModels */,
 				827E23F927DCD1410006E763 /* Managers */,
 				827E240127DCD1410006E763 /* Protocols */,
@@ -2319,6 +2449,7 @@
 			isa = PBXGroup;
 			children = (
 				827E23F827DCD1410006E763 /* GETProducts.swift */,
+				82004CEB285E154F001CFA5E /* GETYandexReverseGeocoding.swift */,
 			);
 			path = GET;
 			sourceTree = "<group>";
@@ -2428,6 +2559,7 @@
 		827E423427F8864600491AC3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				82004CDC285DF288001CFA5E /* YandexMapView */,
 				827648BA284DC8D200D97971 /* CenterMapPinView */,
 				82E8BC3F284B64BA00BA2508 /* ChangeAddressView */,
 				82DB32882843722A00379554 /* SearchAddressView */,
@@ -3696,6 +3828,7 @@
 				827E244C27DCD6320006E763 /* URLProduct.swift */,
 				820188E328429449008916B5 /* URLAddressSuggestion.swift */,
 				820B866F285504A100A0B9B9 /* URLReverseGeocoding.swift */,
+				82004CF8285E190C001CFA5E /* URLYandexReverseGeocoding.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -3743,6 +3876,7 @@
 		82EC8C1427DE5BC500661F58 /* Decodable */ = {
 			isa = PBXGroup;
 			children = (
+				82004CED285E1569001CFA5E /* YandexReverseGeocoding */,
 				820188E72842989A008916B5 /* AddressSuggestion */,
 				82741AFF27D5230E006EBE80 /* DECProduct.swift */,
 				82EC8C1527DE5BDA00661F58 /* DECMenu.swift */,
@@ -3988,6 +4122,14 @@
 			path = MenuCategoriesCollection;
 			sourceTree = "<group>";
 		};
+		EF356307A2BB8278FB27CFCA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0814910A539DCDB765A01A3B /* Pods_ZanjabilHalal.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -3995,10 +4137,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8232109927D46F0000FE79E9 /* Build configuration list for PBXNativeTarget "ZanjabilHalal" */;
 			buildPhases = (
+				3668CB87D7C2C5A876787CE3 /* [CP] Check Pods Manifest.lock */,
 				8232107E27D46EFF00FE79E9 /* Sources */,
 				8232107F27D46EFF00FE79E9 /* Frameworks */,
 				8232108027D46EFF00FE79E9 /* Resources */,
 				827E234F27DC67D80006E763 /* Embed Libraries */,
+				1ABDA799FE95D3C319628200 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -4114,6 +4258,7 @@
 				8280AC0F27F086D600DEFFE6 /* PayOrderViewController.xib in Resources */,
 				8262AF8D281467BF009A7E3A /* Address.xcassets in Resources */,
 				82E8BC4C284B64F300BA2508 /* ChangeAddressView.xib in Resources */,
+				82004CEA285DF2B1001CFA5E /* YandexMapView.xib in Resources */,
 				82DB3297284379B100379554 /* Search.xcassets in Resources */,
 				82F458062802DE76004BCD68 /* MenuCategoriesView.xib in Resources */,
 				8262AF87281466A2009A7E3A /* AddressCollectionCell.xib in Resources */,
@@ -4171,6 +4316,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1ABDA799FE95D3C319628200 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ZanjabilHalal/Pods-ZanjabilHalal-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ZanjabilHalal/Pods-ZanjabilHalal-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ZanjabilHalal/Pods-ZanjabilHalal-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3668CB87D7C2C5A876787CE3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZanjabilHalal-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8232107E27D46EFF00FE79E9 /* Sources */ = {
@@ -4311,6 +4498,7 @@
 				8223D5A9284CA77D00729F52 /* AddressSuggestionsTableModel.swift in Sources */,
 				8280ABB827F01F5100DEFFE6 /* BasketManagers.swift in Sources */,
 				82C265F22801C568007984B3 /* CreateAddressModel.swift in Sources */,
+				82004CF7285E16FB001CFA5E /* DECYandexGeoObjectCollection.swift in Sources */,
 				82F458032802DE76004BCD68 /* MenuCategoriesView.swift in Sources */,
 				827E245227DCD9C40006E763 /* Extension + Decimal.swift in Sources */,
 				827E241F27DCD1410006E763 /* URLCreateStatic.swift in Sources */,
@@ -4385,10 +4573,14 @@
 				8208FED327F8AA46003955D0 /* CoreDataService.swift in Sources */,
 				8223D5AC284CA77D00729F52 /* AddressSuggestionsTableViewBuilder.swift in Sources */,
 				829A56C928202261005F110B /* StartLoadingViewBuilder.swift in Sources */,
+				82004CF5285E1690001CFA5E /* DECYandexReverseGeocodingResponse.swift in Sources */,
+				82004D06285E2E9B001CFA5E /* DECYandexGeocoderMetaData.swift in Sources */,
 				8223D5DE284CBDE900729F52 /* AddressSuggestionTableCellModel.swift in Sources */,
 				82C266122801CDC4007984B3 /* WarningService.swift in Sources */,
+				82004CEC285E154F001CFA5E /* GETYandexReverseGeocoding.swift in Sources */,
 				8280ABC227F01F5100DEFFE6 /* BasketViewModel.swift in Sources */,
 				827E242327DCD1410006E763 /* URLAbstractFactory.swift in Sources */,
+				82004CE7285DF2B1001CFA5E /* YandexMapView.swift in Sources */,
 				8262AF89281466A2009A7E3A /* AddressCollectionCellModel.swift in Sources */,
 				8294A3F227F95D270094CAEB /* SwitchMenuModel.swift in Sources */,
 				82EC8BD527DDF24C00661F58 /* ProfileViewModel.swift in Sources */,
@@ -4410,7 +4602,9 @@
 				82CD808B2815AE390048DC71 /* OrdersCollectionModel.swift in Sources */,
 				827E244527DCD2300006E763 /* Extension + StringConverter.swift in Sources */,
 				82CD808E2815AE390048DC71 /* OrdersCollectionLayout.swift in Sources */,
+				82004CF9285E190C001CFA5E /* URLYandexReverseGeocoding.swift in Sources */,
 				82C265E628015323007984B3 /* PayOrderCollectionCellModel.swift in Sources */,
+				82004CF3285E1659001CFA5E /* DECYandexGEOObject.swift in Sources */,
 				828E0D95280C66A6005239F1 /* InfoAlertView.swift in Sources */,
 				82741AEA27D4F38C006EBE80 /* MainNavigationModel.swift in Sources */,
 				823AF1B8281EC75E00593C1C /* AddAddressView.swift in Sources */,
@@ -4425,6 +4619,8 @@
 				827E243427DCD1CE0006E763 /* AlertButtonOptionsoble.swift in Sources */,
 				828C2DB4281307BF0059A828 /* ProfileCollectionModel.swift in Sources */,
 				82A268BD280A60E90051B997 /* InputAddressCollection.swift in Sources */,
+				82004CE8285DF2B1001CFA5E /* YandexMapModel.swift in Sources */,
+				82004D04285E2E15001CFA5E /* DECYandexMetaDataProperty.swift in Sources */,
 				8294A50927F9EEE60094CAEB /* POSTOrder.swift in Sources */,
 				823210CB27D475E200FE79E9 /* LoadNidoble.swift in Sources */,
 				82EC8BFA27DDFAF800661F58 /* OrderViewModel.swift in Sources */,
@@ -4437,6 +4633,7 @@
 				8232116327D4C90C00FE79E9 /* Extension + UIStoryboard.swift in Sources */,
 				82EC8C0D27DE4EA700661F58 /* URLFirebaseRestaurants.swift in Sources */,
 				82A268E3280AB3540051B997 /* PayOrderCollection.swift in Sources */,
+				82004CFC285E1A5C001CFA5E /* ParametersYandexReverseGeocoding.swift in Sources */,
 				82DB32BF2843E1BC00379554 /* AddressSuggestionsCollectionViewModel.swift in Sources */,
 				82F457D328028B37004BCD68 /* VerticalDishCollectionCell.swift in Sources */,
 				8208FED427F8AA46003955D0 /* PersistenService.swift in Sources */,
@@ -4451,6 +4648,7 @@
 				826B35DF280C11D800A15424 /* BasketTotalSumViewBuilder.swift in Sources */,
 				8280AC1727F0918D00DEFFE6 /* PayOrderCollectionCell.swift in Sources */,
 				826B35E1280C11D800A15424 /* BasketTotalSumModel.swift in Sources */,
+				82004CEF285E158C001CFA5E /* DECYandexReverseGeocoding.swift in Sources */,
 				820B8670285504A100A0B9B9 /* URLReverseGeocoding.swift in Sources */,
 				82C2660E2801CAC7007984B3 /* WarningView.swift in Sources */,
 				8223D5DD284CBDE900729F52 /* AddressSuggestionTableCellBuilder.swift in Sources */,
@@ -4458,6 +4656,7 @@
 				8280AC0627F086D600DEFFE6 /* PayOrderViewController.swift in Sources */,
 				820083ED283A3FD900A0F8BB /* MapScreenViewModel.swift in Sources */,
 				82E2F41827D5CC56005C4530 /* SetupFirebase.swift in Sources */,
+				82004D0A285E308B001CFA5E /* DECYandexAddressComponent.swift in Sources */,
 				827E243327DCD1CE0006E763 /* AlertService.swift in Sources */,
 				82E8BC4B284B64F300BA2508 /* ChangeAddressViewModel.swift in Sources */,
 				828C2DC32813086F0059A828 /* ProfileCollectionCellBuilder.swift in Sources */,
@@ -4470,6 +4669,7 @@
 				82CD8079281548A50048DC71 /* OrderCollectionCellViewModel.swift in Sources */,
 				8223D5AD284CA77D00729F52 /* AddressSuggestionsTableViewModel.swift in Sources */,
 				82A268FD280AD5A50051B997 /* PayInfoViewBuilder.swift in Sources */,
+				82004D01285E22C0001CFA5E /* DECYandexGeoObjects.swift in Sources */,
 				828E0D96280C66A6005239F1 /* InfoAlertModel.swift in Sources */,
 				827E242527DCD1410006E763 /* URLCreateProtocol.swift in Sources */,
 				82DB32C12843E1BC00379554 /* AddressSuggestionsCollectionView.swift in Sources */,
@@ -4515,6 +4715,7 @@
 				828C2DB7281307BF0059A828 /* ProfileCollectionLayout.swift in Sources */,
 				82B637FA280B01A800E8DF72 /* BasketCollectionLayout.swift in Sources */,
 				827E244227DCD2300006E763 /* Extension + TypeLink.swift in Sources */,
+				82004CE6285DF2B1001CFA5E /* YandexMapViewBuilder.swift in Sources */,
 				82C266092801C9F8007984B3 /* WarningViewBuilder.swift in Sources */,
 				827E241927DCD1410006E763 /* CookieService.swift in Sources */,
 				82EC8C1027DE4FD200661F58 /* RequestFirebase.swift in Sources */,
@@ -4560,6 +4761,7 @@
 				8232119327DD027F0019E6B6 /* TabBarView.swift in Sources */,
 				8223D5E2284CC06000729F52 /* MainTableCellBuilder.swift in Sources */,
 				8299C2AA281D907B0071A742 /* Extension + Date.swift in Sources */,
+				82004CE9285DF2B1001CFA5E /* YandexMapViewModel.swift in Sources */,
 				8232116C27DCF52D0019E6B6 /* JSONEncoderService.swift in Sources */,
 				82F91E7F27E5F81000F5A5CC /* ActionsMenuViewController.swift in Sources */,
 				8262AEEE2813F09B009A7E3A /* AvatarCollectionCell.swift in Sources */,
@@ -4572,7 +4774,9 @@
 				8294A50D27F9F3290094CAEB /* ENCDish.swift in Sources */,
 				82DB32C52843E1BC00379554 /* AddressSuggestionsCollectionLayout.swift in Sources */,
 				82C266252801DAC4007984B3 /* Extension + Profile.swift in Sources */,
+				82004CFF285E1ECC001CFA5E /* YandexMapCameraListenerService.swift in Sources */,
 				8262AF9128146A10009A7E3A /* Extension + AddressesViewController.swift in Sources */,
+				82004D08285E3045001CFA5E /* DECYandexAddressSuggestion.swift in Sources */,
 				82C266292801DADD007984B3 /* Extension + ActionButton.swift in Sources */,
 				826B35E2280C11D800A15424 /* BasketTotalSumViewModel.swift in Sources */,
 				82A268E2280AB3540051B997 /* PayOrderCollectionModel.swift in Sources */,
@@ -4715,6 +4919,7 @@
 		};
 		8232109A27D46F0000FE79E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87A35AE318F0870C4BB9B8D3 /* Pods-ZanjabilHalal.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -4750,6 +4955,7 @@
 		};
 		8232109B27D46F0000FE79E9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24D55ACC031F2D623A1F08F3 /* Pods-ZanjabilHalal.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

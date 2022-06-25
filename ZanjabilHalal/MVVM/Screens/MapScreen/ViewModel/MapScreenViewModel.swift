@@ -30,26 +30,11 @@ final class MapScreenViewModel: NSObject, MVVMViewModelProtocol {
 	private var cancellable: Set<AnyCancellable> = []
 	private var changeAddressViewModel: ChangeAddressViewModel!
 	private var centerMapPinViewModel : CenterMapPinViewModel!
+	private var yandexMapViewModel    : YandexMapViewModel!
     //MARK: - Main state view model
     private func stateModel(){
         guard let model = self.model else { return }
         switch model {
-			case .setupGeoPositioningService:
-				self.geoPositioningService.setupLocationService()
-				self.geoPositioningService.startUserLocation()
-				self.geoPositioningService.setupMapKitService()
-				// MARK: - изменения геопозиции пользователя
-				self.geoPositioningService.completionMapCamera
-					.sink(receiveValue: { mapCamera in
-						self.model = .updateCameraPosition(mapCamera)
-						self.geoPositioningService.stopUserLocation()
-					})
-					.store(in: &self.cancellable)
-				// MARK: - изменения камеры карты
-				self.geoPositioningService.completionRegionChange
-					.sink(receiveValue: { regionChange in
-						self.model = .animationCenterPinImageView(regionChange)
-					}).store(in: &self.cancellable)
 			case .createViewProperties:
 				let addChangeAddress: Closure<UIView> = { container in
 					self.model = .addChangeAddress(container)
@@ -57,18 +42,21 @@ final class MapScreenViewModel: NSObject, MVVMViewModelProtocol {
 				let addCenterMapPinView: Closure<UIView> = { container in
 					self.model = .addCenterMapPinView(container)
 				}
-				let viewProperties = MapScreenViewController.ViewProperties(mapViewDelegate    : self.mapKitService,
-																			mapCamera          : nil,
-																			addChangeAddress   : addChangeAddress,
-																			addCenterMapPinView: addCenterMapPinView)
+				let addMapView: Closure<UIView> = { container in
+					self.model = .addMapView(container)
+				}
+				let viewProperties = MapScreenViewController.ViewProperties(addChangeAddress   : addChangeAddress,
+																			addCenterMapPinView: addCenterMapPinView,
+																			addMapView         : addMapView)
 				self.mainView?.create(with: viewProperties)
-			case .updateCameraPosition(let mapCamera):
-				self.mainView?.viewProperties?.mapCamera = mapCamera
-				self.reloadProperties()
+			case .addMapView(let container):
+				self.yandexMapViewModel = self.createMapViewModel(with: container)
+				self.yandexMapViewModel.model = .createViewProperties
+				self.yandexMapViewModel.model = .setupGeoPositioningService
 			case .addChangeAddress(let container):
 				self.changeAddressViewModel       = self.createChangeAddressViewModel(with: container)
 				self.changeAddressViewModel.model = .createViewProperties
-				self.changeAddressViewModel.model = .setupGeoPositioningService
+				self.changeAddressViewModel.model = .setupYandexMapCameraListenerService
 			case .addCenterMapPinView(let container):
 				self.centerMapPinViewModel       = self.createCenterMapPinViewModel(with: container)
 				self.centerMapPinViewModel.model = .createViewProperties
@@ -95,6 +83,16 @@ final class MapScreenViewModel: NSObject, MVVMViewModelProtocol {
 			centerMapPinView.edges.equalToSuperview()
 		}
 		return centerMapPinViewBuilder.viewModel
+	}
+	
+	public func createMapViewModel(with containerView: UIView) -> YandexMapViewModel {
+		let agsMapViewBuilder = self.mainViewsBuilder.createYandexMapViewBuilder()
+		let mapView           = agsMapViewBuilder.view
+		containerView.addSubview(mapView)
+		mapView.snp.makeConstraints { mapView in
+			mapView.edges.equalToSuperview()
+		}
+		return agsMapViewBuilder.viewModel
 	}
 	
     init(with mainView: MapScreenViewController) {

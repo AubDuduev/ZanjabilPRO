@@ -13,7 +13,7 @@
             <connections>
                 <outlet property="containerCenterMapPinView" destination="mE0-ld-Myy" id="wDV-gu-SIG"/>
                 <outlet property="containerChangeAddressView" destination="jtD-Hr-wB9" id="fn3-Ou-TCq"/>
-                <outlet property="mapView" destination="v9t-AA-6sV" id="6IU-ZE-hDv"/>
+                <outlet property="containerMapView" destination="eKb-Mu-fUC" id="3d5-ka-ouL"/>
                 <outlet property="view" destination="kns-3F-tW8" id="UMe-1P-Rbc"/>
             </connections>
         </placeholder>
@@ -28,20 +28,9 @@
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="efZ-Nh-pf4" userLabel="MainStackView">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eKb-Mu-fUC" userLabel="MapView">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eKb-Mu-fUC" userLabel="ContainerMapView">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
-                                    <subviews>
-                                        <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="v9t-AA-6sV">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
-                                        </mapView>
-                                    </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="v9t-AA-6sV" secondAttribute="trailing" id="DNd-um-BuR"/>
-                                        <constraint firstItem="v9t-AA-6sV" firstAttribute="top" secondItem="eKb-Mu-fUC" secondAttribute="top" id="Eu5-wz-Ipd"/>
-                                        <constraint firstItem="v9t-AA-6sV" firstAttribute="leading" secondItem="eKb-Mu-fUC" secondAttribute="leading" id="j1b-UV-bxz"/>
-                                        <constraint firstAttribute="bottom" secondItem="v9t-AA-6sV" secondAttribute="bottom" id="sI9-aP-IQZ"/>
-                                    </constraints>
                                 </view>
                             </subviews>
                         </stackView>

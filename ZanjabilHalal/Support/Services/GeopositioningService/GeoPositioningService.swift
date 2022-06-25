@@ -9,6 +9,7 @@ import Combine
 import CoreLocation
 import Foundation
 import MapKit
+import YandexMapsMobile
 
 final class GeoPositioningService {
 	// MARK: - DI
@@ -23,9 +24,8 @@ final class GeoPositioningService {
 	public var completionUserCoordinate     = PassthroughSubject<CLLocationCoordinate2D, Never>()
 	public var completionRegionCoordinate   = PassthroughSubject<CLLocationCoordinate2D, Never>()
 	public var completionMapCamera          = PassthroughSubject<MKMapCamera, Never>()
+	public var completionYandexCamera       = PassthroughSubject<YMKCameraPosition, Never>()
 	public var completionRegionChange       = PassthroughSubject<RegionChange, Never>()
-	
-	private var addressSuggestion: DECAddressSuggestion?
 	
 	public func setupLocationService() {
 		self.locationService.setup()
@@ -33,6 +33,7 @@ final class GeoPositioningService {
 		self.locationService.didUpdateLocations = { [weak self] coordinate in
 			guard let self = self else { return }
 			self.createMapCamera(with: coordinate)
+			self.createYandexCameraPosition(with: coordinate)
 			self.completionUserCoordinate.send(coordinate)
 			self.postReverseGeocoding(with: coordinate)
 		}
@@ -58,14 +59,7 @@ final class GeoPositioningService {
 	
 	public func setCoordinate(with coordinate: CLLocationCoordinate2D) {
 		self.createMapCamera(with: coordinate)
-	}
-	
-	public func saveAddressSuggestion(with addressSuggestion: DECAddressSuggestion){
-		self.addressSuggestion = addressSuggestion
-	}
-	
-	public func getAddressSuggestion() -> DECAddressSuggestion? {
-		return self.addressSuggestion
+		self.createYandexCameraPosition(with: coordinate)
 	}
 	
 	public func stopUserLocation(){
@@ -74,6 +68,17 @@ final class GeoPositioningService {
 	
 	public func startUserLocation(){
 		self.locationService.getUserLocation()
+	}
+	
+	private func createYandexCameraPosition(with coordinate: CLLocationCoordinate2D) {
+		let point  = YMKPoint(latitude : coordinate.latitude,
+							  longitude: coordinate.longitude)
+		let camera = YMKCameraPosition(target : point,
+									   zoom   : 18,
+									   azimuth: 0,
+									   tilt   : 0)
+		
+		self.completionYandexCamera.send(camera)
 	}
 	
 	private func createMapCamera(with coordinate: CLLocationCoordinate2D) {

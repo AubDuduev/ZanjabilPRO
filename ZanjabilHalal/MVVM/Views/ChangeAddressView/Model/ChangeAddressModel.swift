@@ -10,8 +10,8 @@ import CoreLocation
 enum ChangeAddressModel {
     
     case createViewProperties
-	case setupGeoPositioningService
+	case setupYandexMapCameraListenerService
 	case addAddressCollectionView(UIView)
 	case didTapSearchAddress
-	case updateAddress(DECAddressSuggestion)
+	case updateAddress(DECYandexGEOObject)
 }

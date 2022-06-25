@@ -13,10 +13,13 @@ final class URLParameters: NSObject {
     private var stringKeyStringValue: [String: String]!
     
     enum QueryItemsType {
-        case none
+		case yandexReverseGeocoding(ParametersYandexReverseGeocoding)
     }
     enum QueryKey: String {
-        case none
+		case apikey
+		case geocode
+		case format
+		case results
     }
     enum QueryValue: String {
         case none
@@ -35,8 +38,13 @@ final class URLParameters: NSObject {
     //MARK: - Функция для создании параметров для URL
     public func create(queryItems: QueryItemsType, _ valueString: QueryValueString = .none, _ queryKeyStringValueString: QueryKeyStringValueString = .none) -> [URLQueryItem]? {
         switch queryItems {
-            case .none:
-                return nil
+            case .yandexReverseGeocoding(let parameters):
+				let queryItems = self.createQueryItems(
+					with: .QueryKeyStringValue([.apikey : parameters.apikey,
+												.geocode: parameters.geocode,
+												.format : parameters.format,
+												.results: parameters.results]))
+				return queryItems
         }
     }
     //MARK: - Функция для генерации параметров для URL

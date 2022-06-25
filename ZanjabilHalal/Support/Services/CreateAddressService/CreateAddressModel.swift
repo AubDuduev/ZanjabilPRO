@@ -40,6 +40,18 @@ struct CreateAddressModel {
 		self.street    = addressSuggestionData.street ?? ""
 		self.isDefault = true
 	}
+	
+	init(yandexAddressSuggestion: DECYandexAddressSuggestion) {
+		
+		self.ID        = UUID().uuidString
+		self.build     = yandexAddressSuggestion.build ?? ""
+		self.city      = yandexAddressSuggestion.city  ?? ""
+		self.apartment = ""
+		self.floor     = ""
+		self.intercom  = ""
+		self.street    = yandexAddressSuggestion.street ?? ""
+		self.isDefault = true
+	}
     
     init() {
         self.ID        = UUID().uuidString
