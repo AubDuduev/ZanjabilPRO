@@ -24,7 +24,7 @@ public final class GETYandexReverseGeocoding: SessionProtocol {
 		let parameters = data as! ParametersYandexReverseGeocoding
 		let urlObject  = URLYandexReverseGeocoding()
 		let url        = self.abstractFactory.create(urlObject, dataForUrl: parameters)?.URL
-		let header     = self.headers.create(type: .authorization_appJson(.Token, .daData))
+		let header     = self.headers.create(with: .authorization_appJson(.Token, .daData))
 		//3 - Geting data
 		self.group.enter()
 		self.session(url: url, httpMethod: .get, header: header) { sessionResult in

@@ -15,6 +15,7 @@ struct DECYandexAddressSuggestion {
 	let area             : String?
 	let city             : String?
 	let addressComponents: [DECYandexAddressComponent]
+	var coordinate       : DECYandexCoordinate?
 	
 	enum CodingKeys: String, CodingKey {
 		
@@ -26,7 +27,7 @@ extension DECYandexAddressSuggestion: Decodable {
 	
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
-		self.postalCode        = try? values.decode(String?.self, forKey: .postalCode)
+		self.postalCode        = try? values.decode(String?.self,   forKey: .postalCode)
 		self.addressComponents = (try? values.decode([DECYandexAddressComponent]?.self, forKey: .components)) ?? []
 		self.country           = self.addressComponents.first(where: { $0.kind == .country })?.name
 		self.build             = self.addressComponents.first(where: { $0.kind == .build   })?.name

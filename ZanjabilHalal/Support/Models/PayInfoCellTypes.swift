@@ -13,7 +13,7 @@ private typealias R = TextResources.PayInfoView
 enum PayInfoCellTypes {
     
     case cost(String)
-    case delivery(String)
+    case delivery(String?)
     case total(String)
     
     public func title() -> String {
@@ -28,7 +28,7 @@ enum PayInfoCellTypes {
         }
     }
     
-    public func info() -> String {
+    public func info() -> String? {
         
         switch self {
             case .cost(let name):

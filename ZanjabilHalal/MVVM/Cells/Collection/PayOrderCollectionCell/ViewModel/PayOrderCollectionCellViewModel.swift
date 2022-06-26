@@ -6,6 +6,7 @@
 //
 import UIKit
 import Resolver
+import Combine
 
 final class PayOrderCollectionCellViewModel: NSObject, MVVMViewModelProtocol {
     
@@ -24,11 +25,12 @@ final class PayOrderCollectionCellViewModel: NSObject, MVVMViewModelProtocol {
     private var mainViewsBuilder          : MainViewsBuilder
     @Injected
     private var localBasketService        : LocalBasketService
-    
+	
     // MARK: - Private
     private var inputAddressCollectionViewModel: InputAddressCollectionViewModel!
     private var payInfoViewModel               : PayInfoViewModel!
 	private var mapViewModel                   : MapViewModel!
+	private var cancellable                    : Set<AnyCancellable> = []
     
     private func logicPayOrderCollectionCellModel(){
         guard let model = self.model else { return }
@@ -61,7 +63,7 @@ final class PayOrderCollectionCellViewModel: NSObject, MVVMViewModelProtocol {
                 let totalPrice = self.localBasketService.getTotalPrice()
                 self.payInfoViewModel = self.createInfoViewModel(with: container, with: .cost("\(totalPrice) ₽"))
             case .createPayInfoDeliveryViewModel(let container):
-                self.payInfoViewModel = self.createInfoViewModel(with: container, with: .delivery("500 ₽"))
+                self.payInfoViewModel = self.createInfoViewModel(with: container, with: .delivery(nil))
             case .createPayInfoTotalPriceViewModel(let container):
                 let totalPrice = self.localBasketService.getTotalPrice()
                 self.payInfoViewModel = self.createInfoViewModel(with: container, with: .total("\(totalPrice) ₽"))

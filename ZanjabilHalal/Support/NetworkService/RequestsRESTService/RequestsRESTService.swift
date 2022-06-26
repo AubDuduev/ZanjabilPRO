@@ -40,6 +40,19 @@ final class RequestsRESTService {
 			}
 		}
 	}
+	
+	public func postDeliveryCheckPrice(with deliveryCheckPrice: ENCDeliveryCheckPrice, completion: @escaping Closure<DECDeliveryCheckPrice?>){
+		let postDeliveryCheckPrice = POSTDeliveryCheckPrice()
+		postDeliveryCheckPrice.request(data: deliveryCheckPrice) { requestResult in
+			switch requestResult {
+				case .error(let error):
+					print(error ?? "")
+				case .object(let deliveryCheckPrice):
+					let decAddressSuggestions = deliveryCheckPrice as? DECDeliveryCheckPrice
+					completion(decAddressSuggestions)
+			}
+		}
+	}
 	// MARK: - GET
 	public func getYandexReverseGeocoding(with parameters: ParametersYandexReverseGeocoding, completion: @escaping Closure<DECYandexGEOObject?>){
 		let getYandexReverseGeocoding = GETYandexReverseGeocoding()

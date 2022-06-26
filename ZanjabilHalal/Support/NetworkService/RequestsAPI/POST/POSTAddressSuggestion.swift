@@ -25,7 +25,7 @@ public final class POSTAddressSuggestion: SessionProtocol {
 		let body       = self.urlBody.create(with: .addressSuggestion(parameters))
 		let urlObject  = URLAddressSuggestion()
 		let url        = self.abstractFactory.create(urlObject)?.URL
-		let header     = self.headers.create(type: .authorization_appJson(.Token, .daData))
+		let header     = self.headers.create(with: .authorization_appJson(.Token, .daData))
 		//3 - Geting data
 		self.group.enter()
 		self.session(url: url, body: body, httpMethod: .post, header: header) { sessionResult in

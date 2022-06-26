@@ -17,13 +17,13 @@ final class PayOrderCollectionViewModel: MVVMViewModelProtocol {
     public var mainView: PayOrderCollectionView?
     public var isUpdate: ClosureEmpty?
     // MARK: - Private
-    private var cancelable : Set<AnyCancellable> = []
-    private var addresses  : [DECAddress]!
+    private var cancelable   : Set<AnyCancellable> = []
+    private var addresses    : [DECAddress]!
     //DI
     @Injected
-    private var addressesService    : AddressesService
+    private var addressesService     : AddressesService
     @Injected
-    private var createAddressService: CreateAddressService
+    private var createAddressService : CreateAddressService
     //MARK: - Main state view model
     private func statePayOrderModel(){
         guard let model = self.model else { return }
@@ -32,7 +32,13 @@ final class PayOrderCollectionViewModel: MVVMViewModelProtocol {
                 if let defaultAddress = defaultAddress {
                     self.createAddressService.setAddress(with: defaultAddress)
                 }
-				let payOrderCollectionCells: [PayOrderCollectionCells] = [.map, .inputOfAddress(defaultAddress), .payInfoCost, .payInfoDelivery, .totalPrice]
+				let payOrderCollectionCells: [PayOrderCollectionCells] = [
+					.map,
+					.inputOfAddress(defaultAddress),
+					.payInfoCost,
+					.payInfoDelivery,
+					.totalPrice
+				]
                 let viewProperties  = PayOrderCollectionView.ViewProperties(payOrderCollectionCells: payOrderCollectionCells)
                 self.mainView?.update(with: viewProperties)
             case .getAddress:

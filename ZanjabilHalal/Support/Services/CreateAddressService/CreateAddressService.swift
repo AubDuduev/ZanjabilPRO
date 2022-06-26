@@ -5,6 +5,7 @@
 //  Created by Senior Developer on 09.04.2022.
 //
 import UIKit
+import CoreLocation
 
 final class CreateAddressService: ServiceProtocol {
     
@@ -19,28 +20,30 @@ final class CreateAddressService: ServiceProtocol {
     
     public var update: ClosureAny?
     
-    private var city     : String!
-    private var street   : String!
-    private var build    : String!
-    private var apartment: String!
-    private var floor    : String!
-    private var intercom : String!
+    private var city      : String!
+    private var street    : String!
+    private var build     : String!
+    private var apartment : String!
+    private var floor     : String!
+    private var intercom  : String!
+	private var latitude  : Double!
+	private var longitude : Double!
     
     public func createAddress(with inputText: String, with inputAddressType: InputAddressTypes) {
     
         switch inputAddressType {
             case .city:
-                self.createAddressModel.city = inputText
+                self.createAddressModel.city      = inputText
             case .street:
-                self.createAddressModel.street = inputText
+                self.createAddressModel.street    = inputText
             case .build:
-                self.createAddressModel.build = inputText
+                self.createAddressModel.build     = inputText
             case .apartment:
                 self.createAddressModel.apartment = inputText
             case .floor:
-                self.createAddressModel.floor = inputText
+                self.createAddressModel.floor     = inputText
             case .intercom:
-                self.createAddressModel.intercom = inputText
+                self.createAddressModel.intercom  = inputText
         }
         self.update?(self.createAddressModel)
     }

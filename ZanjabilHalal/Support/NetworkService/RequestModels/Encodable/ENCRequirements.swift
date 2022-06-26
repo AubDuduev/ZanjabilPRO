@@ -1,25 +1,25 @@
 //
-//  CODRequirements.swift
+//  ENCRequirements.swift
 //  ZanjabilHalal
 //
 //  Created by Senior Developer on 25.06.2022.
 //
 import Foundation
 
-struct CODRequirements {
+struct ENCRequirements {
+	
+	let taxiClass: String?
   
    enum CodingKeys: String, CodingKey {
       
-      case amount    = "amount"
-     
+      case taxiClass = "taxi_class"
    }
 }
 
-extension CODRequirements: Encodable {
+extension ENCRequirements: Encodable {
    
    func encode(to encoder: Encoder) throws {
       var container = encoder.container(keyedBy: CodingKeys.self)
-      
-      try container.encode(amount   , forKey: .amount)
+      try container.encode(taxiClass, forKey: .taxiClass)
    }
 }

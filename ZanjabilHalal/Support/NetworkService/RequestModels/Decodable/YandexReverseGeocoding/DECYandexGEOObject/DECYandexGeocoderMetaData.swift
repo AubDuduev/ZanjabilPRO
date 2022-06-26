@@ -9,7 +9,7 @@ import Foundation
 struct DECYandexGeocoderMetaData {
 	
 	let fullAddress            : String?
-	let yandexAddressSuggestion: DECYandexAddressSuggestion?
+	var yandexAddressSuggestion: DECYandexAddressSuggestion?
 	
 	enum CodingKeys: String, CodingKey {
 		case fullAddress             = "text"

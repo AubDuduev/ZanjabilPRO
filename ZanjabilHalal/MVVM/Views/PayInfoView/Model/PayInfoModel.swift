@@ -9,5 +9,6 @@ import UIKit
 enum PayInfoModel {
     
     case createViewProperties(PayInfoCellTypes)
-    case updateViewProperties
+	case getDeliveryPrice
+    case updateViewProperties(String)
 }

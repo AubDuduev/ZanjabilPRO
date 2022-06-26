@@ -7,17 +7,17 @@
 import Foundation
 
 struct DECYandexMetaDataProperty {
-   
-	let geocoderMetaData: DECYandexGeocoderMetaData?
-   
-   enum CodingKeys: String, CodingKey {
-      case geocoderMetaData = "GeocoderMetaData"
-   }
+	
+	var geocoderMetaData: DECYandexGeocoderMetaData?
+	
+	enum CodingKeys: String, CodingKey {
+		case geocoderMetaData = "GeocoderMetaData"
+	}
 }
 extension DECYandexMetaDataProperty: Decodable {
-   
-   init(from decoder: Decoder) throws {
-      let values = try decoder.container(keyedBy: CodingKeys.self)
-      self.geocoderMetaData = try? values.decode(DECYandexGeocoderMetaData?.self, forKey: .geocoderMetaData)
-   }
+	
+	init(from decoder: Decoder) throws {
+		let values = try decoder.container(keyedBy: CodingKeys.self)
+		self.geocoderMetaData = try? values.decode(DECYandexGeocoderMetaData?.self, forKey: .geocoderMetaData)
+	}
 }

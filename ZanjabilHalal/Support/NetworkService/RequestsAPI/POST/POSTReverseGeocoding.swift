@@ -13,7 +13,7 @@ public final class POSTReverseGeocoding: SessionProtocol {
 	private var headers         = URLHeaders()
 	private var urlBody         = URLBody()
 	private let internetСheck   = InternetСheckService()
-	private var group           = DispatchGroup()
+	private var groupSession     = DispatchGroup()
 	private var sessionData     : Data!
 	private let decoderService  = JSONDecoderService()
 	
@@ -25,24 +25,24 @@ public final class POSTReverseGeocoding: SessionProtocol {
 		let body       = self.urlBody.create(with: .coordinate(parameters))
 		let urlObject  = URLReverseGeocoding()
 		let url        = self.abstractFactory.create(urlObject)?.URL
-		let header     = self.headers.create(type: .authorization_appJson(.Token, .daData))
+		let header     = self.headers.create(with: .authorization_appJson(.Token, .daData))
 		//3 - Geting data
-		self.group.enter()
+		self.groupSession.enter()
 		self.session(url: url, body: body, httpMethod: .post, header: header) { sessionResult in
 			switch sessionResult {
 					// Success
 				case .data(let data):
 					self.sessionData = data
-					self.group.leave()
+					self.groupSession.leave()
 					// Error
 				case .error(let error):
 					print(error!.localizedDescription, "Error JSONDecode get from Server")
 					completionRequest(.error(error))
-					self.group.leave()
+					self.groupSession.leave()
 			}
 		}
 		//4 - Decoding
-		self.group.notify(queue: .main) {
+		self.groupSession.notify(queue: .main) {
 			self.decoderService.decode(jsonType: DECAddressSuggestions.self, data: self.sessionData) { (decodeResult) in
 				switch decodeResult {
 						// Error

@@ -21,6 +21,7 @@ final class URLBody {
 		
 		case addressSuggestion(ENCAddressSuggestion)
 		case coordinate(ENCCoordinate)
+		case deliveryCheckPrice(ENCDeliveryCheckPrice)
 	}
     
     public func create<T: Encodable>(with encodableType: EncodableDefault<T>) -> Data? {
@@ -40,6 +41,10 @@ final class URLBody {
 				return data
 			case .coordinate(let coordinate):
 				let data = jsonEncoderService.encode(with: coordinate)
+				return data
+			case .deliveryCheckPrice(let deliveryCheckPrice):
+				let data = jsonEncoderService.encode(with: deliveryCheckPrice)
+				print(String(decoding: data!, as: UTF8.self))
 				return data
 		}
 	}

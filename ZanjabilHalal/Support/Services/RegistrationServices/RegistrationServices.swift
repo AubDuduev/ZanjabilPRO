@@ -86,6 +86,9 @@ extension Resolver: ResolverRegistering {
 			YandexMapService()
 		}
 		
+		Resolver.register {
+			YandexDeliveryService()
+		}
     }
     
     private static func application(){
