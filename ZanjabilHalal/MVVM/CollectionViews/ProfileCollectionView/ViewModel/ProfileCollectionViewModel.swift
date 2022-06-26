@@ -51,12 +51,18 @@ final class ProfileCollectionViewModel: MVVMViewModelProtocol {
 				self.mainView?.update(with: viewProperties)
 				mainView?.viewProperties?.updateRow(indexPathUserName)
             case .getAddress:
-                self.addressesService.subscribeUpdate.sink { addresses in
-                    self.addresses = addresses
-                    self.defaultAddress = addresses.first(where: { $0.isDefault })
+                self.addressesService.subscribeDefaultAddress
+					.sink { defaultAddress in
+                    self.defaultAddress = defaultAddress
                     self.model = .createViewProperties
                 }
                 .store(in: &cancelable)
+				self.addressesService.subscribeAddresses
+					.sink { addresses in
+						self.addresses = addresses
+						self.model     = .createViewProperties
+					}
+					.store(in: &cancelable)
                 self.addressesService.getAddresses()
         }
     }

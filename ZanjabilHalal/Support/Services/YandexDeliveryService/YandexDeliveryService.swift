@@ -26,11 +26,11 @@ final class YandexDeliveryService: ServiceProtocol {
 	
 	public func getPrice(){
 		let addressGroup  = DispatchGroup()
-		self.addressesService.subscribeUpdate
-			.sink { addresses in
+		self.addressesService.subscribeDefaultAddress
+			.removeDuplicates()
+			.sink { defaultAddress in
 				addressGroup.enter()
-				self.addresses      = addresses
-				self.defaultAddress = addresses.first(where: { $0.isDefault })
+				self.defaultAddress = defaultAddress
 				addressGroup.leave()
 			}
 			.store(in: &cancelable)

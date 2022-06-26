@@ -89,8 +89,9 @@ final class ActionButtonViewModel: MVVMViewModelProtocol {
     }
 	
 	private func saveAddress(executeSaving: @escaping ClosureEmpty){
+		
 		//сохранение адреса
-		self.addressesService.changeDefaultAddress(with: self.createAddressService.address) {
+		self.addressesService.defaultAddress() {
 			executeSaving()
 		}
 	}
@@ -102,8 +103,6 @@ final class ActionButtonViewModel: MVVMViewModelProtocol {
             self.warningService.present(with: warningTextType, dismiss: true)
             return
         }
-		//смотрим есть ли этот адрес в базе
-		guard !addressesService.equitable(with: self.createAddressService.address) else { return }
 		
 		self.saveAddress {
 			executeTesting()

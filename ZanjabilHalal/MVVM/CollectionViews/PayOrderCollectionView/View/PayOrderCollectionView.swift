@@ -9,7 +9,7 @@ import UIKit
 final class PayOrderCollectionView: UIView, MVVMViewProtocol {
     
     struct ViewProperties {
-        let payOrderCollectionCells: [PayOrderCollectionCells]
+        var payOrderCollectionCells: [PayOrderCollectionCells]
     }
     var viewProperties: ViewProperties?
     

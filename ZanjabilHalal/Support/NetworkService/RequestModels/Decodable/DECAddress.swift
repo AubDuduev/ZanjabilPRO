@@ -50,3 +50,18 @@ extension DECAddress: Decodable {
         self.isDefault  = (try? values.decode(Bool.self,   forKey: .isDefault )) ?? false
     }
 }
+extension DECAddress: Equatable {
+	static func == (lhs: DECAddress, rhs: DECAddress) -> Bool {
+		let isEquatable = (lhs.ID        == rhs.ID        &&
+						   lhs.build     == rhs.build     &&
+						   lhs.city      == rhs.city      &&
+						   lhs.apartment == rhs.apartment &&
+						   lhs.floor     == rhs.floor     &&
+						   lhs.intercom  == rhs.intercom  &&
+						   lhs.street    == rhs.street    &&
+						   lhs.latitude  == rhs.latitude  &&
+						   lhs.longitude == rhs.longitude &&
+						   lhs.isDefault == rhs.isDefault)
+		return isEquatable
+	}
+}

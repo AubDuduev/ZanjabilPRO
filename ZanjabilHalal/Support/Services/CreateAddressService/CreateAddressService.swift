@@ -57,10 +57,10 @@ final class CreateAddressService: ServiceProtocol {
 		guard let yandexAddressSuggestion = self.yandexAddressSuggestion else { return }
 		self.createAddressModel = CreateAddressModel(yandexAddressSuggestion: yandexAddressSuggestion)
 	}
-    
-    public func setAddress(with address: DECAddress) {
-        self.createAddressModel = CreateAddressModel(address: address)
-    }
+	
+	public func saveAddress(with address: DECAddress) {
+		self.createAddressModel = CreateAddressModel(address: address)
+	}
 	
 	public func saveAddressSuggestion(with addressSuggestion: DECAddressSuggestion){
 		self.addressSuggestion = addressSuggestion

@@ -48,6 +48,7 @@ final class PayOrderViewModel: MVVMViewModelProtocol {
 	public func createPayOrderCollectionViewModel(with containerView: UIView) -> PayOrderCollectionViewModel {
 		let payOrderCollectionViewBuilder     = self.mainCollectionViewsBuilder.createPayOrderCollectionViewBuilder()
 		let payOrderCollectionViewBuilderView = payOrderCollectionViewBuilder.view
+		payOrderCollectionViewBuilder.viewModel.model = .createViewProperties
 		payOrderCollectionViewBuilder.viewModel.model = .getAddress
 		containerView.addSubview(payOrderCollectionViewBuilderView)
 		payOrderCollectionViewBuilderView.snp.makeConstraints { payOrderCollectionViewBuilderView in

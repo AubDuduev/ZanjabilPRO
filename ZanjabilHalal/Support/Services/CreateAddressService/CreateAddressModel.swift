@@ -31,6 +31,18 @@ struct CreateAddressModel {
         self.isDefault = address.isDefault
     }
 	
+	init(address: ENCAddress) {
+		
+		self.ID        = address.ID
+		self.build     = address.build
+		self.city      = address.city
+		self.apartment = address.apartment
+		self.floor     = address.floor
+		self.intercom  = address.intercom
+		self.street    = address.street
+		self.isDefault = address.isDefault
+	}
+	
 	init(addressSuggestionData: DECAddressSuggestionData) {
 		
 		self.ID        = UUID().uuidString

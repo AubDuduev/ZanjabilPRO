@@ -29,7 +29,8 @@ final class AddressesCollectionViewModel: MVVMViewModelProtocol {
         guard let model = self.model else { return }
         switch model {
             case .createViewProperties(let addressCollectionType):
-                self.addressesService.subscribeUpdate.sink { addresses in
+                self.addressesService.subscribeAddresses
+					.sink { addresses in
 					let viewProperties = AddressesCollectionView.ViewProperties(addressCollectionType: addressCollectionType,
 																				addresses: addresses)
                     self.mainView?.update(with: viewProperties)

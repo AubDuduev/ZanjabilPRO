@@ -8,6 +8,7 @@ import UIKit
 
 enum PayOrderCollectionModel {
     
-    case createViewProperties(DECAddress?)
+    case createViewProperties
+	case updateViewProperties(DECAddress?)
     case getAddress
 }
