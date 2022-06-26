@@ -15,6 +15,8 @@ struct ENCAddress: Encodable {
     let floor    : String
     let intercom : String
     let street   : String
+	let latitude : String
+	let longitude: String
     var isDefault: Bool
     
     
@@ -27,7 +29,9 @@ struct ENCAddress: Encodable {
         self.floor     = createAddressModel.floor
         self.intercom  = createAddressModel.intercom
         self.street    = createAddressModel.street
-        self.isDefault = createAddressModel.isDefault
+        self.latitude  = createAddressModel.latitude.toString
+		self.longitude = createAddressModel.longitude.toString
+		self.isDefault = createAddressModel.isDefault
     }
     
     init(address: DECAddress, isDefault: Bool) {
@@ -40,5 +44,7 @@ struct ENCAddress: Encodable {
         self.intercom  = address.intercom
         self.street    = address.street
         self.isDefault = isDefault
+		self.latitude  = address.latitude
+		self.longitude = address.longitude
     }
 }

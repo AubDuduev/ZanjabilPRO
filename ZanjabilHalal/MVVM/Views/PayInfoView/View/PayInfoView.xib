@@ -46,12 +46,18 @@
                                 </label>
                             </subviews>
                         </stackView>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="2PV-tf-QD4">
+                            <rect key="frame" x="434" y="0.0" width="20" height="32"/>
+                        </activityIndicatorView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="5dW-vr-B5Q" secondAttribute="bottom" id="8rJ-1U-lAe"/>
+                        <constraint firstItem="2PV-tf-QD4" firstAttribute="top" secondItem="8Po-2Z-lkQ" secondAttribute="top" id="EJU-bO-lrO"/>
+                        <constraint firstAttribute="trailing" secondItem="2PV-tf-QD4" secondAttribute="trailing" constant="16" id="UJZ-XK-YYs"/>
                         <constraint firstAttribute="trailing" secondItem="5dW-vr-B5Q" secondAttribute="trailing" constant="16" id="cdT-KZ-Gi6"/>
                         <constraint firstItem="5dW-vr-B5Q" firstAttribute="leading" secondItem="8Po-2Z-lkQ" secondAttribute="leading" constant="16" id="fde-JQ-m7w"/>
+                        <constraint firstAttribute="bottom" secondItem="2PV-tf-QD4" secondAttribute="bottom" id="kpo-88-7o9"/>
                         <constraint firstItem="5dW-vr-B5Q" firstAttribute="top" secondItem="8Po-2Z-lkQ" secondAttribute="top" id="tiu-6M-yhx"/>
                     </constraints>
                 </view>
@@ -67,6 +73,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="activityView" destination="2PV-tf-QD4" id="9AF-VI-X3q"/>
                 <outlet property="infoButton" destination="DF5-CL-hyE" id="bWy-fm-gfM"/>
                 <outlet property="infoLabel" destination="6JQ-fV-TYA" id="BSU-No-fpn"/>
                 <outlet property="titleLabel" destination="4dz-eE-lYM" id="08I-fe-nA5"/>

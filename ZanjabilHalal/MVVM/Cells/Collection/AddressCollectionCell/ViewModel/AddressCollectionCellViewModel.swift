@@ -14,9 +14,11 @@ final class AddressCollectionCellViewModel: MVVMViewModelProtocol {
     }
     // MARK: - DI
     @Injected
-    private var mainRouter      : MainRouter
+    private var mainRouter          : MainRouter
     @Injected
-    private var addressesService: AddressesService
+    private var addressesService    : AddressesService
+	@Injected
+	private var createAddressService: CreateAddressService
     //MARK: - implementation protocol
     public var mainView: AddressCollectionCell?
     public var isUpdate: ClosureEmpty?
@@ -35,8 +37,10 @@ final class AddressCollectionCellViewModel: MVVMViewModelProtocol {
                     }
                 }
                 let didTapCellAddress: Closure<DECAddress> = { address in
-                    let address = ENCAddress(address: address, isDefault: true)
-                    self.addressesService.changeDefaultAddress(with: address)
+					var address = address
+					address.isDefault = true
+					self.createAddressService.saveAddress(with: address)
+                    self.addressesService.defaultAddress()
                 }
                 
 				let viewProperties = AddressCollectionCell.ViewProperties(addressCollectionType: addressCollectionType,

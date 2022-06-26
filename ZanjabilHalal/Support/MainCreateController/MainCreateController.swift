@@ -12,9 +12,9 @@ final class MainCreateController {
     @Injected
     private var mainViewControllersBuilder: MainViewControllersBuilder
     // MARK: - VC
-    lazy public var navigationViewController: MainNavigationViewController = self.createMainNavigationViewController(id: .tabBarVC)
-    lazy public var tabBarViewController    : MainTabBarViewController     = self.createMainTabBarViewController()
-    lazy public var payOrderViewController  : PayOrderViewController       = self.createPayOrderViewController()
+    lazy public var navigationViewController     : MainNavigationViewController  = self.createMainNavigationViewController(id: .tabBarVC)
+    lazy public var tabBarViewController         : MainTabBarViewController      = self.createMainTabBarViewController()
+    lazy public var payOrderViewControllerBuilder: PayOrderViewControllerBuilder = self.createPayOrderViewControllerBuilder()
     
     // MARK: - Создаем основной навигационный контроллер
     private func createMainNavigationViewController(id controllerID: ControllersID) -> MainNavigationViewController {
@@ -66,10 +66,9 @@ final class MainCreateController {
         return basketViewController
     }
     // MARK: - Создаем контроллер оплаты заказа
-    private func createPayOrderViewController() -> PayOrderViewController {
-        let payOrderBuilder             = self.mainViewControllersBuilder.createPayOrderBuilder()
-        payOrderBuilder.viewModel.model = .createViewProperties
-        return payOrderBuilder.view
+    private func createPayOrderViewControllerBuilder() -> PayOrderViewControllerBuilder {
+        let payOrderBuilder = self.mainViewControllersBuilder.createPayOrderBuilder()
+        return payOrderBuilder
     }
     // MARK: - Создаем контроллер для ввода адреса
     private func createInputAddressViewController(with address: DECAddress?, with actionButtonType: ActionButtonType) -> InputAddressViewController {
@@ -131,7 +130,8 @@ final class MainCreateController {
             case .basketVC:
                 return self.createBasketViewController() as! T
             case .payOrderVC:
-                return self.payOrderViewController as! T
+				self.payOrderViewControllerBuilder.viewModel.model = .createViewProperties
+                return self.payOrderViewControllerBuilder.view as! T
             case .inputAddressVC(let address, let actionButtonType):
                 return self.createInputAddressViewController(with: address, with: actionButtonType) as! T
             case .ordersVC:

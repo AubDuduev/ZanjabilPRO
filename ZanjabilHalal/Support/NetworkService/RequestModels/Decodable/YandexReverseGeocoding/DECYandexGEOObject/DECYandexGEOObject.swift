@@ -8,11 +8,12 @@ import Foundation
 
 struct DECYandexGEOObject {
 	
-	let metaDataProperty: DECYandexMetaDataProperty?
+	var metaDataProperty: DECYandexMetaDataProperty?
+	let coordinate      : DECYandexCoordinate?
 	
 	enum CodingKeys: String, CodingKey {
-		
 		case metaDataProperty = "metaDataProperty"
+		case coordinate       = "Point"
 	}
 }
 extension DECYandexGEOObject: Decodable {
@@ -20,5 +21,7 @@ extension DECYandexGEOObject: Decodable {
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
 		self.metaDataProperty = try? values.decode(DECYandexMetaDataProperty?.self, forKey: .metaDataProperty)
+		self.coordinate       = try? values.decode(DECYandexCoordinate?.self, forKey: .coordinate)
+		self.metaDataProperty?.geocoderMetaData?.yandexAddressSuggestion?.coordinate = self.coordinate
 	}
 }

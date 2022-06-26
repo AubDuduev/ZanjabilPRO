@@ -25,7 +25,8 @@ final class URLHeaders {
 	
 	enum AuthorisationToken: String {
 		
-		case daData = "5a00c32e1628c100e5fb22ac8e0740e383e47491"
+		case daData         = "5a00c32e1628c100e5fb22ac8e0740e383e47491"
+		case yandexDelivery = "AQAAAABg0bhFAAVM1ZFEFSJs900Rhu9DJtyekEU"
 	}
 	
 	enum AuthorisationType: String {
@@ -45,8 +46,8 @@ final class URLHeaders {
 		case appJson   = "application/json"
 		case jsonEnc   = "application/x-www-form-urlencoded|application/json"
 	}
-	public func create(type: HeaderType) -> Header {
-		switch type {
+	public func create(with headerType: HeaderType) -> Header {
+		switch headerType {
 				//MARK: - AppJson
 			case .appJson:
 				self.keyValueHeader = [.contentType: .appJson]

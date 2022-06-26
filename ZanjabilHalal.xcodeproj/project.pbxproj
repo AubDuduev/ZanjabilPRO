@@ -51,6 +51,8 @@
 		8208FED327F8AA46003955D0 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8208FED127F8AA46003955D0 /* CoreDataService.swift */; };
 		8208FED427F8AA46003955D0 /* PersistenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8208FED227F8AA46003955D0 /* PersistenService.swift */; };
 		8208FED927F8AABF003955D0 /* ZanjabilHalal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8208FED727F8AABF003955D0 /* ZanjabilHalal.xcdatamodeld */; };
+		820A935328686B9A0055BCC8 /* DECYandexCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820A935228686B9A0055BCC8 /* DECYandexCoordinate.swift */; };
+		820A9355286873300055BCC8 /* Extension + Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820A9354286873300055BCC8 /* Extension + Double.swift */; };
 		820ACBD627F2D8E10035CCC5 /* FeedbackGeneratorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820ACBD527F2D8E10035CCC5 /* FeedbackGeneratorService.swift */; };
 		820B8670285504A100A0B9B9 /* URLReverseGeocoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820B866F285504A100A0B9B9 /* URLReverseGeocoding.swift */; };
 		820B86722855074B00A0B9B9 /* POSTReverseGeocoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820B86712855074B00A0B9B9 /* POSTReverseGeocoding.swift */; };
@@ -295,9 +297,7 @@
 		8280ABD127F060D600DEFFE6 /* Basket.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8280ABD027F060D600DEFFE6 /* Basket.xcassets */; };
 		8280ABD427F061DA00DEFFE6 /* BuyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8280ABD227F061DA00DEFFE6 /* BuyView.swift */; };
 		8280ABD527F061DA00DEFFE6 /* BuyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8280ABD327F061DA00DEFFE6 /* BuyView.xib */; };
-		8280AC0327F086D600DEFFE6 /* PayOrderManagers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8280ABF627F086D600DEFFE6 /* PayOrderManagers.swift */; };
 		8280AC0627F086D600DEFFE6 /* PayOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8280ABF927F086D600DEFFE6 /* PayOrderViewController.swift */; };
-		8280AC0727F086D600DEFFE6 /* ConfiguratorPayOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8280ABFA27F086D600DEFFE6 /* ConfiguratorPayOrder.swift */; };
 		8280AC0927F086D600DEFFE6 /* BuilderPayOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8280ABFC27F086D600DEFFE6 /* BuilderPayOrder.swift */; };
 		8280AC0C27F086D600DEFFE6 /* PayOrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8280ABFF27F086D600DEFFE6 /* PayOrderModel.swift */; };
 		8280AC0D27F086D600DEFFE6 /* PayOrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8280AC0027F086D600DEFFE6 /* PayOrderViewModel.swift */; };
@@ -327,6 +327,15 @@
 		828E0D98280C66A6005239F1 /* InfoAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 828E0D93280C66A6005239F1 /* InfoAlertView.xib */; };
 		828E0D9B280C67FB005239F1 /* InfoAlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828E0D9A280C67FB005239F1 /* InfoAlertService.swift */; };
 		828E0D9D280C6856005239F1 /* Extension + InfoAlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828E0D9C280C6856005239F1 /* Extension + InfoAlertService.swift */; };
+		82924CF128674E3A0070B1CA /* CODDeliveryAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82924CF028674E3A0070B1CA /* CODDeliveryAddress.swift */; };
+		82924CF328674E4A0070B1CA /* CODDeliveryContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82924CF228674E4A0070B1CA /* CODDeliveryContact.swift */; };
+		82924CF5286767F20070B1CA /* URLYandexCheckPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82924CF4286767F20070B1CA /* URLYandexCheckPrice.swift */; };
+		82924CF828676A6D0070B1CA /* POSTDeliveryCheckPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82924CF728676A6D0070B1CA /* POSTDeliveryCheckPrice.swift */; };
+		82924CFD28676E2C0070B1CA /* ENCDeliveryCheckPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82924CFC28676E2C0070B1CA /* ENCDeliveryCheckPrice.swift */; };
+		82924CFF286771620070B1CA /* DECDeliveryCheckPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82924CFE286771610070B1CA /* DECDeliveryCheckPrice.swift */; };
+		82924D012867718D0070B1CA /* CODCurrencyRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82924D002867718D0070B1CA /* CODCurrencyRules.swift */; };
+		82924D03286773620070B1CA /* ENCRequirements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82924D02286773620070B1CA /* ENCRequirements.swift */; };
+		82924D06286776C00070B1CA /* YandexDeliveryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82924D05286776C00070B1CA /* YandexDeliveryService.swift */; };
 		8294A3F127F95D270094CAEB /* SwitchMenuBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294A3ED27F95D270094CAEB /* SwitchMenuBuilder.swift */; };
 		8294A3F227F95D270094CAEB /* SwitchMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294A3EE27F95D270094CAEB /* SwitchMenuModel.swift */; };
 		8294A3F327F95D270094CAEB /* SwitchMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294A3EF27F95D270094CAEB /* SwitchMenuViewModel.swift */; };
@@ -531,6 +540,12 @@
 		82F458152802DF79004BCD68 /* DishCategoryCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F458102802DF79004BCD68 /* DishCategoryCollectionCell.swift */; };
 		82F458162802DF79004BCD68 /* DishCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F458112802DF79004BCD68 /* DishCategoryModel.swift */; };
 		82F458172802DF79004BCD68 /* DishCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F458122802DF79004BCD68 /* DishCategoryViewModel.swift */; };
+		82F90BE22866F95F00FB29FB /* CODClientRequirements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F90BE12866F95F00FB29FB /* CODClientRequirements.swift */; };
+		82F90BEC2866FC0900FB29FB /* CODCreatePrepaymentDelivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F90BEB2866FC0900FB29FB /* CODCreatePrepaymentDelivery.swift */; };
+		82F90BEE2866FFC300FB29FB /* CODEmergencyContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F90BED2866FFC300FB29FB /* CODEmergencyContact.swift */; };
+		82F90BF02867024B00FB29FB /* CODSendPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F90BEF2867024B00FB29FB /* CODSendPackage.swift */; };
+		82F90BF32867028200FB29FB /* CODSendPackageSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F90BF22867028200FB29FB /* CODSendPackageSize.swift */; };
+		82F90BF62867109600FB29FB /* CODRoutePoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F90BF52867109600FB29FB /* CODRoutePoint.swift */; };
 		82F91E7527E5D6CF00F5A5CC /* MenuCategoriesCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F91E7427E5D6CF00F5A5CC /* MenuCategoriesCollection.swift */; };
 		82F91E7727E5D88F00F5A5CC /* DECCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F91E7627E5D88F00F5A5CC /* DECCategory.swift */; };
 		82F91E7D27E5E38700F5A5CC /* MenuCategoriesCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F91E7C27E5E38700F5A5CC /* MenuCategoriesCollectionLayout.swift */; };
@@ -596,6 +611,8 @@
 		8208FED127F8AA46003955D0 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		8208FED227F8AA46003955D0 /* PersistenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenService.swift; sourceTree = "<group>"; };
 		8208FED827F8AABF003955D0 /* ZanjabilHalal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ZanjabilHalal.xcdatamodel; sourceTree = "<group>"; };
+		820A935228686B9A0055BCC8 /* DECYandexCoordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DECYandexCoordinate.swift; sourceTree = "<group>"; };
+		820A9354286873300055BCC8 /* Extension + Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + Double.swift"; sourceTree = "<group>"; };
 		820ACBD527F2D8E10035CCC5 /* FeedbackGeneratorService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackGeneratorService.swift; sourceTree = "<group>"; };
 		820B866F285504A100A0B9B9 /* URLReverseGeocoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLReverseGeocoding.swift; sourceTree = "<group>"; };
 		820B86712855074B00A0B9B9 /* POSTReverseGeocoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POSTReverseGeocoding.swift; sourceTree = "<group>"; };
@@ -806,9 +823,7 @@
 		8280ABD027F060D600DEFFE6 /* Basket.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Basket.xcassets; sourceTree = "<group>"; };
 		8280ABD227F061DA00DEFFE6 /* BuyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyView.swift; sourceTree = "<group>"; };
 		8280ABD327F061DA00DEFFE6 /* BuyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BuyView.xib; sourceTree = "<group>"; };
-		8280ABF627F086D600DEFFE6 /* PayOrderManagers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayOrderManagers.swift; sourceTree = "<group>"; };
 		8280ABF927F086D600DEFFE6 /* PayOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayOrderViewController.swift; sourceTree = "<group>"; };
-		8280ABFA27F086D600DEFFE6 /* ConfiguratorPayOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfiguratorPayOrder.swift; sourceTree = "<group>"; };
 		8280ABFC27F086D600DEFFE6 /* BuilderPayOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuilderPayOrder.swift; sourceTree = "<group>"; };
 		8280ABFF27F086D600DEFFE6 /* PayOrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayOrderModel.swift; sourceTree = "<group>"; };
 		8280AC0027F086D600DEFFE6 /* PayOrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayOrderViewModel.swift; sourceTree = "<group>"; };
@@ -838,6 +853,15 @@
 		828E0D93280C66A6005239F1 /* InfoAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoAlertView.xib; sourceTree = "<group>"; };
 		828E0D9A280C67FB005239F1 /* InfoAlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoAlertService.swift; sourceTree = "<group>"; };
 		828E0D9C280C6856005239F1 /* Extension + InfoAlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + InfoAlertService.swift"; sourceTree = "<group>"; };
+		82924CF028674E3A0070B1CA /* CODDeliveryAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CODDeliveryAddress.swift; sourceTree = "<group>"; };
+		82924CF228674E4A0070B1CA /* CODDeliveryContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CODDeliveryContact.swift; sourceTree = "<group>"; };
+		82924CF4286767F20070B1CA /* URLYandexCheckPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLYandexCheckPrice.swift; sourceTree = "<group>"; };
+		82924CF728676A6D0070B1CA /* POSTDeliveryCheckPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POSTDeliveryCheckPrice.swift; sourceTree = "<group>"; };
+		82924CFC28676E2C0070B1CA /* ENCDeliveryCheckPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ENCDeliveryCheckPrice.swift; sourceTree = "<group>"; };
+		82924CFE286771610070B1CA /* DECDeliveryCheckPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DECDeliveryCheckPrice.swift; sourceTree = "<group>"; };
+		82924D002867718D0070B1CA /* CODCurrencyRules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CODCurrencyRules.swift; sourceTree = "<group>"; };
+		82924D02286773620070B1CA /* ENCRequirements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ENCRequirements.swift; sourceTree = "<group>"; };
+		82924D05286776C00070B1CA /* YandexDeliveryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexDeliveryService.swift; sourceTree = "<group>"; };
 		8294A3ED27F95D270094CAEB /* SwitchMenuBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchMenuBuilder.swift; sourceTree = "<group>"; };
 		8294A3EE27F95D270094CAEB /* SwitchMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchMenuModel.swift; sourceTree = "<group>"; };
 		8294A3EF27F95D270094CAEB /* SwitchMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchMenuViewModel.swift; sourceTree = "<group>"; };
@@ -1043,6 +1067,12 @@
 		82F458102802DF79004BCD68 /* DishCategoryCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishCategoryCollectionCell.swift; sourceTree = "<group>"; };
 		82F458112802DF79004BCD68 /* DishCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishCategoryModel.swift; sourceTree = "<group>"; };
 		82F458122802DF79004BCD68 /* DishCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishCategoryViewModel.swift; sourceTree = "<group>"; };
+		82F90BE12866F95F00FB29FB /* CODClientRequirements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CODClientRequirements.swift; sourceTree = "<group>"; };
+		82F90BEB2866FC0900FB29FB /* CODCreatePrepaymentDelivery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CODCreatePrepaymentDelivery.swift; sourceTree = "<group>"; };
+		82F90BED2866FFC300FB29FB /* CODEmergencyContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CODEmergencyContact.swift; sourceTree = "<group>"; };
+		82F90BEF2867024B00FB29FB /* CODSendPackage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CODSendPackage.swift; sourceTree = "<group>"; };
+		82F90BF22867028200FB29FB /* CODSendPackageSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CODSendPackageSize.swift; sourceTree = "<group>"; };
+		82F90BF52867109600FB29FB /* CODRoutePoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CODRoutePoint.swift; sourceTree = "<group>"; };
 		82F91E7427E5D6CF00F5A5CC /* MenuCategoriesCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCategoriesCollection.swift; sourceTree = "<group>"; };
 		82F91E7627E5D88F00F5A5CC /* DECCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DECCategory.swift; sourceTree = "<group>"; };
 		82F91E7C27E5E38700F5A5CC /* MenuCategoriesCollectionLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCategoriesCollectionLayout.swift; sourceTree = "<group>"; };
@@ -1181,6 +1211,7 @@
 				82004D05285E2E9B001CFA5E /* DECYandexGeocoderMetaData.swift */,
 				82004D07285E3045001CFA5E /* DECYandexAddressSuggestion.swift */,
 				82004D09285E308B001CFA5E /* DECYandexAddressComponent.swift */,
+				820A935228686B9A0055BCC8 /* DECYandexCoordinate.swift */,
 			);
 			path = DECYandexGEOObject;
 			sourceTree = "<group>";
@@ -1367,7 +1398,6 @@
 		8223D5AF284CAB6300729F52 /* Collection */ = {
 			isa = PBXGroup;
 			children = (
-				82F4580A2802DF55004BCD68 /* DishCategoryCollectionCell */,
 				82DB32C62843E38400379554 /* AddressSuggestionCell */,
 				820083F0283A40EF00A0F8BB /* MapCell */,
 				823AF1BC281ED23500593C1C /* DefaultAddressCell */,
@@ -1576,6 +1606,7 @@
 		8232115227D477FD00FE79E9 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				82924D04286776950070B1CA /* YandexDeliveryService */,
 				82004CFD285E1EBC001CFA5E /* YandexMapCameraListenerService */,
 				8270448F2855E7E800D9046E /* GeopositioningService */,
 				826A92612839531C004AAE0C /* LocationSevice */,
@@ -1648,6 +1679,7 @@
 				8299C2A9281D907B0071A742 /* Extension + Date.swift */,
 				827472EE2841323C004D3FDF /* Extension + CLLocation.swift */,
 				827044942855EEF600D9046E /* Extension + CLLocationCoordinate2D.swift */,
+				820A9354286873300055BCC8 /* Extension + Double.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1655,12 +1687,15 @@
 		8232116D27DCFB340019E6B6 /* Encodable */ = {
 			isa = PBXGroup;
 			children = (
+				82F90BE72866FB5B00FB29FB /* YandexDelivery */,
 				8232116E27DCFB440019E6B6 /* ENCProduct.swift */,
 				8294A50627F9E1B60094CAEB /* ENCAddress.swift */,
 				8294A50A27F9EF0F0094CAEB /* ENCOrder.swift */,
 				8294A50C27F9F3290094CAEB /* ENCDish.swift */,
 				820188E528429635008916B5 /* ENCAddressSuggestion.swift */,
 				820B8673285507A000A0B9B9 /* ENCCoordinate.swift */,
+				82924CFC28676E2C0070B1CA /* ENCDeliveryCheckPrice.swift */,
+				82924D02286773620070B1CA /* ENCRequirements.swift */,
 			);
 			path = Encodable;
 			sourceTree = "<group>";
@@ -2416,7 +2451,6 @@
 				820188EF28429D56008916B5 /* RequestsRESTService */,
 				827E23F527DCD1410006E763 /* RequestsAPI */,
 				82EC8C0E27DE4FBB00661F58 /* RequestFirebase */,
-				82EC8C0827DE4DE900661F58 /* RequestsFirebase */,
 				82004CFA285E1A3A001CFA5E /* URLParametersModels */,
 				827E244727DCD2CA0006E763 /* RequestModels */,
 				827E23F927DCD1410006E763 /* Managers */,
@@ -2441,6 +2475,7 @@
 			children = (
 				820188E12842941C008916B5 /* POSTAddressSuggestion.swift */,
 				820B86712855074B00A0B9B9 /* POSTReverseGeocoding.swift */,
+				82924CF728676A6D0070B1CA /* POSTDeliveryCheckPrice.swift */,
 			);
 			path = POST;
 			sourceTree = "<group>";
@@ -2524,6 +2559,7 @@
 		827E244727DCD2CA0006E763 /* RequestModels */ = {
 			isa = PBXGroup;
 			children = (
+				82F90BE32866FA7A00FB29FB /* Codable */,
 				82EC8C1427DE5BC500661F58 /* Decodable */,
 				8232116D27DCFB340019E6B6 /* Encodable */,
 			);
@@ -2636,7 +2672,6 @@
 			children = (
 				8280AC0027F086D600DEFFE6 /* PayOrderViewModel.swift */,
 				8280ABFC27F086D600DEFFE6 /* BuilderPayOrder.swift */,
-				8280ABFA27F086D600DEFFE6 /* ConfiguratorPayOrder.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -2652,7 +2687,6 @@
 		8280ABD927F0864400DEFFE6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				8280ABF627F086D600DEFFE6 /* PayOrderManagers.swift */,
 				8280ABFF27F086D600DEFFE6 /* PayOrderModel.swift */,
 			);
 			path = Model;
@@ -2793,6 +2827,23 @@
 				828E0D9A280C67FB005239F1 /* InfoAlertService.swift */,
 			);
 			path = InfoAlertService;
+			sourceTree = "<group>";
+		};
+		82924CF6286767F70070B1CA /* YandexDelivery */ = {
+			isa = PBXGroup;
+			children = (
+				82004CF8285E190C001CFA5E /* URLYandexReverseGeocoding.swift */,
+				82924CF4286767F20070B1CA /* URLYandexCheckPrice.swift */,
+			);
+			path = YandexDelivery;
+			sourceTree = "<group>";
+		};
+		82924D04286776950070B1CA /* YandexDeliveryService */ = {
+			isa = PBXGroup;
+			children = (
+				82924D05286776C00070B1CA /* YandexDeliveryService.swift */,
+			);
+			path = YandexDeliveryService;
 			sourceTree = "<group>";
 		};
 		8294A3F427F95DBD0094CAEB /* ViewModel */ = {
@@ -3828,7 +3879,7 @@
 				827E244C27DCD6320006E763 /* URLProduct.swift */,
 				820188E328429449008916B5 /* URLAddressSuggestion.swift */,
 				820B866F285504A100A0B9B9 /* URLReverseGeocoding.swift */,
-				82004CF8285E190C001CFA5E /* URLYandexReverseGeocoding.swift */,
+				82924CF6286767F70070B1CA /* YandexDelivery */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -3869,6 +3920,7 @@
 			isa = PBXGroup;
 			children = (
 				82EC8C0F27DE4FD200661F58 /* RequestFirebase.swift */,
+				82EC8C0827DE4DE900661F58 /* RequestsFirebase */,
 			);
 			path = RequestFirebase;
 			sourceTree = "<group>";
@@ -3885,6 +3937,7 @@
 				82CD806B281510D30048DC71 /* DECAddress.swift */,
 				82CD807B28154A8A0048DC71 /* DECOrderDish.swift */,
 				8299C2A2281D2B7F0071A742 /* DECOrder.swift */,
+				82924CFE286771610070B1CA /* DECDeliveryCheckPrice.swift */,
 			);
 			path = Decodable;
 			sourceTree = "<group>";
@@ -3970,6 +4023,7 @@
 				828C2D982813076E0059A828 /* ProfileCollectionView */,
 				82A2690F280AFCAF0051B997 /* BascketCollectionView */,
 				82A268D4280AB31D0051B997 /* PayOrderCollectionView */,
+				82F4580A2802DF55004BCD68 /* DishCategoryCollectionCell */,
 				82A268AD280A60AE0051B997 /* InputAddressCollectionView */,
 				82F457FC2802DE58004BCD68 /* MenuCategoriesCollectionView */,
 				82F457FB2802D25D004BCD68 /* MenuCollectionView */,
@@ -4111,6 +4165,61 @@
 				82F458112802DF79004BCD68 /* DishCategoryModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		82F90BE02866F83000FB29FB /* YandexDelivery */ = {
+			isa = PBXGroup;
+			children = (
+				82F90BE12866F95F00FB29FB /* CODClientRequirements.swift */,
+				82F90BED2866FFC300FB29FB /* CODEmergencyContact.swift */,
+				82924D002867718D0070B1CA /* CODCurrencyRules.swift */,
+				82F90BF42867107D00FB29FB /* CODRoutePoint */,
+				82F90BEA2866FBFF00FB29FB /* CODCreatePrepaymentDelivery */,
+				82F90BF12867027000FB29FB /* CODSendPackage */,
+			);
+			path = YandexDelivery;
+			sourceTree = "<group>";
+		};
+		82F90BE32866FA7A00FB29FB /* Codable */ = {
+			isa = PBXGroup;
+			children = (
+				82F90BE02866F83000FB29FB /* YandexDelivery */,
+			);
+			path = Codable;
+			sourceTree = "<group>";
+		};
+		82F90BE72866FB5B00FB29FB /* YandexDelivery */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = YandexDelivery;
+			sourceTree = "<group>";
+		};
+		82F90BEA2866FBFF00FB29FB /* CODCreatePrepaymentDelivery */ = {
+			isa = PBXGroup;
+			children = (
+				82F90BEB2866FC0900FB29FB /* CODCreatePrepaymentDelivery.swift */,
+			);
+			path = CODCreatePrepaymentDelivery;
+			sourceTree = "<group>";
+		};
+		82F90BF12867027000FB29FB /* CODSendPackage */ = {
+			isa = PBXGroup;
+			children = (
+				82F90BEF2867024B00FB29FB /* CODSendPackage.swift */,
+				82F90BF22867028200FB29FB /* CODSendPackageSize.swift */,
+			);
+			path = CODSendPackage;
+			sourceTree = "<group>";
+		};
+		82F90BF42867107D00FB29FB /* CODRoutePoint */ = {
+			isa = PBXGroup;
+			children = (
+				82F90BF52867109600FB29FB /* CODRoutePoint.swift */,
+				82924CF028674E3A0070B1CA /* CODDeliveryAddress.swift */,
+				82924CF228674E4A0070B1CA /* CODDeliveryContact.swift */,
+			);
+			path = CODRoutePoint;
 			sourceTree = "<group>";
 		};
 		82F91E7327E5D6B100F5A5CC /* MenuCategoriesCollection */ = {
@@ -4368,7 +4477,9 @@
 				82A268FF280AD5A50051B997 /* PayInfoModel.swift in Sources */,
 				826EC8E227EF450F00E5C530 /* MenuState.swift in Sources */,
 				82C2662B2801DB48007984B3 /* Extension + WarningService.swift in Sources */,
+				82924CF828676A6D0070B1CA /* POSTDeliveryCheckPrice.swift in Sources */,
 				827E244427DCD2300006E763 /* Extension + EstimateText.swift in Sources */,
+				82924CF328674E4A0070B1CA /* CODDeliveryContact.swift in Sources */,
 				8208FE8527F88A14003955D0 /* CounterDishesModel.swift in Sources */,
 				82F457F92802D104004BCD68 /* MainCollectionCellsBuilder.swift in Sources */,
 				820188E9284298C4008916B5 /* DECAddressSuggestion.swift in Sources */,
@@ -4389,6 +4500,7 @@
 				82C266102801CBDC007984B3 /* WarningText.swift in Sources */,
 				82EC8C1827DE5C2100661F58 /* DECDish.swift in Sources */,
 				820083FA283A412800A0F8BB /* MapCollectionCellBuilder.swift in Sources */,
+				82F90BF62867109600FB29FB /* CODRoutePoint.swift in Sources */,
 				823AF1B7281EC75E00593C1C /* AddAddressViewBuilder.swift in Sources */,
 				82F91E7727E5D88F00F5A5CC /* DECCategory.swift in Sources */,
 				82C2661E2801CF7B007984B3 /* ErrorViewModel.swift in Sources */,
@@ -4409,6 +4521,7 @@
 				826B35D2280C10B600A15424 /* BascketInfoModel.swift in Sources */,
 				82741ABD27D4EA94006EBE80 /* MenuModel.swift in Sources */,
 				82741B0027D5230E006EBE80 /* DECProduct.swift in Sources */,
+				82924CFD28676E2C0070B1CA /* ENCDeliveryCheckPrice.swift in Sources */,
 				82C265EE2801B2B5007984B3 /* CreateAddressService.swift in Sources */,
 				8280AC0927F086D600DEFFE6 /* BuilderPayOrder.swift in Sources */,
 				8223D5AA284CA77D00729F52 /* AddressSuggestionsTableView.swift in Sources */,
@@ -4442,6 +4555,7 @@
 				8262AF7B28145FE3009A7E3A /* AddressesViewModel.swift in Sources */,
 				8262AF8B281466A2009A7E3A /* AddressCollectionCell.swift in Sources */,
 				82A2690A280AE45F0051B997 /* BasketProduct+CoreDataClass.swift in Sources */,
+				82F90BE22866F95F00FB29FB /* CODClientRequirements.swift in Sources */,
 				827648C5284DC91F00D97971 /* CenterMapPinModel.swift in Sources */,
 				82F457E128028E56004BCD68 /* HorizontalDishModel.swift in Sources */,
 				82F91E7527E5D6CF00F5A5CC /* MenuCategoriesCollection.swift in Sources */,
@@ -4451,6 +4565,7 @@
 				827E241E27DCD1410006E763 /* URLAbstractBaseService.swift in Sources */,
 				82DB32D12843E3AE00379554 /* AddressSuggestionCollectionCellModel.swift in Sources */,
 				820188EB2842990A008916B5 /* DECAddressSuggestions.swift in Sources */,
+				82924D06286776C00070B1CA /* YandexDeliveryService.swift in Sources */,
 				8299C295281D21540071A742 /* GETOrders.swift in Sources */,
 				8262AEF128141FBC009A7E3A /* MainCreateController.swift in Sources */,
 				82A2690B280AE45F0051B997 /* BasketProduct+CoreDataProperties.swift in Sources */,
@@ -4477,6 +4592,7 @@
 				826B35C2280C0AE500A15424 /* ActionButtonModel.swift in Sources */,
 				82DB32C32843E1BC00379554 /* AddressSuggestionsCollection.swift in Sources */,
 				82F458042802DE76004BCD68 /* MenuCategoriesModel.swift in Sources */,
+				82F90BF02867024B00FB29FB /* CODSendPackage.swift in Sources */,
 				82EC8BF327DDFAF800661F58 /* OrderViewController.swift in Sources */,
 				82E8BC4A284B64F300BA2508 /* ChangeAddressModel.swift in Sources */,
 				8262AF5C28145B01009A7E3A /* OrdersViewModel.swift in Sources */,
@@ -4509,7 +4625,6 @@
 				82C183FD27E7432B00053480 /* AddDishView.swift in Sources */,
 				827E244927DCD3980006E763 /* EnumSession.swift in Sources */,
 				82CD807C28154A8A0048DC71 /* DECOrderDish.swift in Sources */,
-				8280AC0327F086D600DEFFE6 /* PayOrderManagers.swift in Sources */,
 				8262AF5528145B01009A7E3A /* OrdersViewController.swift in Sources */,
 				82A26900280AD5A50051B997 /* PayInfoViewModel.swift in Sources */,
 				82DB32D02843E3AE00379554 /* AddressSuggestionCollectionCellBuilder.swift in Sources */,
@@ -4528,6 +4643,7 @@
 				8262AF43281452B6009A7E3A /* LottieSetup.swift in Sources */,
 				82B8EC3128468DDA001861E9 /* AddressSuggestionScreenViewModel.swift in Sources */,
 				826FA69C27E6E14800C0BC29 /* Extension + UIImageView.swift in Sources */,
+				820A9355286873300055BCC8 /* Extension + Double.swift in Sources */,
 				827E241A27DCD1410006E763 /* RequestProtocol.swift in Sources */,
 				8232119927DD02CF0019E6B6 /* Extension + UIView.swift in Sources */,
 				82F458142802DF79004BCD68 /* DishCategoryCollectionCellBuilder.swift in Sources */,
@@ -4541,6 +4657,7 @@
 				8294A4BA27F9C9A80094CAEB /* KeyBoardProtocol.swift in Sources */,
 				82EC8BCF27DDF24C00661F58 /* ConfiguratorProfile.swift in Sources */,
 				8262AEEB2813F09B009A7E3A /* AvatarCollectionCellBuilder.swift in Sources */,
+				82F90BEE2866FFC300FB29FB /* CODEmergencyContact.swift in Sources */,
 				823AF15C281EB91500593C1C /* Extension + PayOrderViewController.swift in Sources */,
 				82EC8C1627DE5BDA00661F58 /* DECMenu.swift in Sources */,
 				8208FED927F8AABF003955D0 /* ZanjabilHalal.xcdatamodeld in Sources */,
@@ -4583,6 +4700,7 @@
 				82004CE7285DF2B1001CFA5E /* YandexMapView.swift in Sources */,
 				8262AF89281466A2009A7E3A /* AddressCollectionCellModel.swift in Sources */,
 				8294A3F227F95D270094CAEB /* SwitchMenuModel.swift in Sources */,
+				82924CF5286767F20070B1CA /* URLYandexCheckPrice.swift in Sources */,
 				82EC8BD527DDF24C00661F58 /* ProfileViewModel.swift in Sources */,
 				82A268A7280A5AE60051B997 /* InputAddressModel.swift in Sources */,
 				823AF155281E656600593C1C /* TabBarViewModel.swift in Sources */,
@@ -4598,6 +4716,8 @@
 				82E8BC49284B64F300BA2508 /* ChangeAddressView.swift in Sources */,
 				8280ABD427F061DA00DEFFE6 /* BuyView.swift in Sources */,
 				82F457DF28028E56004BCD68 /* HorizontalDishCollectionCellBuilder.swift in Sources */,
+				82F90BF32867028200FB29FB /* CODSendPackageSize.swift in Sources */,
+				82924D012867718D0070B1CA /* CODCurrencyRules.swift in Sources */,
 				82C2661C2801CF7B007984B3 /* ErrorView.swift in Sources */,
 				82CD808B2815AE390048DC71 /* OrdersCollectionModel.swift in Sources */,
 				827E244527DCD2300006E763 /* Extension + StringConverter.swift in Sources */,
@@ -4623,9 +4743,11 @@
 				82004D04285E2E15001CFA5E /* DECYandexMetaDataProperty.swift in Sources */,
 				8294A50927F9EEE60094CAEB /* POSTOrder.swift in Sources */,
 				823210CB27D475E200FE79E9 /* LoadNidoble.swift in Sources */,
+				820A935328686B9A0055BCC8 /* DECYandexCoordinate.swift in Sources */,
 				82EC8BFA27DDFAF800661F58 /* OrderViewModel.swift in Sources */,
 				827472E6284121D5004D3FDF /* MapView.swift in Sources */,
 				82C265E528015323007984B3 /* PayOrderCollectionCellBuilder.swift in Sources */,
+				82924D03286773620070B1CA /* ENCRequirements.swift in Sources */,
 				823AF1C7281ED26500593C1C /* DefaultAddressCollectionCellModel.swift in Sources */,
 				82741AE727D4F38C006EBE80 /* BuilderMainNavigation.swift in Sources */,
 				827E244027DCD2300006E763 /* Extension + StringEmoji.swift in Sources */,
@@ -4652,7 +4774,6 @@
 				820B8670285504A100A0B9B9 /* URLReverseGeocoding.swift in Sources */,
 				82C2660E2801CAC7007984B3 /* WarningView.swift in Sources */,
 				8223D5DD284CBDE900729F52 /* AddressSuggestionTableCellBuilder.swift in Sources */,
-				8280AC0727F086D600DEFFE6 /* ConfiguratorPayOrder.swift in Sources */,
 				8280AC0627F086D600DEFFE6 /* PayOrderViewController.swift in Sources */,
 				820083ED283A3FD900A0F8BB /* MapScreenViewModel.swift in Sources */,
 				82E2F41827D5CC56005C4530 /* SetupFirebase.swift in Sources */,
@@ -4730,11 +4851,13 @@
 				8262AEEC2813F09B009A7E3A /* AvatarCollectionCellModel.swift in Sources */,
 				82A26907280AD8730051B997 /* Extension + PayInfoView.swift in Sources */,
 				82741A9427D4E795006EBE80 /* LoadingViewController.swift in Sources */,
+				82924CFF286771620070B1CA /* DECDeliveryCheckPrice.swift in Sources */,
 				827E243F27DCD2300006E763 /* Extension + StringDecode.swift in Sources */,
 				82CD807A281548A50048DC71 /* OrderCollectionCell.swift in Sources */,
 				8262AEED2813F09B009A7E3A /* AvatarCollectionCellViewModel.swift in Sources */,
 				82741AB427D4EA94006EBE80 /* MenuManagers.swift in Sources */,
 				82E8BC48284B64F300BA2508 /* ChangeAddressViewBuilder.swift in Sources */,
+				82F90BEC2866FC0900FB29FB /* CODCreatePrepaymentDelivery.swift in Sources */,
 				82E89F2628295C8600CA17DC /* UserData+CoreDataProperties.swift in Sources */,
 				827648C3284DC91F00D97971 /* CenterMapPinViewBuilder.swift in Sources */,
 				8223D5DB284CBDE900729F52 /* AddressSuggestionTableCellViewModel.swift in Sources */,
@@ -4784,6 +4907,7 @@
 				82A268FE280AD5A50051B997 /* PayInfoView.swift in Sources */,
 				82EC8BD127DDF24C00661F58 /* BuilderProfile.swift in Sources */,
 				827044932855ECC600D9046E /* RegionChange.swift in Sources */,
+				82924CF128674E3A0070B1CA /* CODDeliveryAddress.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

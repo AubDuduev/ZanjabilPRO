@@ -23,7 +23,7 @@ public final class GETProducts: SessionProtocol {
         let parameter  = data as! String
         let body       = self.urlBody.create(with: .default(parameters))
         let url        = self.abstractFactory.create(URLProduct(), dataForUrl: parameter)?.URL
-        let header     = self.headers.create(type: .appJson)
+        let header     = self.headers.create(with: .appJson)
         //3 - Получение данных
         do {
             try session(url: url, body: body, httpMethod: .get, header: header)

@@ -8,14 +8,16 @@ import Foundation
 
 struct CreateAddressModel {
     
-    var ID        = UUID().uuidString
-    var build     = String()
-    var city      = String()
-    var apartment = String()
-    var floor     = String()
-    var intercom  = String()
-    var street    = String()
-    var isDefault = false
+    var ID         = UUID().uuidString
+    var build      = String()
+    var city       = String()
+    var apartment  = String()
+    var floor      = String()
+    var intercom   = String()
+    var street     = String()
+	var latitude   : Double = 0
+	var longitude  : Double = 0
+    var isDefault  = false
     
     init(address: DECAddress) {
         
@@ -28,6 +30,18 @@ struct CreateAddressModel {
         self.street    = address.street
         self.isDefault = address.isDefault
     }
+	
+	init(address: ENCAddress) {
+		
+		self.ID        = address.ID
+		self.build     = address.build
+		self.city      = address.city
+		self.apartment = address.apartment
+		self.floor     = address.floor
+		self.intercom  = address.intercom
+		self.street    = address.street
+		self.isDefault = address.isDefault
+	}
 	
 	init(addressSuggestionData: DECAddressSuggestionData) {
 		
@@ -43,14 +57,16 @@ struct CreateAddressModel {
 	
 	init(yandexAddressSuggestion: DECYandexAddressSuggestion) {
 		
-		self.ID        = UUID().uuidString
-		self.build     = yandexAddressSuggestion.build ?? ""
-		self.city      = yandexAddressSuggestion.city  ?? ""
-		self.apartment = ""
-		self.floor     = ""
-		self.intercom  = ""
-		self.street    = yandexAddressSuggestion.street ?? ""
-		self.isDefault = true
+		self.ID         = UUID().uuidString
+		self.build      = yandexAddressSuggestion.build ?? ""
+		self.city       = yandexAddressSuggestion.city  ?? ""
+		self.apartment  = ""
+		self.floor      = ""
+		self.intercom   = ""
+		self.street     = yandexAddressSuggestion.street ?? ""
+		self.longitude  = yandexAddressSuggestion.coordinate?.longitude ?? 0
+		self.latitude   = yandexAddressSuggestion.coordinate?.latitude  ?? 0
+		self.isDefault  = true
 	}
     
     init() {
